@@ -32,7 +32,7 @@
             this.msk_telefone = new System.Windows.Forms.MaskedTextBox();
             this.txt_rua = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
-            this.msk_cpf = new System.Windows.Forms.MaskedTextBox();
+            this.msk_rg = new System.Windows.Forms.MaskedTextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_telefone = new System.Windows.Forms.Label();
@@ -87,14 +87,14 @@
             this.txt_nome.Size = new System.Drawing.Size(438, 31);
             this.txt_nome.TabIndex = 24;
             // 
-            // msk_cpf
+            // msk_rg
             // 
-            this.msk_cpf.Location = new System.Drawing.Point(587, 133);
-            this.msk_cpf.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_cpf.Mask = "99,999,999-9";
-            this.msk_cpf.Name = "msk_cpf";
-            this.msk_cpf.Size = new System.Drawing.Size(148, 31);
-            this.msk_cpf.TabIndex = 23;
+            this.msk_rg.Location = new System.Drawing.Point(587, 133);
+            this.msk_rg.Margin = new System.Windows.Forms.Padding(4);
+            this.msk_rg.Mask = "99,999,999-9";
+            this.msk_rg.Name = "msk_rg";
+            this.msk_rg.Size = new System.Drawing.Size(148, 31);
+            this.msk_rg.TabIndex = 23;
             // 
             // lbl_cpf
             // 
@@ -268,7 +268,7 @@
             // 
             this.msk_numero.Location = new System.Drawing.Point(290, 209);
             this.msk_numero.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_numero.Mask = "9999999999";
+            this.msk_numero.Mask = "99999999";
             this.msk_numero.Name = "msk_numero";
             this.msk_numero.Size = new System.Drawing.Size(148, 31);
             this.msk_numero.TabIndex = 52;
@@ -361,7 +361,7 @@
             this.Controls.Add(this.msk_telefone);
             this.Controls.Add(this.txt_rua);
             this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.msk_cpf);
+            this.Controls.Add(this.msk_rg);
             this.Controls.Add(this.lbl_cpf);
             this.Controls.Add(this.lbl_nome);
             this.Controls.Add(this.lbl_telefone);
@@ -385,7 +385,7 @@
         public System.Windows.Forms.MaskedTextBox msk_telefone;
         public System.Windows.Forms.TextBox txt_rua;
         public System.Windows.Forms.TextBox txt_nome;
-        public System.Windows.Forms.MaskedTextBox msk_cpf;
+        public System.Windows.Forms.MaskedTextBox msk_rg;
         private System.Windows.Forms.Label lbl_cpf;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Label lbl_telefone;
