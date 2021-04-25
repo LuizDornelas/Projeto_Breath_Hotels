@@ -218,73 +218,28 @@
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Cls_Login.cs" />
-    <Compile Include="Frm_cadastroUsuarios.cs">
+    <Compile Include="Frm_CadastroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_cadastroUsuarios.Designer.cs">
-      <DependentUpon>Frm_cadastroUsuarios.cs</DependentUpon>
+    <Compile Include="Frm_CadastroUsuarios.Designer.cs">
+      <DependentUpon>Frm_CadastroUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_cargo.cs">
+    <Compile Include="Frm_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_cargo.Designer.cs">
-      <DependentUpon>Frm_cargo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_empresa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_empresa.Designer.cs">
-      <DependentUpon>Frm_empresa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_fornecedores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_fornecedores.Designer.cs">
-      <DependentUpon>Frm_fornecedores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_quartos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_quartos.Designer.cs">
-      <DependentUpon>Frm_quartos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_tiposDeQuartos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_tiposDeQuartos.Designer.cs">
-      <DependentUpon>Frm_tiposDeQuartos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="pg_1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="pg_1.Designer.cs">
-      <DependentUpon>pg_1.cs</DependentUpon>
+    <Compile Include="Frm_Dashboard.Designer.cs">
+      <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frm_cadastroUsuarios.resx">
-      <DependentUpon>Frm_cadastroUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_cargo.resx">
-      <DependentUpon>Frm_cargo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_empresa.resx">
-      <DependentUpon>Frm_empresa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_fornecedores.resx">
-      <DependentUpon>Frm_fornecedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_quartos.resx">
-      <DependentUpon>Frm_quartos.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_CadastroUsuarios.resx">
+      <DependentUpon>Frm_CadastroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_tiposDeQuartos.resx">
-      <DependentUpon>Frm_tiposDeQuartos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="pg_1.resx">
-      <DependentUpon>pg_1.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Dashboard.resx">
+      <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

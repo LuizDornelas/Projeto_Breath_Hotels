@@ -1,6 +1,6 @@
 ﻿namespace ProjetoHotel
 {
-    partial class Frm_cadastroUsuarios
+    partial class Frm_CadastroUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_cadastroUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroUsuarios));
             this.msk_telefone = new System.Windows.Forms.MaskedTextBox();
             this.txt_rua = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoHotel
 {
-    public partial class pg_1 : Form
+    public partial class Frm_Dashboard : Form
     {
-        public pg_1(string name, string tipo)
+        public Frm_Dashboard(string name, string tipo)
         {
             InitializeComponent();
             lbl_nome.Text = name;
@@ -29,7 +29,7 @@ namespace ProjetoHotel
         private void funcionariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string tipo = lbl_usuario.Text;
-            Frm_cadastroUsuarios Cadastro = new Frm_cadastroUsuarios(tipo);
+            Frm_CadastroUsuarios Cadastro = new Frm_CadastroUsuarios(tipo);
             Cadastro.StartPosition = FormStartPosition.CenterParent;
             Cadastro.MdiParent = this;
             Cadastro.Show();
@@ -59,13 +59,6 @@ namespace ProjetoHotel
         {
             this.Close();
 
-        }
-        private void empresaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Frm_empresa CadastroEmpresa = new Frm_empresa();
-            CadastroEmpresa.StartPosition = FormStartPosition.CenterParent;
-            CadastroEmpresa.MdiParent = this;
-            CadastroEmpresa.Show();
         }
         private void logToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -100,16 +93,6 @@ namespace ProjetoHotel
         }
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void novaVendaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

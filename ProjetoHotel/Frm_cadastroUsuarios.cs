@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoHotel
 {
-    public partial class Frm_cadastroUsuarios : Form
+    public partial class Frm_CadastroUsuarios : Form
     {
-        public Frm_cadastroUsuarios(string tipo)
+        public Frm_CadastroUsuarios(string tipo)
         {
             InitializeComponent();
 
