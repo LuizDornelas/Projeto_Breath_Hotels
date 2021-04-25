@@ -1,6 +1,7 @@
-﻿namespace ProjetoHotel
+﻿
+namespace ProjetoHotel
 {
-    partial class Frm_CadastroUsuarios
+    partial class Frm_AtualizaUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AtualizaUsuarios));
             this.msk_telefone = new System.Windows.Forms.MaskedTextBox();
             this.txt_rua = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
@@ -37,14 +38,13 @@
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.lbl_rua = new System.Windows.Forms.Label();
-            this.lbl_cargo = new System.Windows.Forms.Label();
+            this.lbl_tipo = new System.Windows.Forms.Label();
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.lbl_senha = new System.Windows.Forms.Label();
             this.txt_senha = new System.Windows.Forms.TextBox();
-            this.cmb_cadastro_fun = new System.Windows.Forms.ComboBox();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbl_numero = new System.Windows.Forms.Label();
             this.lbl_bairro = new System.Windows.Forms.Label();
             this.txt_bairro = new System.Windows.Forms.TextBox();
@@ -55,13 +55,22 @@
             this.lbl_cep = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.msk_cep = new System.Windows.Forms.MaskedTextBox();
+            this.cmb_ativo = new System.Windows.Forms.ComboBox();
+            this.lbl_ativo = new System.Windows.Forms.Label();
+            this.lbl_pesquisa = new System.Windows.Forms.Label();
+            this.txt_pesquisa = new System.Windows.Forms.TextBox();
+            this.lbl_criterio = new System.Windows.Forms.Label();
+            this.cmb_criterio = new System.Windows.Forms.ComboBox();
             this.btn_voltar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_salvar = new System.Windows.Forms.Button();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // msk_telefone
             // 
-            this.msk_telefone.Location = new System.Drawing.Point(796, 133);
+            this.msk_telefone.Location = new System.Drawing.Point(797, 205);
             this.msk_telefone.Margin = new System.Windows.Forms.Padding(4);
             this.msk_telefone.Mask = "(99)00000-0000";
             this.msk_telefone.Name = "msk_telefone";
@@ -70,7 +79,7 @@
             // 
             // txt_rua
             // 
-            this.txt_rua.Location = new System.Drawing.Point(100, 209);
+            this.txt_rua.Location = new System.Drawing.Point(101, 281);
             this.txt_rua.Margin = new System.Windows.Forms.Padding(4);
             this.txt_rua.Multiline = true;
             this.txt_rua.Name = "txt_rua";
@@ -79,7 +88,7 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.Location = new System.Drawing.Point(100, 133);
+            this.txt_nome.Location = new System.Drawing.Point(101, 205);
             this.txt_nome.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nome.MaxLength = 50;
             this.txt_nome.Multiline = true;
@@ -89,7 +98,7 @@
             // 
             // msk_rg
             // 
-            this.msk_rg.Location = new System.Drawing.Point(587, 133);
+            this.msk_rg.Location = new System.Drawing.Point(588, 205);
             this.msk_rg.Margin = new System.Windows.Forms.Padding(4);
             this.msk_rg.Mask = "99,999,999-9";
             this.msk_rg.Name = "msk_rg";
@@ -99,7 +108,7 @@
             // lbl_cpf
             // 
             this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Location = new System.Drawing.Point(582, 104);
+            this.lbl_cpf.Location = new System.Drawing.Point(583, 176);
             this.lbl_cpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cpf.Name = "lbl_cpf";
             this.lbl_cpf.Size = new System.Drawing.Size(49, 25);
@@ -109,7 +118,7 @@
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(95, 104);
+            this.lbl_nome.Location = new System.Drawing.Point(96, 176);
             this.lbl_nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(75, 25);
@@ -119,7 +128,7 @@
             // lbl_telefone
             // 
             this.lbl_telefone.AutoSize = true;
-            this.lbl_telefone.Location = new System.Drawing.Point(791, 104);
+            this.lbl_telefone.Location = new System.Drawing.Point(792, 176);
             this.lbl_telefone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_telefone.Name = "lbl_telefone";
             this.lbl_telefone.Size = new System.Drawing.Size(98, 25);
@@ -129,27 +138,27 @@
             // lbl_rua
             // 
             this.lbl_rua.AutoSize = true;
-            this.lbl_rua.Location = new System.Drawing.Point(95, 180);
+            this.lbl_rua.Location = new System.Drawing.Point(96, 252);
             this.lbl_rua.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_rua.Name = "lbl_rua";
             this.lbl_rua.Size = new System.Drawing.Size(57, 25);
             this.lbl_rua.TabIndex = 19;
             this.lbl_rua.Text = "Rua:";
             // 
-            // lbl_cargo
+            // lbl_tipo
             // 
-            this.lbl_cargo.AutoSize = true;
-            this.lbl_cargo.Location = new System.Drawing.Point(851, 265);
-            this.lbl_cargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_cargo.Name = "lbl_cargo";
-            this.lbl_cargo.Size = new System.Drawing.Size(61, 25);
-            this.lbl_cargo.TabIndex = 37;
-            this.lbl_cargo.Text = "Tipo:";
+            this.lbl_tipo.AutoSize = true;
+            this.lbl_tipo.Location = new System.Drawing.Point(852, 337);
+            this.lbl_tipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_tipo.Name = "lbl_tipo";
+            this.lbl_tipo.Size = new System.Drawing.Size(61, 25);
+            this.lbl_tipo.TabIndex = 37;
+            this.lbl_tipo.Text = "Tipo:";
             // 
             // lbl_usuario
             // 
             this.lbl_usuario.AutoSize = true;
-            this.lbl_usuario.Location = new System.Drawing.Point(469, 265);
+            this.lbl_usuario.Location = new System.Drawing.Point(470, 337);
             this.lbl_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_usuario.Name = "lbl_usuario";
             this.lbl_usuario.Size = new System.Drawing.Size(93, 25);
@@ -158,7 +167,7 @@
             // 
             // txt_usuario
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(474, 294);
+            this.txt_usuario.Location = new System.Drawing.Point(475, 366);
             this.txt_usuario.Margin = new System.Windows.Forms.Padding(4);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(166, 31);
@@ -167,59 +176,45 @@
             // lbl_senha
             // 
             this.lbl_senha.AutoSize = true;
-            this.lbl_senha.Location = new System.Drawing.Point(659, 265);
+            this.lbl_senha.Location = new System.Drawing.Point(660, 337);
             this.lbl_senha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_senha.Name = "lbl_senha";
             this.lbl_senha.Size = new System.Drawing.Size(76, 25);
             this.lbl_senha.TabIndex = 41;
             this.lbl_senha.Text = "Senha:";
-            this.lbl_senha.Click += new System.EventHandler(this.lbl_senha_Click);
             // 
             // txt_senha
             // 
-            this.txt_senha.Location = new System.Drawing.Point(664, 294);
+            this.txt_senha.Location = new System.Drawing.Point(665, 366);
             this.txt_senha.Margin = new System.Windows.Forms.Padding(4);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(166, 31);
             this.txt_senha.TabIndex = 42;
             // 
-            // cmb_cadastro_fun
+            // cmb_tipo
             // 
-            this.cmb_cadastro_fun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_cadastro_fun.FormattingEnabled = true;
-            this.cmb_cadastro_fun.Location = new System.Drawing.Point(856, 292);
-            this.cmb_cadastro_fun.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_cadastro_fun.Name = "cmb_cadastro_fun";
-            this.cmb_cadastro_fun.Size = new System.Drawing.Size(124, 33);
-            this.cmb_cadastro_fun.TabIndex = 43;
-            this.cmb_cadastro_fun.SelectedIndexChanged += new System.EventHandler(this.cmb_cadastro_fun_SelectedIndexChanged);
+            this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Location = new System.Drawing.Point(857, 364);
+            this.cmb_tipo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(124, 33);
+            this.cmb_tipo.TabIndex = 43;
             // 
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo.Location = new System.Drawing.Point(350, 29);
+            this.lbl_titulo.Location = new System.Drawing.Point(400, 29);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(368, 38);
+            this.lbl_titulo.Size = new System.Drawing.Size(309, 38);
             this.lbl_titulo.TabIndex = 44;
-            this.lbl_titulo.Text = "Cadastro de Usuários";
-            this.lbl_titulo.Click += new System.EventHandler(this.Titulo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(335, 67);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(394, 20);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "* Todos os dados são de preenchimento obrigatório";
+            this.lbl_titulo.Text = "Atualiza Cadastro";
             // 
             // lbl_numero
             // 
             this.lbl_numero.AutoSize = true;
-            this.lbl_numero.Location = new System.Drawing.Point(285, 180);
+            this.lbl_numero.Location = new System.Drawing.Point(286, 252);
             this.lbl_numero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_numero.Name = "lbl_numero";
             this.lbl_numero.Size = new System.Drawing.Size(96, 25);
@@ -229,7 +224,7 @@
             // lbl_bairro
             // 
             this.lbl_bairro.AutoSize = true;
-            this.lbl_bairro.Location = new System.Drawing.Point(469, 180);
+            this.lbl_bairro.Location = new System.Drawing.Point(470, 252);
             this.lbl_bairro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_bairro.Name = "lbl_bairro";
             this.lbl_bairro.Size = new System.Drawing.Size(79, 25);
@@ -238,7 +233,7 @@
             // 
             // txt_bairro
             // 
-            this.txt_bairro.Location = new System.Drawing.Point(474, 209);
+            this.txt_bairro.Location = new System.Drawing.Point(475, 281);
             this.txt_bairro.Margin = new System.Windows.Forms.Padding(4);
             this.txt_bairro.Multiline = true;
             this.txt_bairro.Name = "txt_bairro";
@@ -248,7 +243,7 @@
             // lbl_cidade
             // 
             this.lbl_cidade.AutoSize = true;
-            this.lbl_cidade.Location = new System.Drawing.Point(659, 180);
+            this.lbl_cidade.Location = new System.Drawing.Point(660, 252);
             this.lbl_cidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cidade.Name = "lbl_cidade";
             this.lbl_cidade.Size = new System.Drawing.Size(83, 25);
@@ -257,7 +252,7 @@
             // 
             // txt_cidade
             // 
-            this.txt_cidade.Location = new System.Drawing.Point(664, 209);
+            this.txt_cidade.Location = new System.Drawing.Point(665, 281);
             this.txt_cidade.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cidade.Multiline = true;
             this.txt_cidade.Name = "txt_cidade";
@@ -266,7 +261,7 @@
             // 
             // msk_numero
             // 
-            this.msk_numero.Location = new System.Drawing.Point(290, 209);
+            this.msk_numero.Location = new System.Drawing.Point(291, 281);
             this.msk_numero.Margin = new System.Windows.Forms.Padding(4);
             this.msk_numero.Mask = "99999999";
             this.msk_numero.Name = "msk_numero";
@@ -275,7 +270,7 @@
             // 
             // txt_estado
             // 
-            this.txt_estado.Location = new System.Drawing.Point(100, 294);
+            this.txt_estado.Location = new System.Drawing.Point(101, 366);
             this.txt_estado.Margin = new System.Windows.Forms.Padding(4);
             this.txt_estado.Multiline = true;
             this.txt_estado.Name = "txt_estado";
@@ -285,7 +280,7 @@
             // lbl_cep
             // 
             this.lbl_cep.AutoSize = true;
-            this.lbl_cep.Location = new System.Drawing.Point(285, 265);
+            this.lbl_cep.Location = new System.Drawing.Point(286, 337);
             this.lbl_cep.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cep.Name = "lbl_cep";
             this.lbl_cep.Size = new System.Drawing.Size(59, 25);
@@ -295,7 +290,7 @@
             // lbl_estado
             // 
             this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Location = new System.Drawing.Point(95, 265);
+            this.lbl_estado.Location = new System.Drawing.Point(96, 337);
             this.lbl_estado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(83, 25);
@@ -304,42 +299,126 @@
             // 
             // msk_cep
             // 
-            this.msk_cep.Location = new System.Drawing.Point(290, 294);
+            this.msk_cep.Location = new System.Drawing.Point(291, 366);
             this.msk_cep.Margin = new System.Windows.Forms.Padding(4);
             this.msk_cep.Mask = "99999-999";
             this.msk_cep.Name = "msk_cep";
             this.msk_cep.Size = new System.Drawing.Size(148, 31);
             this.msk_cep.TabIndex = 56;
             // 
+            // cmb_ativo
+            // 
+            this.cmb_ativo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_ativo.FormattingEnabled = true;
+            this.cmb_ativo.Location = new System.Drawing.Point(857, 281);
+            this.cmb_ativo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_ativo.Name = "cmb_ativo";
+            this.cmb_ativo.Size = new System.Drawing.Size(124, 33);
+            this.cmb_ativo.TabIndex = 57;
+            // 
+            // lbl_ativo
+            // 
+            this.lbl_ativo.AutoSize = true;
+            this.lbl_ativo.Location = new System.Drawing.Point(852, 252);
+            this.lbl_ativo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_ativo.Name = "lbl_ativo";
+            this.lbl_ativo.Size = new System.Drawing.Size(67, 25);
+            this.lbl_ativo.TabIndex = 58;
+            this.lbl_ativo.Text = "Ativo:";
+            // 
+            // lbl_pesquisa
+            // 
+            this.lbl_pesquisa.AutoSize = true;
+            this.lbl_pesquisa.Location = new System.Drawing.Point(104, 107);
+            this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_pesquisa.Name = "lbl_pesquisa";
+            this.lbl_pesquisa.Size = new System.Drawing.Size(103, 25);
+            this.lbl_pesquisa.TabIndex = 59;
+            this.lbl_pesquisa.Text = "Pesquisar";
+            // 
+            // txt_pesquisa
+            // 
+            this.txt_pesquisa.Location = new System.Drawing.Point(215, 103);
+            this.txt_pesquisa.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_pesquisa.MaxLength = 50;
+            this.txt_pesquisa.Multiline = true;
+            this.txt_pesquisa.Name = "txt_pesquisa";
+            this.txt_pesquisa.Size = new System.Drawing.Size(177, 31);
+            this.txt_pesquisa.TabIndex = 60;
+            // 
+            // lbl_criterio
+            // 
+            this.lbl_criterio.AutoSize = true;
+            this.lbl_criterio.Location = new System.Drawing.Point(400, 104);
+            this.lbl_criterio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_criterio.Name = "lbl_criterio";
+            this.lbl_criterio.Size = new System.Drawing.Size(83, 25);
+            this.lbl_criterio.TabIndex = 61;
+            this.lbl_criterio.Text = "Critério";
+            // 
+            // cmb_criterio
+            // 
+            this.cmb_criterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_criterio.FormattingEnabled = true;
+            this.cmb_criterio.Location = new System.Drawing.Point(491, 101);
+            this.cmb_criterio.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_criterio.Name = "cmb_criterio";
+            this.cmb_criterio.Size = new System.Drawing.Size(124, 33);
+            this.cmb_criterio.TabIndex = 62;
+            // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(277, 362);
+            this.btn_voltar.Location = new System.Drawing.Point(450, 775);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(204, 55);
-            this.btn_voltar.TabIndex = 58;
+            this.btn_voltar.TabIndex = 63;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(101, 435);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(880, 305);
+            this.dataGridView1.TabIndex = 64;
+            // 
             // btn_salvar
             // 
-            this.btn_salvar.Location = new System.Drawing.Point(587, 362);
+            this.btn_salvar.Location = new System.Drawing.Point(777, 89);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(204, 55);
-            this.btn_salvar.TabIndex = 59;
+            this.btn_salvar.TabIndex = 65;
             this.btn_salvar.Text = "Salvar";
             this.btn_salvar.UseVisualStyleBackColor = true;
-            this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click_1);
             // 
-            // Frm_CadastroUsuarios
+            // btn_pesquisa
+            // 
+            this.btn_pesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisa.Image")));
+            this.btn_pesquisa.Location = new System.Drawing.Point(631, 97);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
+            this.btn_pesquisa.TabIndex = 66;
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            // 
+            // Frm_AtualizaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1084, 478);
+            this.ClientSize = new System.Drawing.Size(1096, 861);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.btn_salvar);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_voltar);
+            this.Controls.Add(this.cmb_criterio);
+            this.Controls.Add(this.lbl_criterio);
+            this.Controls.Add(this.txt_pesquisa);
+            this.Controls.Add(this.lbl_pesquisa);
+            this.Controls.Add(this.lbl_ativo);
+            this.Controls.Add(this.cmb_ativo);
             this.Controls.Add(this.msk_cep);
             this.Controls.Add(this.lbl_estado);
             this.Controls.Add(this.lbl_cep);
@@ -350,14 +429,13 @@
             this.Controls.Add(this.txt_bairro);
             this.Controls.Add(this.lbl_bairro);
             this.Controls.Add(this.lbl_numero);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_titulo);
-            this.Controls.Add(this.cmb_cadastro_fun);
+            this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.txt_senha);
             this.Controls.Add(this.lbl_senha);
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.lbl_usuario);
-            this.Controls.Add(this.lbl_cargo);
+            this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.msk_telefone);
             this.Controls.Add(this.txt_rua);
             this.Controls.Add(this.txt_nome);
@@ -369,13 +447,12 @@
             this.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(72)))), ((int)(((byte)(112)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "Frm_CadastroUsuarios";
+            this.Name = "Frm_AtualizaUsuarios";
             this.Text = "Cadastro de Usuários";
             this.TransparencyKey = System.Drawing.Color.White;
-            this.Load += new System.EventHandler(this.Frm_cadastroFuncionarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,14 +467,13 @@
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Label lbl_telefone;
         private System.Windows.Forms.Label lbl_rua;
-        private System.Windows.Forms.Label lbl_cargo;
+        private System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.Label lbl_usuario;
         public System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.Label lbl_senha;
         public System.Windows.Forms.TextBox txt_senha;
-        private System.Windows.Forms.ComboBox cmb_cadastro_fun;
+        private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.Label lbl_titulo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_numero;
         private System.Windows.Forms.Label lbl_bairro;
         public System.Windows.Forms.TextBox txt_bairro;
@@ -408,7 +484,15 @@
         private System.Windows.Forms.Label lbl_cep;
         private System.Windows.Forms.Label lbl_estado;
         public System.Windows.Forms.MaskedTextBox msk_cep;
+        private System.Windows.Forms.ComboBox cmb_ativo;
+        private System.Windows.Forms.Label lbl_ativo;
+        private System.Windows.Forms.Label lbl_pesquisa;
+        public System.Windows.Forms.TextBox txt_pesquisa;
+        private System.Windows.Forms.Label lbl_criterio;
+        private System.Windows.Forms.ComboBox cmb_criterio;
         private System.Windows.Forms.Button btn_voltar;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_salvar;
+        private System.Windows.Forms.Button btn_pesquisa;
     }
 }

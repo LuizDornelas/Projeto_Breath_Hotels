@@ -211,6 +211,12 @@
   <ItemGroup>
     <Compile Include="Cls_Cadastro.cs" />
     <Compile Include="Cls_Conexao.cs" />
+    <Compile Include="Frm_AtualizaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AtualizaUsuarios.Designer.cs">
+      <DependentUpon>Frm_AtualizaUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_AtualizaUsuarios.resx">
+      <DependentUpon>Frm_AtualizaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_CadastroUsuarios.resx">
       <DependentUpon>Frm_CadastroUsuarios.cs</DependentUpon>
     </EmbeddedResource>

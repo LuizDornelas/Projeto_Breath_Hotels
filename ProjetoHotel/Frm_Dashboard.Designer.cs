@@ -58,6 +58,7 @@
             this.ptr_quarto = new System.Windows.Forms.PictureBox();
             this.ptr_atras_hotel = new System.Windows.Forms.PictureBox();
             this.ptr_piscina = new System.Windows.Forms.PictureBox();
+            this.atualizaCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_principal.SuspendLayout();
             this.pnl_pg_lateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_usuario)).BeginInit();
@@ -94,7 +95,8 @@
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.funcionariosToolStripMenuItem});
+            this.funcionariosToolStripMenuItem,
+            this.atualizaCadastroToolStripMenuItem});
             this.cadastroToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
@@ -355,6 +357,13 @@
             this.ptr_piscina.TabIndex = 9;
             this.ptr_piscina.TabStop = false;
             // 
+            // atualizaCadastroToolStripMenuItem
+            // 
+            this.atualizaCadastroToolStripMenuItem.Name = "atualizaCadastroToolStripMenuItem";
+            this.atualizaCadastroToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.atualizaCadastroToolStripMenuItem.Text = "Atualiza Cadastro";
+            this.atualizaCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaCadastroToolStripMenuItem_Click);
+            // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +429,6 @@
         private System.Windows.Forms.Label lbl_usuario;
         private System.Windows.Forms.Label lbl_separador_1;
         private System.Windows.Forms.Label lbl_nome;
+        private System.Windows.Forms.ToolStripMenuItem atualizaCadastroToolStripMenuItem;
     }
 }
