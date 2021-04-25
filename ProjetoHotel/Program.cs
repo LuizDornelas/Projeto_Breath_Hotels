@@ -16,7 +16,7 @@ namespace ProjetoHotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Login_A());
+            Application.Run(new Frm_Login());
         }
     }
 }

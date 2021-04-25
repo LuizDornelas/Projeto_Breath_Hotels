@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProjetoHotel
 {
-    public partial class Frm_Login_A : Form
+    public partial class Frm_Login : Form
     {
-        public Frm_Login_A()
+        public Frm_Login()
         {
             InitializeComponent();
         }

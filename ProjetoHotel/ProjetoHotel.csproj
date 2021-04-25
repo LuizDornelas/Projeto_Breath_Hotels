@@ -211,11 +211,11 @@
   <ItemGroup>
     <Compile Include="Cls_Cadastro.cs" />
     <Compile Include="Cls_Conexao.cs" />
-    <Compile Include="Frm_Login_A.cs">
+    <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Login_A.Designer.cs">
-      <DependentUpon>Frm_Login_A.cs</DependentUpon>
+    <Compile Include="Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Cls_Login.cs" />
     <Compile Include="Frm_cadastroUsuarios.cs">
@@ -277,8 +277,8 @@
     <EmbeddedResource Include="Frm_quartos.resx">
       <DependentUpon>Frm_quartos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Login_A.resx">
-      <DependentUpon>Frm_Login_A.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_tiposDeQuartos.resx">
       <DependentUpon>Frm_tiposDeQuartos.cs</DependentUpon>

@@ -12,14 +12,22 @@ namespace ProjetoHotel
 {
     public partial class Frm_cadastroUsuarios : Form
     {
-        public Frm_cadastroUsuarios()
+        public Frm_cadastroUsuarios(string tipo)
         {
             InitializeComponent();
 
             cmb_cadastro_fun.Items.Clear();
-            cmb_cadastro_fun.Items.Add("Cliente");
-            cmb_cadastro_fun.Items.Add("Func");
-            cmb_cadastro_fun.Items.Add("Admin");
+
+            if (tipo == "Cargo: Admin")
+            {                
+                cmb_cadastro_fun.Items.Add("Func");
+                cmb_cadastro_fun.Items.Add("Admin");
+                cmb_cadastro_fun.Items.Add("Cliente");
+            }
+            else
+            {
+                cmb_cadastro_fun.Items.Add("Cliente");
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
