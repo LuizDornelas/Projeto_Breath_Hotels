@@ -58,14 +58,14 @@ namespace ProjetoHotel
             this.cmb_ativo = new System.Windows.Forms.ComboBox();
             this.lbl_ativo = new System.Windows.Forms.Label();
             this.lbl_pesquisa = new System.Windows.Forms.Label();
-            this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.lbl_criterio = new System.Windows.Forms.Label();
             this.cmb_criterio = new System.Windows.Forms.ComboBox();
             this.btn_voltar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_usuarios = new System.Windows.Forms.DataGridView();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.btn_pesquisa = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // msk_telefone
@@ -336,16 +336,6 @@ namespace ProjetoHotel
             this.lbl_pesquisa.TabIndex = 59;
             this.lbl_pesquisa.Text = "Pesquisar";
             // 
-            // txt_pesquisa
-            // 
-            this.txt_pesquisa.Location = new System.Drawing.Point(215, 103);
-            this.txt_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_pesquisa.MaxLength = 50;
-            this.txt_pesquisa.Multiline = true;
-            this.txt_pesquisa.Name = "txt_pesquisa";
-            this.txt_pesquisa.Size = new System.Drawing.Size(177, 31);
-            this.txt_pesquisa.TabIndex = 60;
-            // 
             // lbl_criterio
             // 
             this.lbl_criterio.AutoSize = true;
@@ -365,10 +355,11 @@ namespace ProjetoHotel
             this.cmb_criterio.Name = "cmb_criterio";
             this.cmb_criterio.Size = new System.Drawing.Size(124, 33);
             this.cmb_criterio.TabIndex = 62;
+            this.cmb_criterio.SelectedIndexChanged += new System.EventHandler(this.cmb_criterio_SelectedIndexChanged);
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(450, 775);
+            this.btn_voltar.Location = new System.Drawing.Point(450, 650);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(204, 55);
             this.btn_voltar.TabIndex = 63;
@@ -376,13 +367,16 @@ namespace ProjetoHotel
             this.btn_voltar.UseVisualStyleBackColor = true;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
-            // dataGridView1
+            // dgv_usuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(101, 435);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(880, 305);
-            this.dataGridView1.TabIndex = 64;
+            this.dgv_usuarios.AllowUserToAddRows = false;
+            this.dgv_usuarios.AllowUserToDeleteRows = false;
+            this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_usuarios.Location = new System.Drawing.Point(101, 435);
+            this.dgv_usuarios.Name = "dgv_usuarios";
+            this.dgv_usuarios.ReadOnly = true;
+            this.dgv_usuarios.Size = new System.Drawing.Size(880, 176);
+            this.dgv_usuarios.TabIndex = 64;
             // 
             // btn_salvar
             // 
@@ -390,8 +384,9 @@ namespace ProjetoHotel
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(204, 55);
             this.btn_salvar.TabIndex = 65;
-            this.btn_salvar.Text = "Salvar";
+            this.btn_salvar.Text = "Atualizar";
             this.btn_salvar.UseVisualStyleBackColor = true;
+            this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // btn_pesquisa
             // 
@@ -401,21 +396,30 @@ namespace ProjetoHotel
             this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
             this.btn_pesquisa.TabIndex = 66;
             this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
+            // 
+            // msk_pesquisa
+            // 
+            this.msk_pesquisa.Location = new System.Drawing.Point(215, 101);
+            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
+            this.msk_pesquisa.Name = "msk_pesquisa";
+            this.msk_pesquisa.Size = new System.Drawing.Size(184, 31);
+            this.msk_pesquisa.TabIndex = 67;
             // 
             // Frm_AtualizaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1096, 861);
+            this.ClientSize = new System.Drawing.Size(1096, 719);
             this.ControlBox = false;
+            this.Controls.Add(this.msk_pesquisa);
             this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.btn_salvar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_usuarios);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.cmb_criterio);
             this.Controls.Add(this.lbl_criterio);
-            this.Controls.Add(this.txt_pesquisa);
             this.Controls.Add(this.lbl_pesquisa);
             this.Controls.Add(this.lbl_ativo);
             this.Controls.Add(this.cmb_ativo);
@@ -452,7 +456,7 @@ namespace ProjetoHotel
             this.Name = "Frm_AtualizaUsuarios";
             this.Text = "Cadastro de Usuários";
             this.TransparencyKey = System.Drawing.Color.White;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,12 +491,12 @@ namespace ProjetoHotel
         private System.Windows.Forms.ComboBox cmb_ativo;
         private System.Windows.Forms.Label lbl_ativo;
         private System.Windows.Forms.Label lbl_pesquisa;
-        public System.Windows.Forms.TextBox txt_pesquisa;
         private System.Windows.Forms.Label lbl_criterio;
         private System.Windows.Forms.ComboBox cmb_criterio;
         private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_usuarios;
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.Button btn_pesquisa;
+        public System.Windows.Forms.MaskedTextBox msk_pesquisa;
     }
 }
