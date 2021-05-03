@@ -371,6 +371,8 @@ namespace ProjetoHotel
             // 
             this.dgv_usuarios.AllowUserToAddRows = false;
             this.dgv_usuarios.AllowUserToDeleteRows = false;
+            this.dgv_usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_usuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuarios.Location = new System.Drawing.Point(101, 435);
             this.dgv_usuarios.Name = "dgv_usuarios";

@@ -35,6 +35,7 @@
             this.fecharSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizaCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.hospedadoscheckInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,14 @@
             this.ptr_quarto = new System.Windows.Forms.PictureBox();
             this.ptr_atras_hotel = new System.Windows.Forms.PictureBox();
             this.ptr_piscina = new System.Windows.Forms.PictureBox();
-            this.atualizaCadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ptr_checkin = new System.Windows.Forms.PictureBox();
+            this.lbl_reservas = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ptr_quartos = new System.Windows.Forms.PictureBox();
+            this.lbl_quartostotal = new System.Windows.Forms.Label();
+            this.lbl_quartosdisponiveis = new System.Windows.Forms.Label();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.mnu_principal.SuspendLayout();
             this.pnl_pg_lateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_usuario)).BeginInit();
@@ -67,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptr_quarto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_atras_hotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_piscina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_checkin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_quartos)).BeginInit();
             this.SuspendLayout();
             // 
             // sairToolStripMenuItem
@@ -108,6 +118,13 @@
             this.funcionariosToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.funcionariosToolStripMenuItem.Text = "Cadastro de Usuário";
             this.funcionariosToolStripMenuItem.Click += new System.EventHandler(this.funcionariosToolStripMenuItem_Click);
+            // 
+            // atualizaCadastroToolStripMenuItem
+            // 
+            this.atualizaCadastroToolStripMenuItem.Name = "atualizaCadastroToolStripMenuItem";
+            this.atualizaCadastroToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.atualizaCadastroToolStripMenuItem.Text = "Atualiza Cadastro";
+            this.atualizaCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaCadastroToolStripMenuItem_Click);
             // 
             // reservasToolStripMenuItem
             // 
@@ -188,6 +205,13 @@
             this.pnl_pg_lateral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_pg_lateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.pnl_pg_lateral.Controls.Add(this.lbl_quartosdisponiveis);
+            this.pnl_pg_lateral.Controls.Add(this.label5);
+            this.pnl_pg_lateral.Controls.Add(this.ptr_quartos);
+            this.pnl_pg_lateral.Controls.Add(this.lbl_quartostotal);
+            this.pnl_pg_lateral.Controls.Add(this.label2);
+            this.pnl_pg_lateral.Controls.Add(this.ptr_checkin);
+            this.pnl_pg_lateral.Controls.Add(this.lbl_reservas);
             this.pnl_pg_lateral.Controls.Add(this.lbl_nome);
             this.pnl_pg_lateral.Controls.Add(this.lbl_separador_2);
             this.pnl_pg_lateral.Controls.Add(this.ptr_usuario);
@@ -357,18 +381,105 @@
             this.ptr_piscina.TabIndex = 9;
             this.ptr_piscina.TabStop = false;
             // 
-            // atualizaCadastroToolStripMenuItem
+            // label2
             // 
-            this.atualizaCadastroToolStripMenuItem.Name = "atualizaCadastroToolStripMenuItem";
-            this.atualizaCadastroToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.atualizaCadastroToolStripMenuItem.Text = "Atualiza Cadastro";
-            this.atualizaCadastroToolStripMenuItem.Click += new System.EventHandler(this.atualizaCadastroToolStripMenuItem_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(-25, 358);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(362, 22);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "________________________________";
+            // 
+            // ptr_checkin
+            // 
+            this.ptr_checkin.Image = ((System.Drawing.Image)(resources.GetObject("ptr_checkin.Image")));
+            this.ptr_checkin.Location = new System.Drawing.Point(21, 268);
+            this.ptr_checkin.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_checkin.Name = "ptr_checkin";
+            this.ptr_checkin.Size = new System.Drawing.Size(50, 50);
+            this.ptr_checkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_checkin.TabIndex = 12;
+            this.ptr_checkin.TabStop = false;
+            // 
+            // lbl_reservas
+            // 
+            this.lbl_reservas.AutoSize = true;
+            this.lbl_reservas.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_reservas.ForeColor = System.Drawing.Color.White;
+            this.lbl_reservas.Location = new System.Drawing.Point(17, 336);
+            this.lbl_reservas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_reservas.Name = "lbl_reservas";
+            this.lbl_reservas.Size = new System.Drawing.Size(118, 22);
+            this.lbl_reservas.TabIndex = 13;
+            this.lbl_reservas.Text = "Reservas: 6";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(-25, 529);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(362, 22);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "________________________________";
+            // 
+            // ptr_quartos
+            // 
+            this.ptr_quartos.Image = ((System.Drawing.Image)(resources.GetObject("ptr_quartos.Image")));
+            this.ptr_quartos.Location = new System.Drawing.Point(21, 395);
+            this.ptr_quartos.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_quartos.Name = "ptr_quartos";
+            this.ptr_quartos.Size = new System.Drawing.Size(50, 50);
+            this.ptr_quartos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_quartos.TabIndex = 16;
+            this.ptr_quartos.TabStop = false;
+            // 
+            // lbl_quartostotal
+            // 
+            this.lbl_quartostotal.AutoSize = true;
+            this.lbl_quartostotal.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_quartostotal.ForeColor = System.Drawing.Color.White;
+            this.lbl_quartostotal.Location = new System.Drawing.Point(11, 463);
+            this.lbl_quartostotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_quartostotal.Name = "lbl_quartostotal";
+            this.lbl_quartostotal.Size = new System.Drawing.Size(166, 22);
+            this.lbl_quartostotal.TabIndex = 17;
+            this.lbl_quartostotal.Text = "Total Quartos: 10";
+            // 
+            // lbl_quartosdisponiveis
+            // 
+            this.lbl_quartosdisponiveis.AutoSize = true;
+            this.lbl_quartosdisponiveis.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_quartosdisponiveis.ForeColor = System.Drawing.Color.White;
+            this.lbl_quartosdisponiveis.Location = new System.Drawing.Point(11, 494);
+            this.lbl_quartosdisponiveis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_quartosdisponiveis.Name = "lbl_quartosdisponiveis";
+            this.lbl_quartosdisponiveis.Size = new System.Drawing.Size(211, 22);
+            this.lbl_quartosdisponiveis.TabIndex = 19;
+            this.lbl_quartosdisponiveis.Text = "Quartos disponíveis: 3";
+            // 
+            // btn_pesquisa
+            // 
+            this.btn_pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_pesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisa.Image")));
+            this.btn_pesquisa.Location = new System.Drawing.Point(609, 38);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
+            this.btn_pesquisa.TabIndex = 67;
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1109, 748);
+            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.ptr_piscina);
             this.Controls.Add(this.ptr_atras_hotel);
             this.Controls.Add(this.ptr_quarto);
@@ -394,6 +505,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptr_quarto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_atras_hotel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_piscina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_checkin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_quartos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +543,13 @@
         private System.Windows.Forms.Label lbl_separador_1;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.ToolStripMenuItem atualizaCadastroToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox ptr_quartos;
+        private System.Windows.Forms.Label lbl_quartostotal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox ptr_checkin;
+        private System.Windows.Forms.Label lbl_reservas;
+        private System.Windows.Forms.Label lbl_quartosdisponiveis;
+        private System.Windows.Forms.Button btn_pesquisa;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,56 @@ namespace ProjetoHotel
             InitializeComponent();
             lbl_nome.Text = name;
             lbl_usuario.Text = "Cargo: " + tipo;
+
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select count (status) from reservas where status = 'Em andamento';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader reserva = cmd.ExecuteReader();
+
+                reserva.Read();
+
+                lbl_reservas.Text = $"Reservas: {reserva["count"].ToString()}";
+
+                reserva.Close();
+
+                querry = "select count (quarto) from quartos;";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader total_quartos = cmd.ExecuteReader();
+
+                total_quartos.Read();
+
+                lbl_quartostotal.Text = $"Total Quartos: {total_quartos["count"].ToString()}";
+
+                total_quartos.Close();
+
+                querry = "select count (quarto) from quartos where status = 'Disponível';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader quartos_disponivel = cmd.ExecuteReader();
+
+                quartos_disponivel.Read();
+
+                lbl_quartosdisponiveis.Text = $"Quartos disponíveis: {quartos_disponivel["count"].ToString()}";
+
+                quartos_disponivel.Close();
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+
         }
         private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
         {
@@ -103,6 +154,58 @@ namespace ProjetoHotel
             Atualiza.StartPosition = FormStartPosition.CenterParent;
             Atualiza.MdiParent = this;
             Atualiza.Show();
+        }
+
+        private void btn_pesquisa_Click(object sender, EventArgs e)
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select count (status) from reservas where status = 'Em andamento';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader reserva = cmd.ExecuteReader();
+
+                reserva.Read();
+
+                lbl_reservas.Text = $"Reservas: {reserva["count"].ToString()}";
+
+                reserva.Close();
+
+                querry = "select count (quarto) from quartos;";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader total_quartos = cmd.ExecuteReader();
+
+                total_quartos.Read();
+
+                lbl_quartostotal.Text = $"Total Quartos: {total_quartos["count"].ToString()}";
+
+                total_quartos.Close();
+
+                querry = "select count (quarto) from quartos where status = 'Disponível';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader quartos_disponivel = cmd.ExecuteReader();
+
+                quartos_disponivel.Read();
+
+                lbl_quartosdisponiveis.Text = $"Quartos disponíveis: {quartos_disponivel["count"].ToString()}";
+
+                quartos_disponivel.Close();
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
         }
     }
 }

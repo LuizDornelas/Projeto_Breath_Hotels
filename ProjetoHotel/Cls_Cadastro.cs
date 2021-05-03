@@ -318,12 +318,7 @@ namespace ProjetoHotel
                     this.pesquisaid = Convert.ToInt32(this.pesquisa);
                     atualizausuario = "UPDATE usuario SET nome='" + this.nome + "', rg='" + this.rg + "', telefone='" + this.telefone + "', rua='" + this.rua + "', numero='" + this.numero + "', bairro='" + this.bairro + "', cidade='" + this.cidade + "', estado='" + this.estado + "', cep='" + this.cep + "', ativo='" + this.ativo + "' where usuarioid = " + this.pesquisaid + ";";
                     atualizalogin = "UPDATE login SET ativo='" + this.ativo + "', login='" + this.login + "', senha='" + this.senha + "', tipo='" + this.tipo + "' where fk_usuario = " + this.pesquisaid + ";";
-                }
-                else if (this.criterio == "Nome")
-                {                    
-                    atualizausuario = "UPDATE usuario SET nome='" + this.nome + "', rg='" + this.rg + "', telefone='" + this.telefone + "', rua='" + this.rua + "', numero='" + this.numero + "', bairro='" + this.bairro + "', cidade='" + this.cidade + "', estado='" + this.estado + "', cep='" + this.cep + "', ativo='" + this.ativo + "' where nome like '%"+ this.nome +"%';";
-                    atualizalogin = "UPDATE login SET ativo='" + this.ativo + "', login='" + this.login + "', senha='" + this.senha + "', tipo='" + this.tipo + "' where fk_usuario = (select usuarioid from usuario where nome like '%" + this.nome + "%');";
-                }
+                }                
                 else if (this.criterio == "RG")
                 {                    
                     atualizausuario = "UPDATE usuario SET nome='" + this.nome + "', rg='" + this.rg + "', telefone='" + this.telefone + "', rua='" + this.rua + "', numero='" + this.numero + "', bairro='" + this.bairro + "', cidade='" + this.cidade + "', estado='" + this.estado + "', cep='" + this.cep + "', ativo='" + this.ativo + "' where rg = '" + this.rg + "';";

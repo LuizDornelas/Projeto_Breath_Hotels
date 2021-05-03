@@ -27,8 +27,7 @@ namespace ProjetoHotel
             cmb_ativo.Items.Add("NAO");
 
             cmb_criterio.Items.Clear();
-            cmb_criterio.Items.Add("Id");
-            cmb_criterio.Items.Add("Nome");
+            cmb_criterio.Items.Add("Id");            
             cmb_criterio.Items.Add("RG");
             cmb_criterio.Items.Add("Telefone");
             cmb_criterio.SelectedItem = "Id";
@@ -41,7 +40,7 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string datagrid = "select usuarioid, nome, rg, telefone, rua, numero, bairro, cidade, estado, cep, login.ativo, login, senha, tipo from usuario, login where usuarioid = fk_usuario;";
+                string datagrid = "select usuarioid, nome, rg, telefone, rua, numero, bairro, cidade, estado, cep, login.ativo, login, senha, tipo from usuario, login where usuarioid = fk_usuario order by usuarioid;";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(datagrid, pgsqlConnection);
 
@@ -304,12 +303,7 @@ namespace ProjetoHotel
             {
                 msk_pesquisa.Mask = "9999";
                 msk_pesquisa.Text = "";
-            }
-            else if (cmb_criterio.Text == "Nome")
-            {
-                msk_pesquisa.Mask = null;
-                msk_pesquisa.Text = "";
-            }
+            }            
             else if (cmb_criterio.Text == "RG")
             {
                 msk_pesquisa.Mask = "99,999,999-9";
