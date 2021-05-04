@@ -456,7 +456,7 @@ namespace ProjetoHotel
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Frm_AtualizaUsuarios";
-            this.Text = "Cadastro de Usuários";
+            this.Text = "Atualiza Cadastro";
             this.TransparencyKey = System.Drawing.Color.White;
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();
             this.ResumeLayout(false);

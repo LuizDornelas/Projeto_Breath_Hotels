@@ -130,7 +130,10 @@ namespace ProjetoHotel
 
         private void hospedadoscheckInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Frm_Checkin Checkin = new Frm_Checkin(lbl_nome.Text);
+            Checkin.StartPosition = FormStartPosition.CenterParent;
+            Checkin.MdiParent = this;
+            Checkin.Show();
         }
 
         private void checkOutToolStripMenuItem_Click(object sender, EventArgs e)
