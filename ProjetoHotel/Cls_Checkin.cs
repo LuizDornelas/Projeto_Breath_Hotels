@@ -129,7 +129,7 @@ namespace ProjetoHotel
 
                 string pesquisar;
 
-                pesquisar = "select nome, rg, telefone from usuario where usuarioid = '" + this.criterio + "' LIMIT 1;";
+                pesquisar = "select nome, rg, telefone from usuario where usuarioid = '" + this.criterio + "' and ativo = 'SIM' LIMIT 1;";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 

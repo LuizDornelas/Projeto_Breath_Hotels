@@ -92,7 +92,7 @@ namespace ProjetoHotel
                 }
                 else
                 {
-                    MessageBox.Show("Usuário não encontrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Usuário não encontrado, ou desativado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

@@ -34,7 +34,7 @@ namespace ProjetoHotel
 
             else
             {
-                MessageBox.Show("Usuário ou senha inválidos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuário e senha divergentes, ou desativado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
