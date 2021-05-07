@@ -13,6 +13,7 @@ namespace ProjetoHotel
 {
     public partial class Frm_Checkout : Form
     {
+        public string id;
         private NpgsqlConnection pgsqlConnection;
 
         public Frm_Checkout()
@@ -23,6 +24,11 @@ namespace ProjetoHotel
             cmb_criterio.Items.Add("Id");
             cmb_criterio.Items.Add("Quarto");
             cmb_criterio.SelectedItem = "Id";
+
+            cmb_pagamento.Items.Clear();
+            cmb_pagamento.Items.Add("Dinheiro");
+            cmb_pagamento.Items.Add("Cartão de crédito");
+            cmb_pagamento.SelectedItem = "Dinheiro";
 
             dgv_pesquisa();
         }
@@ -102,6 +108,8 @@ namespace ProjetoHotel
         {
             Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();
 
+            dgv_itens.DataSource = null;
+
             if (msk_pesquisa.Text == "")
             {
                 MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,6 +128,7 @@ namespace ProjetoHotel
                         txt_quarto.Text = pesquisa.Quarto;
                         itens(msk_pesquisa.Text);
                         pesquisa.Id = msk_pesquisa.Text;
+                        id = pesquisa.Id;
                         if (pesquisa.valortotal())
                         {
                             msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
@@ -140,6 +149,7 @@ namespace ProjetoHotel
                         txt_saida.Text = pesquisa.Saidaout;
                         txt_quarto.Text = pesquisa.Quarto;
                         itens(pesquisa.Id);
+                        id = pesquisa.Id;
                         pesquisa.valortotal();
                         msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
                     }
@@ -169,6 +179,23 @@ namespace ProjetoHotel
             {
                 msk_pesquisa.Mask = "";
                 msk_pesquisa.Text = "";
+            }
+        }
+
+        private void btn_finalizar_Click(object sender, EventArgs e)
+        {
+            if (txt_nome.Text == "" || txt_entrada.Text == "" || txt_saida.Text == "" || txt_quarto.Text == "" || msk_total.Text == "")
+            {
+                MessageBox.Show("Há campos vazios, favor pesquisar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (cmb_pagamento.Text == "Dinheiro")
+                {                    
+                    Frm_Pgto_Dinheiro form = new Frm_Pgto_Dinheiro(id, msk_total.Text);
+                    form.ShowDialog();
+                    limpa_campos();
+                }
             }
         }
     }

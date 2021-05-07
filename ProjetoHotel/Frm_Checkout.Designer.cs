@@ -52,6 +52,8 @@ namespace ProjetoHotel
             this.lbl_criterio = new System.Windows.Forms.Label();
             this.lbl_itens = new System.Windows.Forms.Label();
             this.dgv_itens = new System.Windows.Forms.DataGridView();
+            this.cmb_pagamento = new System.Windows.Forms.ComboBox();
+            this.lbl_pagamento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reservas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_itens)).BeginInit();
             this.SuspendLayout();
@@ -171,16 +173,17 @@ namespace ProjetoHotel
             // 
             // btn_finalizar
             // 
-            this.btn_finalizar.Location = new System.Drawing.Point(448, 249);
+            this.btn_finalizar.Location = new System.Drawing.Point(472, 249);
             this.btn_finalizar.Name = "btn_finalizar";
             this.btn_finalizar.Size = new System.Drawing.Size(204, 55);
             this.btn_finalizar.TabIndex = 78;
             this.btn_finalizar.Text = "Finalizar";
             this.btn_finalizar.UseVisualStyleBackColor = true;
+            this.btn_finalizar.Click += new System.EventHandler(this.btn_finalizar_Click);
             // 
             // msk_total
             // 
-            this.msk_total.Location = new System.Drawing.Point(203, 261);
+            this.msk_total.Location = new System.Drawing.Point(101, 261);
             this.msk_total.Margin = new System.Windows.Forms.Padding(4);
             this.msk_total.Name = "msk_total";
             this.msk_total.ReadOnly = true;
@@ -190,7 +193,7 @@ namespace ProjetoHotel
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Location = new System.Drawing.Point(198, 232);
+            this.lbl_total.Location = new System.Drawing.Point(96, 232);
             this.lbl_total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(60, 25);
@@ -294,6 +297,26 @@ namespace ProjetoHotel
             this.dgv_itens.Size = new System.Drawing.Size(880, 176);
             this.dgv_itens.TabIndex = 87;
             // 
+            // cmb_pagamento
+            // 
+            this.cmb_pagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_pagamento.FormattingEnabled = true;
+            this.cmb_pagamento.Location = new System.Drawing.Point(275, 261);
+            this.cmb_pagamento.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_pagamento.Name = "cmb_pagamento";
+            this.cmb_pagamento.Size = new System.Drawing.Size(180, 33);
+            this.cmb_pagamento.TabIndex = 89;
+            // 
+            // lbl_pagamento
+            // 
+            this.lbl_pagamento.AutoSize = true;
+            this.lbl_pagamento.Location = new System.Drawing.Point(271, 232);
+            this.lbl_pagamento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_pagamento.Name = "lbl_pagamento";
+            this.lbl_pagamento.Size = new System.Drawing.Size(194, 25);
+            this.lbl_pagamento.TabIndex = 90;
+            this.lbl_pagamento.Text = "Meio de pagamento";
+            // 
             // Frm_Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -301,6 +324,8 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1096, 834);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_pagamento);
+            this.Controls.Add(this.cmb_pagamento);
             this.Controls.Add(this.lbl_itens);
             this.Controls.Add(this.dgv_itens);
             this.Controls.Add(this.lbl_criterio);
@@ -363,5 +388,7 @@ namespace ProjetoHotel
         private System.Windows.Forms.Label lbl_criterio;
         private System.Windows.Forms.Label lbl_itens;
         private System.Windows.Forms.DataGridView dgv_itens;
+        private System.Windows.Forms.ComboBox cmb_pagamento;
+        private System.Windows.Forms.Label lbl_pagamento;
     }
 }

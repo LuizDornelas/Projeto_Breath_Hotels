@@ -79,7 +79,7 @@ namespace ProjetoHotel
         }
         private void btn_pesquisa_Click(object sender, EventArgs e)
         {
-            Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();
+            Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();            
 
             if (msk_pesquisa.Text == "")
             {
@@ -244,9 +244,11 @@ namespace ProjetoHotel
                             reserva.Nomefunc = nomefunc;
                             reserva.Entrada = dtp_entrada.Value;
                             reserva.Saida = dtp_saida.Value;
-                            reserva.Quarto = cmb_quarto.Text;
+                            reserva.Quarto = cmb_quarto.Text;                            
+                            string id;
+                            id = msk_pesquisa.Text;
 
-                            if (reserva.checkin())
+                            if (reserva.checkin(id))
                             {
                                 MessageBox.Show("Reserva realizada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
