@@ -210,7 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cls_Cadastro.cs" />
-    <Compile Include="Cls_Checkin.cs" />
+    <Compile Include="Cls_Checkin_Checkout.cs" />
     <Compile Include="Cls_Conexao.cs" />
     <Compile Include="Frm_AtualizaUsuarios.cs">
       <SubType>Form</SubType>
@@ -223,6 +223,12 @@
     </Compile>
     <Compile Include="Frm_Checkin.Designer.cs">
       <DependentUpon>Frm_Checkin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Checkout.Designer.cs">
+      <DependentUpon>Frm_Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Checkin.resx">
       <DependentUpon>Frm_Checkin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Checkout.resx">
+      <DependentUpon>Frm_Checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>

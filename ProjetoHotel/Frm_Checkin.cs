@@ -14,6 +14,8 @@ namespace ProjetoHotel
     public partial class Frm_Checkin : Form
     {
         public string nomefunc;
+        private NpgsqlConnection pgsqlConnection;
+
         public Frm_Checkin(string nome)
         {
             InitializeComponent();
@@ -46,6 +48,10 @@ namespace ProjetoHotel
             {
                 pgsqlConnection.Close();
             }
+            dgv_pesquisa();
+        }
+        public void dgv_pesquisa()
+        {
             try
             {
                 Cls_Conexao objconexao = new Cls_Conexao();
@@ -53,7 +59,7 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string datagrid = "select reservaid, nomefunc, nomecli, entrada, valor, quartofk, status from reservas where status = 'Em andamento';";
+                string datagrid = "select reservaid, nomefunc, nomecli, entrada, valor, quartofk, status from reservas where status = 'Em andamento' order by reservaid;";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(datagrid, pgsqlConnection);
 
@@ -71,10 +77,9 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
-
         private void btn_pesquisa_Click(object sender, EventArgs e)
         {
-            Cls_Checkin pesquisa = new Cls_Checkin();
+            Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();
 
             if (msk_pesquisa.Text == "")
             {
@@ -104,7 +109,15 @@ namespace ProjetoHotel
 
         private void cmb_quarto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Cls_Checkin_Checkout quartos = new Cls_Checkin_Checkout();
 
+            quartos.Criterio = cmb_quarto.Text;
+
+            if (quartos.camas())
+            {
+                txt_cama_solteiro.Text = quartos.Cama_solteiro;
+                txt_solteiro_casal.Text = quartos.Cama_casal;
+            }
         }
 
         private void cmb_quarto_TextChanged(object sender, EventArgs e)
@@ -173,40 +186,16 @@ namespace ProjetoHotel
 
         private void btn_atualiza_reserva_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection pgsqlConnection = null;
-            try
-            {
-                Cls_Conexao objconexao = new Cls_Conexao();
-
-                pgsqlConnection = objconexao.getConexao();
-                pgsqlConnection.Open();
-
-                string datagrid = "select reservaid, nomefunc, nomecli, entrada, saida, valor, quartofk, status from reservas where status = 'Em andamento';";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(datagrid, pgsqlConnection);
-
-                NpgsqlDataReader dgv = cmd.ExecuteReader();
-
-                if (dgv.HasRows)
-                {
-                    DataTable dt = new DataTable();
-                    dt.Load(dgv);
-                    dgv_reservas.DataSource = dt;
-                }
-            }
-            finally
-            {
-                pgsqlConnection.Close();
-            }
+            dgv_pesquisa();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Cls_Checkin reserva = new Cls_Checkin();
+            Cls_Checkin_Checkout reserva = new Cls_Checkin_Checkout();
 
             if (msk_pesquisa.Text == "")
             {
-                MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Há campos vazios, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

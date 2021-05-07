@@ -55,6 +55,10 @@ namespace ProjetoHotel
             this.msk_total = new System.Windows.Forms.MaskedTextBox();
             this.lbl_total = new System.Windows.Forms.Label();
             this.btn_atualiza_reserva = new System.Windows.Forms.Button();
+            this.txt_cama_solteiro = new System.Windows.Forms.TextBox();
+            this.txt_solteiro_casal = new System.Windows.Forms.TextBox();
+            this.lbl_solteiro = new System.Windows.Forms.Label();
+            this.lbl_casal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -280,7 +284,7 @@ namespace ProjetoHotel
             // 
             // btn_reserva
             // 
-            this.btn_reserva.Location = new System.Drawing.Point(448, 323);
+            this.btn_reserva.Location = new System.Drawing.Point(335, 311);
             this.btn_reserva.Name = "btn_reserva";
             this.btn_reserva.Size = new System.Drawing.Size(204, 55);
             this.btn_reserva.TabIndex = 78;
@@ -317,6 +321,48 @@ namespace ProjetoHotel
             this.btn_atualiza_reserva.UseVisualStyleBackColor = true;
             this.btn_atualiza_reserva.Click += new System.EventHandler(this.btn_atualiza_reserva_Click);
             // 
+            // txt_cama_solteiro
+            // 
+            this.txt_cama_solteiro.Location = new System.Drawing.Point(588, 329);
+            this.txt_cama_solteiro.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_cama_solteiro.MaxLength = 50;
+            this.txt_cama_solteiro.Multiline = true;
+            this.txt_cama_solteiro.Name = "txt_cama_solteiro";
+            this.txt_cama_solteiro.ReadOnly = true;
+            this.txt_cama_solteiro.Size = new System.Drawing.Size(129, 31);
+            this.txt_cama_solteiro.TabIndex = 82;
+            // 
+            // txt_solteiro_casal
+            // 
+            this.txt_solteiro_casal.Location = new System.Drawing.Point(797, 329);
+            this.txt_solteiro_casal.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_solteiro_casal.MaxLength = 50;
+            this.txt_solteiro_casal.Multiline = true;
+            this.txt_solteiro_casal.Name = "txt_solteiro_casal";
+            this.txt_solteiro_casal.ReadOnly = true;
+            this.txt_solteiro_casal.Size = new System.Drawing.Size(129, 31);
+            this.txt_solteiro_casal.TabIndex = 83;
+            // 
+            // lbl_solteiro
+            // 
+            this.lbl_solteiro.AutoSize = true;
+            this.lbl_solteiro.Location = new System.Drawing.Point(583, 300);
+            this.lbl_solteiro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_solteiro.Name = "lbl_solteiro";
+            this.lbl_solteiro.Size = new System.Drawing.Size(149, 25);
+            this.lbl_solteiro.TabIndex = 84;
+            this.lbl_solteiro.Text = "Camas solteiro";
+            // 
+            // lbl_casal
+            // 
+            this.lbl_casal.AutoSize = true;
+            this.lbl_casal.Location = new System.Drawing.Point(792, 300);
+            this.lbl_casal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_casal.Name = "lbl_casal";
+            this.lbl_casal.Size = new System.Drawing.Size(127, 25);
+            this.lbl_casal.TabIndex = 85;
+            this.lbl_casal.Text = "Camas casal";
+            // 
             // Frm_Checkin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -324,6 +370,10 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1096, 708);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_casal);
+            this.Controls.Add(this.lbl_solteiro);
+            this.Controls.Add(this.txt_solteiro_casal);
+            this.Controls.Add(this.txt_cama_solteiro);
             this.Controls.Add(this.btn_atualiza_reserva);
             this.Controls.Add(this.lbl_total);
             this.Controls.Add(this.msk_total);
@@ -391,5 +441,9 @@ namespace ProjetoHotel
         public System.Windows.Forms.MaskedTextBox msk_total;
         private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.Button btn_atualiza_reserva;
+        public System.Windows.Forms.TextBox txt_cama_solteiro;
+        public System.Windows.Forms.TextBox txt_solteiro_casal;
+        private System.Windows.Forms.Label lbl_solteiro;
+        private System.Windows.Forms.Label lbl_casal;
     }
 }

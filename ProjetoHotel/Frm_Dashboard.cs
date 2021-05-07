@@ -138,7 +138,10 @@ namespace ProjetoHotel
 
         private void checkOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Frm_Checkout Checkout = new Frm_Checkout();
+            Checkout.StartPosition = FormStartPosition.CenterParent;
+            Checkout.MdiParent = this;
+            Checkout.Show();
         }
 
         private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
