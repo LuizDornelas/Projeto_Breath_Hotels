@@ -138,14 +138,14 @@
             // hospedadoscheckInToolStripMenuItem
             // 
             this.hospedadoscheckInToolStripMenuItem.Name = "hospedadoscheckInToolStripMenuItem";
-            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.hospedadoscheckInToolStripMenuItem.Text = "Checkin";
             this.hospedadoscheckInToolStripMenuItem.Click += new System.EventHandler(this.hospedadoscheckInToolStripMenuItem_Click);
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.checkOutToolStripMenuItem.Text = "Checkout";
             this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.checkOutToolStripMenuItem_Click);
             // 
@@ -162,14 +162,14 @@
             // produtosToolStripMenuItem1
             // 
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
             this.produtosToolStripMenuItem1.Text = "Produtos";
             this.produtosToolStripMenuItem1.Click += new System.EventHandler(this.produtosToolStripMenuItem1_Click);
             // 
             // fornecedoresToolStripMenuItem
             // 
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
             this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
@@ -393,7 +393,7 @@
             this.lbl_horas.Name = "lbl_horas";
             this.lbl_horas.Size = new System.Drawing.Size(92, 22);
             this.lbl_horas.TabIndex = 6;
-            this.lbl_horas.Text = "20:16:15";
+            this.lbl_horas.Text = "16:13:18";
             this.lbl_horas.Click += new System.EventHandler(this.lbl_horas_Click);
             // 
             // tmr_horas

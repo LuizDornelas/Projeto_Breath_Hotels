@@ -62,7 +62,7 @@ namespace ProjetoHotel
                     MessageBox.Show("Valor menor do que total!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                {                    
+                {
                     Cls_Checkin_Checkout pagamento = new Cls_Checkin_Checkout();
                     pagamento.pgto_dinheiro(id);
                     MessageBox.Show($"Pagamento realizado com sucesso, seu troco é R${txt_troco.Text}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
