@@ -156,7 +156,8 @@ namespace ProjetoHotel
 
         private void atualizaCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_AtualizaUsuarios Atualiza = new Frm_AtualizaUsuarios();
+            string tipo = lbl_usuario.Text;
+            Frm_AtualizaUsuarios Atualiza = new Frm_AtualizaUsuarios(tipo);
             Atualiza.StartPosition = FormStartPosition.CenterParent;
             Atualiza.MdiParent = this;
             Atualiza.Show();

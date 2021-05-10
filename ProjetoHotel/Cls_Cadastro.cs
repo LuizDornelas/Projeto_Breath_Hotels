@@ -1,6 +1,7 @@
 ﻿
 using Npgsql;
 using System;
+using System.Windows.Forms;
 
 namespace ProjetoHotel
 {
@@ -216,30 +217,50 @@ namespace ProjetoHotel
                 }
                 fk_usuario.Close();
 
-                string user = "INSERT INTO public.usuario(usuarioid, nome, rg, telefone, rua, numero, bairro, cidade, estado, cep, ativo) VALUES ('" + this.fk_int + "', '" + this.nome + "', '" + this.rg + "', '" + this.telefone + "', '" + this.rua + "', '" + this.numero + "', '" + this.bairro + "', '" + this.cidade + "', '" + this.estado + "', '" + this.cep + "', 'SIM');";
+                string usersearch = "select count(login) from login where login = '"+ this.login +"';";
 
-                cmd = new NpgsqlCommand(user, pgsqlConnection);
+                cmd = new NpgsqlCommand(usersearch, pgsqlConnection);
 
-                NpgsqlDataReader usuario = cmd.ExecuteReader();
+                NpgsqlDataReader userlogin = cmd.ExecuteReader();
 
-                usuario.Close();
+                userlogin.Read();                               
 
-                string loginq = "INSERT INTO public.login(loginid, login, senha, ativo, tipo, fk_usuario) VALUES ('" + this.fk_int + "', '" + this.login + "', '" + this.senha + "', 'SIM', '" + this.tipo + "', '" + this.fk_int + "');";
+                int qntlogin = Convert.ToInt16(userlogin["count"].ToString());
 
-                cmd = new NpgsqlCommand(loginq, pgsqlConnection);
+                userlogin.Close();                
 
-                NpgsqlDataReader login = cmd.ExecuteReader();
+                if (qntlogin == 0)
+                {
+                    string user = "INSERT INTO public.usuario(usuarioid, nome, rg, telefone, rua, numero, bairro, cidade, estado, cep, ativo) VALUES ('" + this.fk_int + "', '" + this.nome + "', '" + this.rg + "', '" + this.telefone + "', '" + this.rua + "', '" + this.numero + "', '" + this.bairro + "', '" + this.cidade + "', '" + this.estado + "', '" + this.cep + "', 'SIM');";
 
-                login.Close();
+                    cmd = new NpgsqlCommand(user, pgsqlConnection);
 
-                return true;
+                    NpgsqlDataReader usuario = cmd.ExecuteReader();
+
+                    usuario.Close();
+
+                    string loginq = "INSERT INTO public.login(loginid, login, senha, ativo, tipo, fk_usuario) VALUES ('" + this.fk_int + "', '" + this.login + "', '" + this.senha + "', 'SIM', '" + this.tipo + "', '" + this.fk_int + "');";
+
+                    cmd = new NpgsqlCommand(loginq, pgsqlConnection);
+
+                    NpgsqlDataReader login = cmd.ExecuteReader();
+
+                    login.Close();
+
+                    return true;
+                }               
+                else
+                {
+                    MessageBox.Show("Este login já existe, por favor insira outro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
             }
             finally
             {
                 pgsqlConnection.Close();
             }
         }
-        public bool pesquisar()
+        public bool pesquisar(string tipo)
         {
             NpgsqlConnection pgsqlConnection = null;
             try
@@ -274,24 +295,38 @@ namespace ProjetoHotel
 
                 if (pesquisa.Read())
                 {
-                    this.nome = pesquisa["nome"].ToString();
-                    this.rg = pesquisa["rg"].ToString();
-                    this.telefone = pesquisa["telefone"].ToString();
-                    this.rua = pesquisa["rua"].ToString();
-                    this.numero = pesquisa["numero"].ToString();
-                    this.bairro = pesquisa["bairro"].ToString();
-                    this.cidade = pesquisa["cidade"].ToString();
-                    this.ativo = pesquisa["ativo"].ToString();
-                    this.estado = pesquisa["estado"].ToString();
-                    this.cep = pesquisa["cep"].ToString();
-                    this.login = pesquisa["login"].ToString();
-                    this.senha = pesquisa["senha"].ToString();
-                    this.tipo = pesquisa["tipo"].ToString();
-
-                    return true;
+                    
+                    if (pesquisa["tipo"].ToString() == "Admin" && tipo == "Cargo: Func")
+                    {
+                        MessageBox.Show("Não é possível atualizar este usuário com o seu login", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    else if (pesquisa["tipo"].ToString() == "Func" && tipo == "Cargo: Func")
+                    {
+                        MessageBox.Show("Não é possível atualizar este usuário com o seu login", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    else
+                    {
+                        this.nome = pesquisa["nome"].ToString();
+                        this.rg = pesquisa["rg"].ToString();
+                        this.telefone = pesquisa["telefone"].ToString();
+                        this.rua = pesquisa["rua"].ToString();
+                        this.numero = pesquisa["numero"].ToString();
+                        this.bairro = pesquisa["bairro"].ToString();
+                        this.cidade = pesquisa["cidade"].ToString();
+                        this.ativo = pesquisa["ativo"].ToString();
+                        this.estado = pesquisa["estado"].ToString();
+                        this.cep = pesquisa["cep"].ToString();
+                        this.login = pesquisa["login"].ToString();
+                        this.senha = pesquisa["senha"].ToString();
+                        this.tipo = pesquisa["tipo"].ToString();
+                        return true;
+                    }                    
                 }
                 else
                 {
+                    MessageBox.Show("Não foi encontrado cadastro com os critérios informados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }

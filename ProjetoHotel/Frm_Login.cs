@@ -30,12 +30,7 @@ namespace ProjetoHotel
                 Frm_Dashboard form = new Frm_Dashboard(objusuario.Login, objusuario.Tipo);
                 form.ShowDialog();
                 this.Close();
-            }
-
-            else
-            {
-                MessageBox.Show("Usuário e senha divergentes, ou desativado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }            
         }
 
         private void txtSenha_OnValueChanged(object sender, EventArgs e)

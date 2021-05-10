@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProjetoHotel
 {
@@ -49,7 +50,6 @@ namespace ProjetoHotel
         }
         public bool logar()
         {
-
             NpgsqlConnection pgsqlConnection = null;
             try
             {
@@ -58,7 +58,7 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string sql = "SELECT * FROM login WHERE login ='" + this.login + "' and senha='" + this.senha + "' and ativo= 'SIM' LIMIT 1;"; //monta o comando 
+                string sql = "SELECT * FROM login WHERE login ='" + this.login + "' and senha='" + this.senha + "' LIMIT 1;"; //monta o comando 
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, pgsqlConnection);
 
@@ -68,9 +68,14 @@ namespace ProjetoHotel
                 {
                     this.tipo = dr["tipo"].ToString();
 
-                    if (this.login == dr["login"].ToString() && (this.senha) == dr["senha"].ToString())
+                    if (this.login == dr["login"].ToString() && (this.senha) == dr["senha"].ToString() && dr["ativo"].ToString() == "SIM")
                     {
                         return true;
+                    }
+                    else if (dr["ativo"].ToString() == "NAO")
+                    {
+                        MessageBox.Show("Usuário desativado, contate seu administrador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
                     }
                     else
                     {
@@ -79,6 +84,7 @@ namespace ProjetoHotel
                 }
                 else
                 {
+                    MessageBox.Show("Usuário ou senha divergentes", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }

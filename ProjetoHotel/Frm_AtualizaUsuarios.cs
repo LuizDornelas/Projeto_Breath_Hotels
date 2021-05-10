@@ -13,21 +13,33 @@ namespace ProjetoHotel
 {
     public partial class Frm_AtualizaUsuarios : Form
     {
-        public Frm_AtualizaUsuarios()
+        public string tipo;
+        public Frm_AtualizaUsuarios(string tipoo)
         {
-            InitializeComponent();
+            tipo = tipoo;
+
+            InitializeComponent();            
 
             cmb_tipo.Items.Clear();
-            cmb_tipo.Items.Add("Func");
-            cmb_tipo.Items.Add("Admin");
-            cmb_tipo.Items.Add("Cliente");
-
             cmb_ativo.Items.Clear();
+            cmb_criterio.Items.Clear();
+
+            if (tipoo == "Cargo: Admin")
+            {
+                cmb_tipo.Items.Add("Func");
+                cmb_tipo.Items.Add("Admin");
+                cmb_tipo.Items.Add("Cliente");
+            }
+            else
+            {
+                cmb_tipo.Items.Add("Cliente");
+                cmb_tipo.SelectedItem = "Cliente";
+            }
+                                    
             cmb_ativo.Items.Add("SIM");
             cmb_ativo.Items.Add("NAO");
-
-            cmb_criterio.Items.Clear();
-            cmb_criterio.Items.Add("Id");            
+            
+            cmb_criterio.Items.Add("Id");
             cmb_criterio.Items.Add("RG");
             cmb_criterio.Items.Add("Telefone");
             cmb_criterio.SelectedItem = "Id";
@@ -65,7 +77,7 @@ namespace ProjetoHotel
         }
 
         private void btn_salvar_Click(object sender, EventArgs e)
-        {            
+        {
             if (txt_nome.Text == "")
             {
                 MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -159,8 +171,8 @@ namespace ProjetoHotel
                 if (atualizar.atualiza())
                 {
                     MessageBox.Show("Usuário atualizado com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }                
-            }            
+                }
+            }
         }
 
         private void btn_pesquisa_Click(object sender, EventArgs e)
@@ -274,7 +286,7 @@ namespace ProjetoHotel
                 pesquisa.Criterio = cmb_criterio.Text;
                 pesquisa.Pesquisa = msk_pesquisa.Text;
 
-                if (pesquisa.pesquisar())
+                if (pesquisa.pesquisar(tipo))
                 {
                     txt_nome.Text = pesquisa.Nome;
                     msk_rg.Text = pesquisa.Rg;
@@ -289,11 +301,7 @@ namespace ProjetoHotel
                     txt_usuario.Text = pesquisa.Login;
                     txt_senha.Text = pesquisa.Senha;
                     cmb_tipo.Text = pesquisa.Tipo;
-                }
-                else
-                {
-                    MessageBox.Show("Não foi encontrado cadastro com os critérios informados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }               
             }
         }
 
@@ -303,7 +311,7 @@ namespace ProjetoHotel
             {
                 msk_pesquisa.Mask = "9999";
                 msk_pesquisa.Text = "";
-            }            
+            }
             else if (cmb_criterio.Text == "RG")
             {
                 msk_pesquisa.Mask = "99,999,999-9";

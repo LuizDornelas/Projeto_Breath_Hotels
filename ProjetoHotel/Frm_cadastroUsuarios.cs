@@ -23,10 +23,12 @@ namespace ProjetoHotel
                 cmb_cadastro_fun.Items.Add("Func");
                 cmb_cadastro_fun.Items.Add("Admin");
                 cmb_cadastro_fun.Items.Add("Cliente");
+                cmb_cadastro_fun.SelectedItem = "Func";
             }
             else
             {
                 cmb_cadastro_fun.Items.Add("Cliente");
+                cmb_cadastro_fun.SelectedItem = "Cliente";
             }
         }
 
@@ -67,7 +69,6 @@ namespace ProjetoHotel
 
         private void btn_salvar_Click_1(object sender, EventArgs e)
         {
-
             Cls_Cadastro usuario = new Cls_Cadastro();
 
             if (txt_nome.Text == "")
