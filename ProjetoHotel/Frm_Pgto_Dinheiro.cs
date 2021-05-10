@@ -64,7 +64,7 @@ namespace ProjetoHotel
                 else
                 {
                     Cls_Checkin_Checkout pagamento = new Cls_Checkin_Checkout();
-                    pagamento.pgto_dinheiro(id);
+                    pagamento.pgto_dinheiro_cartao(id);
                     MessageBox.Show($"Pagamento realizado com sucesso, seu troco é R${txt_troco.Text}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }

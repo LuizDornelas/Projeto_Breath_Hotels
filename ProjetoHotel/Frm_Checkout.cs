@@ -14,6 +14,7 @@ namespace ProjetoHotel
     public partial class Frm_Checkout : Form
     {
         public string id;
+        public string usuarioid;
         private NpgsqlConnection pgsqlConnection;
 
         public Frm_Checkout()
@@ -116,7 +117,7 @@ namespace ProjetoHotel
             }
             else
             {
-                pesquisa.Criterio = msk_pesquisa.Text;
+                pesquisa.Criterio = msk_pesquisa.Text.ToUpper();
 
                 if (cmb_criterio.Text == "Id")
                 {
@@ -132,7 +133,7 @@ namespace ProjetoHotel
                         if (pesquisa.valortotal())
                         {
                             msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
-                        }                                              
+                        }
                     }
                     else
                     {
@@ -191,10 +192,36 @@ namespace ProjetoHotel
             else
             {
                 if (cmb_pagamento.Text == "Dinheiro")
-                {                    
+                {
                     Frm_Pgto_Dinheiro form = new Frm_Pgto_Dinheiro(id, msk_total.Text);
                     form.ShowDialog();
                     limpa_campos();
+                }
+                else
+                {
+                    Cls_Checkin_Checkout cartao = new Cls_Checkin_Checkout();
+                    if (cartao.procura_cartao(id))
+                    {
+                        DialogResult pgto = new DialogResult();
+
+                        pgto = MessageBox.Show($"Realizar pagamento com o cartão de núm: {cartao.Cartao}?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (pgto == DialogResult.Yes)
+                        {
+                            if (cartao.pgto_dinheiro_cartao(id))
+                            {
+                                MessageBox.Show("Pagamento com o cartão realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Pagamento não realizado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não há cartão registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }

@@ -32,7 +32,7 @@ namespace ProjetoHotel
             this.msk_telefone = new System.Windows.Forms.MaskedTextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.msk_rg = new System.Windows.Forms.MaskedTextBox();
-            this.lbl_cpf = new System.Windows.Forms.Label();
+            this.lbl_rg = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.lbl_titulo = new System.Windows.Forms.Label();
@@ -40,7 +40,6 @@ namespace ProjetoHotel
             this.btn_voltar = new System.Windows.Forms.Button();
             this.dgv_reservas = new System.Windows.Forms.DataGridView();
             this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.msk_valor = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Valor = new System.Windows.Forms.Label();
             this.lbl_reservas = new System.Windows.Forms.Label();
@@ -50,15 +49,16 @@ namespace ProjetoHotel
             this.dtp_saida = new System.Windows.Forms.DateTimePicker();
             this.lbl_saida = new System.Windows.Forms.Label();
             this.lbl_entrada = new System.Windows.Forms.Label();
-            this.btn_total = new System.Windows.Forms.Button();
             this.btn_reserva = new System.Windows.Forms.Button();
             this.msk_total = new System.Windows.Forms.MaskedTextBox();
             this.lbl_total = new System.Windows.Forms.Label();
-            this.btn_atualiza_reserva = new System.Windows.Forms.Button();
             this.txt_cama_solteiro = new System.Windows.Forms.TextBox();
             this.txt_solteiro_casal = new System.Windows.Forms.TextBox();
             this.lbl_solteiro = new System.Windows.Forms.Label();
             this.lbl_casal = new System.Windows.Forms.Label();
+            this.btn_atualiza_reserva = new System.Windows.Forms.Button();
+            this.btn_total = new System.Windows.Forms.Button();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,15 +93,15 @@ namespace ProjetoHotel
             this.msk_rg.Size = new System.Drawing.Size(148, 31);
             this.msk_rg.TabIndex = 23;
             // 
-            // lbl_cpf
+            // lbl_rg
             // 
-            this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Location = new System.Drawing.Point(583, 154);
-            this.lbl_cpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_cpf.Name = "lbl_cpf";
-            this.lbl_cpf.Size = new System.Drawing.Size(42, 25);
-            this.lbl_cpf.TabIndex = 22;
-            this.lbl_cpf.Text = "RG";
+            this.lbl_rg.AutoSize = true;
+            this.lbl_rg.Location = new System.Drawing.Point(583, 154);
+            this.lbl_rg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_rg.Name = "lbl_rg";
+            this.lbl_rg.Size = new System.Drawing.Size(42, 25);
+            this.lbl_rg.TabIndex = 22;
+            this.lbl_rg.Text = "RG";
             // 
             // lbl_nome
             // 
@@ -174,16 +174,6 @@ namespace ProjetoHotel
             this.msk_pesquisa.Name = "msk_pesquisa";
             this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
             this.msk_pesquisa.TabIndex = 67;
-            // 
-            // btn_pesquisa
-            // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(324, 98);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 66;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // msk_valor
             // 
@@ -272,16 +262,6 @@ namespace ProjetoHotel
             this.lbl_entrada.TabIndex = 76;
             this.lbl_entrada.Text = "Entrada";
             // 
-            // btn_total
-            // 
-            this.btn_total.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_total.Location = new System.Drawing.Point(266, 317);
-            this.btn_total.Name = "btn_total";
-            this.btn_total.Size = new System.Drawing.Size(41, 43);
-            this.btn_total.TabIndex = 77;
-            this.btn_total.UseVisualStyleBackColor = true;
-            this.btn_total.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // btn_reserva
             // 
             this.btn_reserva.Location = new System.Drawing.Point(335, 311);
@@ -310,16 +290,6 @@ namespace ProjetoHotel
             this.lbl_total.Size = new System.Drawing.Size(134, 25);
             this.lbl_total.TabIndex = 80;
             this.lbl_total.Text = "Calcula Total";
-            // 
-            // btn_atualiza_reserva
-            // 
-            this.btn_atualiza_reserva.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_atualiza_reserva.Location = new System.Drawing.Point(987, 447);
-            this.btn_atualiza_reserva.Name = "btn_atualiza_reserva";
-            this.btn_atualiza_reserva.Size = new System.Drawing.Size(41, 43);
-            this.btn_atualiza_reserva.TabIndex = 81;
-            this.btn_atualiza_reserva.UseVisualStyleBackColor = true;
-            this.btn_atualiza_reserva.Click += new System.EventHandler(this.btn_atualiza_reserva_Click);
             // 
             // txt_cama_solteiro
             // 
@@ -363,6 +333,36 @@ namespace ProjetoHotel
             this.lbl_casal.TabIndex = 85;
             this.lbl_casal.Text = "Camas casal";
             // 
+            // btn_atualiza_reserva
+            // 
+            this.btn_atualiza_reserva.Image = global::ProjetoHotel.Properties.Resources.refresh;
+            this.btn_atualiza_reserva.Location = new System.Drawing.Point(987, 447);
+            this.btn_atualiza_reserva.Name = "btn_atualiza_reserva";
+            this.btn_atualiza_reserva.Size = new System.Drawing.Size(41, 43);
+            this.btn_atualiza_reserva.TabIndex = 81;
+            this.btn_atualiza_reserva.UseVisualStyleBackColor = true;
+            this.btn_atualiza_reserva.Click += new System.EventHandler(this.btn_atualiza_reserva_Click);
+            // 
+            // btn_total
+            // 
+            this.btn_total.Image = global::ProjetoHotel.Properties.Resources.refresh;
+            this.btn_total.Location = new System.Drawing.Point(266, 317);
+            this.btn_total.Name = "btn_total";
+            this.btn_total.Size = new System.Drawing.Size(41, 43);
+            this.btn_total.TabIndex = 77;
+            this.btn_total.UseVisualStyleBackColor = true;
+            this.btn_total.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btn_pesquisa
+            // 
+            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
+            this.btn_pesquisa.Location = new System.Drawing.Point(324, 98);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
+            this.btn_pesquisa.TabIndex = 66;
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
+            // 
             // Frm_Checkin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -397,7 +397,7 @@ namespace ProjetoHotel
             this.Controls.Add(this.msk_telefone);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.msk_rg);
-            this.Controls.Add(this.lbl_cpf);
+            this.Controls.Add(this.lbl_rg);
             this.Controls.Add(this.lbl_nome);
             this.Controls.Add(this.lbl_telefone);
             this.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -418,7 +418,7 @@ namespace ProjetoHotel
         public System.Windows.Forms.MaskedTextBox msk_telefone;
         public System.Windows.Forms.TextBox txt_nome;
         public System.Windows.Forms.MaskedTextBox msk_rg;
-        private System.Windows.Forms.Label lbl_cpf;
+        private System.Windows.Forms.Label lbl_rg;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Label lbl_telefone;
         private System.Windows.Forms.Label lbl_titulo;

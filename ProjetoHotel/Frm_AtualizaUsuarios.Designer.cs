@@ -34,7 +34,7 @@ namespace ProjetoHotel
             this.txt_rua = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.msk_rg = new System.Windows.Forms.MaskedTextBox();
-            this.lbl_cpf = new System.Windows.Forms.Label();
+            this.lbl_rg = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.lbl_rua = new System.Windows.Forms.Label();
@@ -63,8 +63,8 @@ namespace ProjetoHotel
             this.btn_voltar = new System.Windows.Forms.Button();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
             this.btn_salvar = new System.Windows.Forms.Button();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,15 +105,15 @@ namespace ProjetoHotel
             this.msk_rg.Size = new System.Drawing.Size(148, 31);
             this.msk_rg.TabIndex = 23;
             // 
-            // lbl_cpf
+            // lbl_rg
             // 
-            this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Location = new System.Drawing.Point(583, 176);
-            this.lbl_cpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_cpf.Name = "lbl_cpf";
-            this.lbl_cpf.Size = new System.Drawing.Size(49, 25);
-            this.lbl_cpf.TabIndex = 22;
-            this.lbl_cpf.Text = "RG:";
+            this.lbl_rg.AutoSize = true;
+            this.lbl_rg.Location = new System.Drawing.Point(583, 176);
+            this.lbl_rg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_rg.Name = "lbl_rg";
+            this.lbl_rg.Size = new System.Drawing.Size(49, 25);
+            this.lbl_rg.TabIndex = 22;
+            this.lbl_rg.Text = "RG:";
             // 
             // lbl_nome
             // 
@@ -390,6 +390,14 @@ namespace ProjetoHotel
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
+            // msk_pesquisa
+            // 
+            this.msk_pesquisa.Location = new System.Drawing.Point(215, 101);
+            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
+            this.msk_pesquisa.Name = "msk_pesquisa";
+            this.msk_pesquisa.Size = new System.Drawing.Size(184, 31);
+            this.msk_pesquisa.TabIndex = 67;
+            // 
             // btn_pesquisa
             // 
             this.btn_pesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisa.Image")));
@@ -399,14 +407,6 @@ namespace ProjetoHotel
             this.btn_pesquisa.TabIndex = 66;
             this.btn_pesquisa.UseVisualStyleBackColor = true;
             this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
-            // 
-            // msk_pesquisa
-            // 
-            this.msk_pesquisa.Location = new System.Drawing.Point(215, 101);
-            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_pesquisa.Name = "msk_pesquisa";
-            this.msk_pesquisa.Size = new System.Drawing.Size(184, 31);
-            this.msk_pesquisa.TabIndex = 67;
             // 
             // Frm_AtualizaUsuarios
             // 
@@ -446,7 +446,7 @@ namespace ProjetoHotel
             this.Controls.Add(this.txt_rua);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.msk_rg);
-            this.Controls.Add(this.lbl_cpf);
+            this.Controls.Add(this.lbl_rg);
             this.Controls.Add(this.lbl_nome);
             this.Controls.Add(this.lbl_telefone);
             this.Controls.Add(this.lbl_rua);
@@ -469,7 +469,7 @@ namespace ProjetoHotel
         public System.Windows.Forms.TextBox txt_rua;
         public System.Windows.Forms.TextBox txt_nome;
         public System.Windows.Forms.MaskedTextBox msk_rg;
-        private System.Windows.Forms.Label lbl_cpf;
+        private System.Windows.Forms.Label lbl_rg;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Label lbl_telefone;
         private System.Windows.Forms.Label lbl_rua;

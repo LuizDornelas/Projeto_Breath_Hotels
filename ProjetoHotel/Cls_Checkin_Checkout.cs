@@ -23,8 +23,20 @@ namespace ProjetoHotel
         private string cama_solteiro;
         private string cama_casal;
         private string quarto;
-        private string id;
+        private string id;        
         private double total;
+        private string cartao;
+        public string Cartao
+        {
+            get
+            {
+                return this.cartao;
+            }
+            set
+            {
+                this.cartao = value;
+            }
+        }
         public double Total
         {
             get
@@ -248,7 +260,7 @@ namespace ProjetoHotel
                     this.nome = pesquisa["nomecli"].ToString();
                     this.entradaout = pesquisa["entrada"].ToString();
                     this.saidaout = pesquisa["saida"].ToString();
-                    this.quarto = pesquisa["quartofk"].ToString();
+                    this.quarto = pesquisa["quartofk"].ToString();                    
                     return true;
                 }
                 else
@@ -285,7 +297,7 @@ namespace ProjetoHotel
                     this.entradaout = pesquisa["entrada"].ToString();
                     this.saidaout = pesquisa["saida"].ToString();
                     this.quarto = pesquisa["quartofk"].ToString();
-                    this.id = pesquisa["reservaid"].ToString();
+                    this.id = pesquisa["reservaid"].ToString();                    
                     return true;
                 }
                 else
@@ -415,7 +427,7 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
-        public bool pgto_dinheiro(string id)
+        public bool pgto_dinheiro_cartao(string id)
         {
             NpgsqlConnection pgsqlConnection = null;
             try
@@ -495,6 +507,69 @@ namespace ProjetoHotel
                 }
 
                 return true;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool procura_cartao(string id)
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string pesquisar;
+
+                pesquisar = "select usuariofk from reservas where reservaid = '" + id + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
+
+                NpgsqlDataReader retornaId = cmd.ExecuteReader();
+
+                retornaId.Read();
+
+                string usuariofk = retornaId["usuariofk"].ToString();
+
+                retornaId.Close();
+
+                pesquisar = "select count(usuariofk) from cartao where usuariofk = '"+ usuariofk +"';";
+
+                cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
+
+                NpgsqlDataReader procuraCartao = cmd.ExecuteReader();
+
+                procuraCartao.Read();
+
+                int qntCartao = Convert.ToInt16(procuraCartao["count"].ToString());
+
+                procuraCartao.Close();
+                
+                if (qntCartao != 0)
+                {
+                    pesquisar = "select numerocartao from cartao where usuariofk = '"+ usuariofk +"';";
+
+                    cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
+
+                    NpgsqlDataReader retornaNum = cmd.ExecuteReader();
+
+                    retornaNum.Read();
+
+                    this.cartao = retornaNum["numerocartao"].ToString();
+
+                    retornaNum.Close();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
             finally
             {

@@ -13,7 +13,19 @@ namespace ProjetoHotel
         private string login;
         private string senha;
         private string tipo;
-
+        private string nome;
+        private string id;
+        public string Nome
+        {
+            get
+            {
+                return this.nome;
+            }
+            set
+            {
+                this.nome = value;
+            }
+        }
         public string Login
         {
             get
@@ -58,7 +70,7 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string sql = "SELECT * FROM login WHERE login ='" + this.login + "' and senha='" + this.senha + "' LIMIT 1;"; //monta o comando 
+                string sql = "SELECT * FROM login WHERE login ='" + this.login + "' and senha='" + this.senha + "' LIMIT 1;";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, pgsqlConnection);
 
@@ -68,8 +80,24 @@ namespace ProjetoHotel
                 {
                     this.tipo = dr["tipo"].ToString();
 
+                    this.id = dr["fk_usuario"].ToString();
+
                     if (this.login == dr["login"].ToString() && (this.senha) == dr["senha"].ToString() && dr["ativo"].ToString() == "SIM")
                     {
+                        dr.Close();
+                        
+                        sql = "select nome from usuario where usuarioid = '" + this.id + "';";
+
+                        cmd = new NpgsqlCommand(sql, pgsqlConnection);
+
+                        NpgsqlDataReader nomeLogin = cmd.ExecuteReader();
+
+                        nomeLogin.Read();
+
+                        this.nome = nomeLogin["nome"].ToString();
+
+                        nomeLogin.Close();
+
                         return true;
                     }
                     else if (dr["ativo"].ToString() == "NAO")

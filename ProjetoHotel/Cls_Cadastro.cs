@@ -8,6 +8,7 @@ namespace ProjetoHotel
     class Cls_Cadastro
     {
         private string nome;
+        private string nome2;
         private string rg;
         private string telefone;
         private string rua;
@@ -25,7 +26,53 @@ namespace ProjetoHotel
         private int pesquisaid;
         private string ativo;
         private int fk_int;
-
+        private string validade;
+        private string codigo;
+        private string bandeira;
+        public string Nome2
+        {
+            get
+            {
+                return this.nome2;
+            }
+            set
+            {
+                this.nome2 = value;
+            }
+        }
+        public string Validiade
+        {
+            get
+            {
+                return this.validade;
+            }
+            set
+            {
+                this.validade = value;
+            }
+        }
+        public string Codigo
+        {
+            get
+            {
+                return this.codigo;
+            }
+            set
+            {
+                this.codigo = value;
+            }
+        }
+        public string Bandeira
+        {
+            get
+            {
+                return this.bandeira;
+            }
+            set
+            {
+                this.bandeira = value;
+            }
+        }
         public string Nome
         {
             get
@@ -217,17 +264,17 @@ namespace ProjetoHotel
                 }
                 fk_usuario.Close();
 
-                string usersearch = "select count(login) from login where login = '"+ this.login +"';";
+                string usersearch = "select count(login) from login where login = '" + this.login + "';";
 
                 cmd = new NpgsqlCommand(usersearch, pgsqlConnection);
 
                 NpgsqlDataReader userlogin = cmd.ExecuteReader();
 
-                userlogin.Read();                               
+                userlogin.Read();
 
                 int qntlogin = Convert.ToInt16(userlogin["count"].ToString());
 
-                userlogin.Close();                
+                userlogin.Close();
 
                 if (qntlogin == 0)
                 {
@@ -248,7 +295,7 @@ namespace ProjetoHotel
                     login.Close();
 
                     return true;
-                }               
+                }
                 else
                 {
                     MessageBox.Show("Este login já existe, por favor insira outro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -295,7 +342,7 @@ namespace ProjetoHotel
 
                 if (pesquisa.Read())
                 {
-                    
+
                     if (pesquisa["tipo"].ToString() == "Admin" && tipo == "Cargo: Func")
                     {
                         MessageBox.Show("Não é possível atualizar este usuário com o seu login", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -322,7 +369,7 @@ namespace ProjetoHotel
                         this.senha = pesquisa["senha"].ToString();
                         this.tipo = pesquisa["tipo"].ToString();
                         return true;
-                    }                    
+                    }
                 }
                 else
                 {
@@ -353,14 +400,14 @@ namespace ProjetoHotel
                     this.pesquisaid = Convert.ToInt32(this.pesquisa);
                     atualizausuario = "UPDATE usuario SET nome='" + this.nome + "', rg='" + this.rg + "', telefone='" + this.telefone + "', rua='" + this.rua + "', numero='" + this.numero + "', bairro='" + this.bairro + "', cidade='" + this.cidade + "', estado='" + this.estado + "', cep='" + this.cep + "', ativo='" + this.ativo + "' where usuarioid = " + this.pesquisaid + ";";
                     atualizalogin = "UPDATE login SET ativo='" + this.ativo + "', login='" + this.login + "', senha='" + this.senha + "', tipo='" + this.tipo + "' where fk_usuario = " + this.pesquisaid + ";";
-                }                
+                }
                 else if (this.criterio == "RG")
-                {                    
+                {
                     atualizausuario = "UPDATE usuario SET nome='" + this.nome + "', rg='" + this.rg + "', telefone='" + this.telefone + "', rua='" + this.rua + "', numero='" + this.numero + "', bairro='" + this.bairro + "', cidade='" + this.cidade + "', estado='" + this.estado + "', cep='" + this.cep + "', ativo='" + this.ativo + "' where rg = '" + this.rg + "';";
                     atualizalogin = "UPDATE login SET ativo='" + this.ativo + "', login='" + this.login + "', senha='" + this.senha + "', tipo='" + this.tipo + "' where fk_usuario = (select usuarioid from usuario where rg = '" + this.rg + "');";
                 }
                 else
-                {                    
+                {
                     atualizausuario = "UPDATE usuario SET nome='" + this.nome + "', rg='" + this.rg + "', telefone='" + this.telefone + "', rua='" + this.rua + "', numero='" + this.numero + "', bairro='" + this.bairro + "', cidade='" + this.cidade + "', estado='" + this.estado + "', cep='" + this.cep + "', ativo='" + this.ativo + "' where telefone = '" + this.telefone + "';";
                     atualizalogin = "UPDATE login SET ativo='" + this.ativo + "', login='" + this.login + "', senha='" + this.senha + "', tipo='" + this.tipo + "' where fk_usuario = (select usuarioid from usuario where telefone = '" + this.telefone + "');";
                 }
@@ -376,6 +423,156 @@ namespace ProjetoHotel
                 NpgsqlDataReader atualizarlogin = cmd.ExecuteReader();
 
                 atualizarlogin.Close();
+
+                return true;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool pesquisar()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string pesquisar;
+
+                pesquisar = "select nome, rg from usuario where usuarioid = '" + this.criterio + "' and ativo = 'SIM' LIMIT 1;";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
+
+                NpgsqlDataReader pesquisa = cmd.ExecuteReader();
+
+                if (pesquisa.Read())
+                {
+                    this.nome = pesquisa["nome"].ToString();
+                    this.rg = pesquisa["rg"].ToString();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool cadastroCartao(string id)
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select count(usuariofk) from cartao where usuariofk = '" + id + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader cartoes = cmd.ExecuteReader();
+
+                cartoes.Read();
+
+                int qntcartoes = Convert.ToInt16(cartoes["count"].ToString());
+
+                cartoes.Close();
+
+                if (qntcartoes == 0)
+                {
+                    querry = "INSERT INTO cartao(numerocartao, nome, validade, codigo, bandeira, usuariofk) VALUES ('" + this.numero + "', '" + this.nome + "', '" + this.validade + "', '" + this.codigo + "', '" + this.bandeira + "', '" + id + "');";
+
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                    NpgsqlDataReader cadastraCartao = cmd.ExecuteReader();
+
+                    cadastraCartao.Close();
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool pesquisarCartao()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string pesquisar;
+
+                pesquisar = "select numerocartao, nome, validade, codigo, bandeira from cartao where usuariofk = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
+
+                NpgsqlDataReader pesquisa = cmd.ExecuteReader();
+
+                pesquisa.Read();
+
+                this.numero = pesquisa["numerocartao"].ToString();
+                this.nome = pesquisa["nome"].ToString();
+                this.validade = pesquisa["validade"].ToString();
+                this.codigo = pesquisa["codigo"].ToString();
+                this.bandeira = pesquisa["bandeira"].ToString();              
+
+                pesquisa.Close();
+
+                pesquisar = "select nome from usuario where usuarioid = '" + this.criterio + "';";
+
+                cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
+
+                NpgsqlDataReader pesquisa2 = cmd.ExecuteReader();
+
+                pesquisa2.Read();
+
+                this.nome2 = pesquisa2["nome"].ToString();             
+
+                pesquisa2.Close();
+
+                return true;                
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool atualizaCartao()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string atualiza;
+
+                atualiza = "UPDATE cartao SET numerocartao= '"+ this.numero +"', nome= '" + this.nome +"', validade= '" + this.validade +"', codigo= '" + this.codigo +"', bandeira= '" + this.bandeira +"' where usuariofk = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(atualiza, pgsqlConnection);
+
+                NpgsqlDataReader atualizar = cmd.ExecuteReader();               
 
                 return true;
             }

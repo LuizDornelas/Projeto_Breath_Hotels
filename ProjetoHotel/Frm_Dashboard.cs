@@ -16,7 +16,10 @@ namespace ProjetoHotel
         public Frm_Dashboard(string name, string tipo)
         {
             InitializeComponent();
-            lbl_nome.Text = name;
+
+            string[] nome = name.Split(' ');
+
+            lbl_nome.Text = nome[0];
             lbl_usuario.Text = "Cargo: " + tipo;
 
             NpgsqlConnection pgsqlConnection = null;
@@ -104,7 +107,7 @@ namespace ProjetoHotel
         }
         private void tmr_data_Tick(object sender, EventArgs e)
         {
-            this.lbl_data.Text = DateTime.Now.ToString("DATA: dd-MM-yyyy");
+            this.lbl_data.Text = DateTime.Now.ToString("DATA: dd/MM/yyyy");
         }
         private void fecharSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -156,11 +159,7 @@ namespace ProjetoHotel
 
         private void atualizaCadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string tipo = lbl_usuario.Text;
-            Frm_AtualizaUsuarios Atualiza = new Frm_AtualizaUsuarios(tipo);
-            Atualiza.StartPosition = FormStartPosition.CenterParent;
-            Atualiza.MdiParent = this;
-            Atualiza.Show();
+            
         }
 
         private void btn_pesquisa_Click(object sender, EventArgs e)
@@ -213,6 +212,31 @@ namespace ProjetoHotel
             {
                 pgsqlConnection.Close();
             }
+        }
+
+        private void atualizaCadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string tipo = lbl_usuario.Text;
+            Frm_AtualizaUsuarios Atualiza = new Frm_AtualizaUsuarios(tipo);
+            Atualiza.StartPosition = FormStartPosition.CenterParent;
+            Atualiza.MdiParent = this;
+            Atualiza.Show();
+        }
+
+        private void cadastroDeCartõesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroCartao Cartao = new Frm_CadastroCartao();
+            Cartao.StartPosition = FormStartPosition.CenterParent;
+            Cartao.MdiParent = this;
+            Cartao.Show();
+        }
+
+        private void atualizarCartãoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_AtualizaCartao atualizaCartao = new Frm_AtualizaCartao();
+            atualizaCartao.StartPosition = FormStartPosition.CenterParent;
+            atualizaCartao.MdiParent = this;
+            atualizaCartao.Show();
         }
     }
 }

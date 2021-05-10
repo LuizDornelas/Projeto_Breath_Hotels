@@ -27,7 +27,7 @@ namespace ProjetoHotel
             if (objusuario.logar())
             {
                 this.Hide();
-                Frm_Dashboard form = new Frm_Dashboard(objusuario.Login, objusuario.Tipo);
+                Frm_Dashboard form = new Frm_Dashboard(objusuario.Nome, objusuario.Tipo);
                 form.ShowDialog();
                 this.Close();
             }            
