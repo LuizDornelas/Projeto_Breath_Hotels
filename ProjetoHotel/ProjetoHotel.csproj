@@ -230,6 +230,12 @@
     <Compile Include="Frm_CadastroCartao.Designer.cs">
       <DependentUpon>Frm_CadastroCartao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_CadastroQuarto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_CadastroQuarto.Designer.cs">
+      <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Checkin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_CadastroCartao.resx">
       <DependentUpon>Frm_CadastroCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_CadastroQuarto.resx">
+      <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_CadastroUsuarios.resx">
       <DependentUpon>Frm_CadastroUsuarios.cs</DependentUpon>

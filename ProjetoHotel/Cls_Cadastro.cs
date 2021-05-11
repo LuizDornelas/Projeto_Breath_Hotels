@@ -29,6 +29,42 @@ namespace ProjetoHotel
         private string validade;
         private string codigo;
         private string bandeira;
+        private int camasolteiro;
+        private int camacasal;
+        private string valor;
+        public int Camasolteiro
+        {
+            get
+            {
+                return this.camasolteiro;
+            }
+            set
+            {
+                this.camasolteiro = value;
+            }
+        }
+        public int Camacasal
+        {
+            get
+            {
+                return this.camacasal;
+            }
+            set
+            {
+                this.camacasal = value;
+            }
+        }
+        public string Valor
+        {
+            get
+            {
+                return this.valor;
+            }
+            set
+            {
+                this.valor = value;
+            }
+        }
         public string Nome2
         {
             get
@@ -575,6 +611,51 @@ namespace ProjetoHotel
                 NpgsqlDataReader atualizar = cmd.ExecuteReader();               
 
                 return true;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool cadastroQuarto()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();                
+
+                string querry = "select count(quarto) from quartos where quarto = '"+ this.nome + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader quartoresult = cmd.ExecuteReader();
+
+                quartoresult.Read();
+
+                int qntquarto = Convert.ToInt16(quartoresult["count"].ToString());
+
+                quartoresult.Close();
+
+                if (qntquarto == 0)
+                {
+                    querry = "INSERT INTO quartos(quarto, tipo, camasolteiro, camacasal, status, diaria) VALUES ('"+ this.nome +"', '"+ this.tipo +"', '"+ this.camasolteiro +"', '"+ this.camacasal +"', 'Disponível', '"+ this.valor +"');";
+
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                    NpgsqlDataReader quarto = cmd.ExecuteReader();
+
+                    quarto.Close();                    
+
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Este quarto já existe, por favor insira outro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             finally
             {

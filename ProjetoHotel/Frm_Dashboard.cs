@@ -238,5 +238,13 @@ namespace ProjetoHotel
             atualizaCartao.MdiParent = this;
             atualizaCartao.Show();
         }
+
+        private void cadastroDeQuartoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroQuarto CadQuarto = new Frm_CadastroQuarto();
+            CadQuarto.StartPosition = FormStartPosition.CenterParent;
+            CadQuarto.MdiParent = this;
+            CadQuarto.Show();
+        }
     }
 }
