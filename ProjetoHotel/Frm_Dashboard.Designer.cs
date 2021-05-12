@@ -36,6 +36,7 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroDeCartõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hospedadoscheckInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,7 @@
             this.ptr_atras_hotel = new System.Windows.Forms.PictureBox();
             this.ptr_piscina = new System.Windows.Forms.PictureBox();
             this.btn_pesquisa = new System.Windows.Forms.Button();
-            this.cadastroDeQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_principal.SuspendLayout();
             this.pnl_pg_lateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_quartos)).BeginInit();
@@ -129,6 +130,13 @@
             this.cadastroDeCartõesToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.cadastroDeCartõesToolStripMenuItem.Text = "Cadastro de Cartões";
             this.cadastroDeCartõesToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeCartõesToolStripMenuItem_Click);
+            // 
+            // cadastroDeQuartoToolStripMenuItem
+            // 
+            this.cadastroDeQuartoToolStripMenuItem.Name = "cadastroDeQuartoToolStripMenuItem";
+            this.cadastroDeQuartoToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.cadastroDeQuartoToolStripMenuItem.Text = "Cadastro de Quarto";
+            this.cadastroDeQuartoToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeQuartoToolStripMenuItem_Click);
             // 
             // reservasToolStripMenuItem
             // 
@@ -201,7 +209,8 @@
             // 
             this.atualizaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.atualizaCadastroToolStripMenuItem1,
-            this.atualizarCartãoToolStripMenuItem});
+            this.atualizarCartãoToolStripMenuItem,
+            this.atualizarQuartoToolStripMenuItem});
             this.atualizaToolStripMenuItem.Name = "atualizaToolStripMenuItem";
             this.atualizaToolStripMenuItem.Size = new System.Drawing.Size(75, 21);
             this.atualizaToolStripMenuItem.Text = "Atualiza";
@@ -494,12 +503,12 @@
             this.btn_pesquisa.UseVisualStyleBackColor = true;
             this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
-            // cadastroDeQuartoToolStripMenuItem
+            // atualizarQuartoToolStripMenuItem
             // 
-            this.cadastroDeQuartoToolStripMenuItem.Name = "cadastroDeQuartoToolStripMenuItem";
-            this.cadastroDeQuartoToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.cadastroDeQuartoToolStripMenuItem.Text = "Cadastro de Quarto";
-            this.cadastroDeQuartoToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeQuartoToolStripMenuItem_Click);
+            this.atualizarQuartoToolStripMenuItem.Name = "atualizarQuartoToolStripMenuItem";
+            this.atualizarQuartoToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.atualizarQuartoToolStripMenuItem.Text = "Atualizar Quarto";
+            this.atualizarQuartoToolStripMenuItem.Click += new System.EventHandler(this.atualizarQuartoToolStripMenuItem_Click);
             // 
             // Frm_Dashboard
             // 
@@ -581,5 +590,6 @@
         private System.Windows.Forms.ToolStripMenuItem atualizaCadastroToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem atualizarCartãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeQuartoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atualizarQuartoToolStripMenuItem;
     }
 }

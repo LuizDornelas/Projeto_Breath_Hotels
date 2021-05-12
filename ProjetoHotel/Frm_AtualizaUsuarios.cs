@@ -44,6 +44,10 @@ namespace ProjetoHotel
             cmb_criterio.Items.Add("Telefone");
             cmb_criterio.SelectedItem = "Id";
 
+            atualizadgv();
+        }
+        private void atualizadgv()
+        {
             NpgsqlConnection pgsqlConnection = null;
             try
             {
@@ -64,13 +68,16 @@ namespace ProjetoHotel
                     dt.Load(dgv);
                     dgv_usuarios.DataSource = dt;
                 }
+                else
+                {
+                    dgv_usuarios.DataSource = null;
+                }
             }
             finally
             {
                 pgsqlConnection.Close();
             }
         }
-
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -171,6 +178,20 @@ namespace ProjetoHotel
                 if (atualizar.atualiza())
                 {
                     MessageBox.Show("Usuário atualizado com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    atualizadgv();
+
+                    msk_pesquisa.Text = "";                    
+                    txt_nome.Text = "";
+                    msk_rg.Text = "";
+                    msk_telefone.Text = "";
+                    txt_rua.Text = "";
+                    msk_numero.Text = "";
+                    txt_bairro.Text = "";
+                    txt_cidade.Text = "";
+                    txt_estado.Text = "";
+                    msk_cep.Text = "";
+                    txt_usuario.Text = "";
+                    txt_senha.Text = "";                    
                 }
             }
         }

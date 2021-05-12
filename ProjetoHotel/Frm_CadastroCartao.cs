@@ -91,11 +91,7 @@ namespace ProjetoHotel
                 if (cartao.cadastroCartao(msk_pesquisa.Text))
                 {
                     MessageBox.Show("Cartão cadastrado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Usuário já tem cartão cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }                
             }
         }
     }

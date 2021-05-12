@@ -20,6 +20,8 @@ namespace ProjetoHotel
         {
             InitializeComponent();
 
+            dtp_saida.Value = DateTime.Now.AddDays(1);
+
             nomefunc = nome;
 
             NpgsqlConnection pgsqlConnection = null;
@@ -251,6 +253,7 @@ namespace ProjetoHotel
                             if (reserva.checkin(id))
                             {
                                 MessageBox.Show("Reserva realizada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dgv_pesquisa();
                             }
 
                         }

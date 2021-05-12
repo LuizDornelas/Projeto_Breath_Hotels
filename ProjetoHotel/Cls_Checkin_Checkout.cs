@@ -23,7 +23,7 @@ namespace ProjetoHotel
         private string cama_solteiro;
         private string cama_casal;
         private string quarto;
-        private string id;        
+        private string id;
         private double total;
         private string cartao;
         public string Cartao
@@ -260,7 +260,7 @@ namespace ProjetoHotel
                     this.nome = pesquisa["nomecli"].ToString();
                     this.entradaout = pesquisa["entrada"].ToString();
                     this.saidaout = pesquisa["saida"].ToString();
-                    this.quarto = pesquisa["quartofk"].ToString();                    
+                    this.quarto = pesquisa["quartofk"].ToString();
                     return true;
                 }
                 else
@@ -297,7 +297,7 @@ namespace ProjetoHotel
                     this.entradaout = pesquisa["entrada"].ToString();
                     this.saidaout = pesquisa["saida"].ToString();
                     this.quarto = pesquisa["quartofk"].ToString();
-                    this.id = pesquisa["reservaid"].ToString();                    
+                    this.id = pesquisa["reservaid"].ToString();
                     return true;
                 }
                 else
@@ -320,23 +320,46 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string checkin;
+                string querry;
 
-                checkin = "INSERT INTO reservas(reservaid, nomefunc, nomecli, entrada, saida, valor, quartofk, status, usuariofk) VALUES((select count(reservaid) + 1 from reservas), '" + this.nomefunc + "', '" + this.nome + "', '" + this.entrada + "', '" + this.saida + "', " + this.valor + ", '" + this.quarto + "','Em andamento', '"+ id +"');";
+                querry = "select ativo from usuario where usuarioid = '" + id + "';";
 
-                NpgsqlCommand cmd = new NpgsqlCommand(checkin, pgsqlConnection);
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
-                NpgsqlDataReader reserva = cmd.ExecuteReader();
+                NpgsqlDataReader ativo = cmd.ExecuteReader();
 
-                reserva.Close();
+                ativo.Read();
 
-                checkin = "UPDATE quartos SET status='Ocupado', reservafk=(select reservaid from reservas where quartofk = '" + this.quarto + "' and status = 'Em andamento') WHERE quarto = '" + this.quarto + "';";
+                string verificaAtivo = ativo["ativo"].ToString();
 
-                cmd = new NpgsqlCommand(checkin, pgsqlConnection);
+                ativo.Close();
 
-                NpgsqlDataReader reservaquarto = cmd.ExecuteReader();
-                    
-                return true;
+                if (verificaAtivo == "SIM")
+                {
+                    string checkin;
+
+                    checkin = "INSERT INTO reservas(reservaid, nomefunc, nomecli, entrada, saida, valor, quartofk, status, usuariofk) VALUES((select count(reservaid) + 1 from reservas), '" + this.nomefunc + "', '" + this.nome + "', '" + this.entrada + "', '" + this.saida + "', " + this.valor + ", '" + this.quarto + "','Em andamento', '" + id + "');";
+
+                    cmd = new NpgsqlCommand(checkin, pgsqlConnection);
+
+                    NpgsqlDataReader reserva = cmd.ExecuteReader();
+
+                    reserva.Close();
+
+                    checkin = "UPDATE quartos SET status='Ocupado', reservafk=(select reservaid from reservas where quartofk = '" + this.quarto + "' and status = 'Em andamento') WHERE quarto = '" + this.quarto + "';";
+
+                    cmd = new NpgsqlCommand(checkin, pgsqlConnection);
+
+                    NpgsqlDataReader reservaquarto = cmd.ExecuteReader();
+
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Usuário desativado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+
             }
             finally
             {
@@ -377,7 +400,7 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
-        public bool valortotal()
+        public bool valortotal(int totalDias)
         {
             NpgsqlConnection pgsqlConnection = null;
             try
@@ -392,7 +415,7 @@ namespace ProjetoHotel
                 double valor_reserva = 0;
                 double valor_itens = 0;
 
-                pesquisar = "select valor from reservas where reservaid = '" + this.id + "';";
+                pesquisar = "select diaria from quartos where reservafk = '" + this.id + "';";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -400,9 +423,11 @@ namespace ProjetoHotel
 
                 if (pesquisa.Read())
                 {
-                    valor_reserva = Convert.ToDouble(pesquisa["valor"].ToString());
+                    valor_reserva = Convert.ToDouble(pesquisa["diaria"].ToString());
                 }
                 pesquisa.Close();
+
+                valor_reserva *= totalDias;
 
                 pesquisar = "select sum(valor) from consumos where reservafk = '" + this.id + "';";
 
@@ -427,7 +452,7 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
-        public bool pgto_dinheiro_cartao(string id)
+        public bool pgto_dinheiro_cartao(string id, string total)
         {
             NpgsqlConnection pgsqlConnection = null;
             try
@@ -439,7 +464,7 @@ namespace ProjetoHotel
 
                 string pesquisar;
 
-                pesquisar = "select usuariofk from reservas where reservaid = '"+ id +"';";
+                pesquisar = "select usuariofk from reservas where reservaid = '" + id + "';";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -449,19 +474,19 @@ namespace ProjetoHotel
 
                 string usuariofk = retornaId["usuariofk"].ToString();
 
-                retornaId.Close();                
+                retornaId.Close();
 
-                pesquisar = "UPDATE reservas SET status='Encerrado' WHERE usuariofk = '" + usuariofk + "';";                
+                pesquisar = "UPDATE reservas SET status='Encerrado', valor = '" + total + "', saida = '" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "' WHERE usuariofk = '" + usuariofk + "';";
 
                 cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
-                NpgsqlDataReader atualizaReserva = cmd.ExecuteReader();               
+                NpgsqlDataReader atualizaReserva = cmd.ExecuteReader();
 
                 atualizaReserva.Read();
 
                 atualizaReserva.Close();
 
-                pesquisar = "UPDATE quartos SET status='Disponível', reservafk=null WHERE reservafk = '"+ id +"';";
+                pesquisar = "UPDATE quartos SET status='Disponível', reservafk=null WHERE reservafk = '" + id + "';";
 
                 cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -471,7 +496,7 @@ namespace ProjetoHotel
 
                 liberaQuarto.Close();
 
-                pesquisar = "select count(usuariofk) from reservas where status = 'Em andamento' and usuariofk = '"+ usuariofk + "';";
+                pesquisar = "select count(usuariofk) from reservas where status = 'Em andamento' and usuariofk = '" + usuariofk + "';";
 
                 cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -481,11 +506,11 @@ namespace ProjetoHotel
 
                 int num_reservas = Convert.ToInt16(verificaReservas["count"].ToString());
 
-                verificaReservas.Close();                
+                verificaReservas.Close();
 
                 if (num_reservas == 0)
                 {
-                    pesquisar = "UPDATE usuario SET ativo='NAO' WHERE usuarioid = '"+ usuariofk + "';";
+                    pesquisar = "UPDATE usuario SET ativo='NAO' WHERE usuarioid = '" + usuariofk + "';";
 
                     cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -495,7 +520,7 @@ namespace ProjetoHotel
 
                     desativaUsuario.Close();
 
-                    pesquisar = "UPDATE login SET ativo='NAO' WHERE fk_usuario = '"+ usuariofk + "';";
+                    pesquisar = "UPDATE login SET ativo='NAO' WHERE fk_usuario = '" + usuariofk + "';";
 
                     cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -537,7 +562,7 @@ namespace ProjetoHotel
 
                 retornaId.Close();
 
-                pesquisar = "select count(usuariofk) from cartao where usuariofk = '"+ usuariofk +"';";
+                pesquisar = "select count(usuariofk) from cartao where usuariofk = '" + usuariofk + "';";
 
                 cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -548,10 +573,10 @@ namespace ProjetoHotel
                 int qntCartao = Convert.ToInt16(procuraCartao["count"].ToString());
 
                 procuraCartao.Close();
-                
+
                 if (qntCartao != 0)
                 {
-                    pesquisar = "select numerocartao from cartao where usuariofk = '"+ usuariofk +"';";
+                    pesquisar = "select numerocartao from cartao where usuariofk = '" + usuariofk + "';";
 
                     cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -569,7 +594,7 @@ namespace ProjetoHotel
                 {
                     return false;
                 }
-                
+
             }
             finally
             {

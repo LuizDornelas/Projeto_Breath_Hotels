@@ -218,6 +218,12 @@
     <Compile Include="Frm_AtualizaCartao.Designer.cs">
       <DependentUpon>Frm_AtualizaCartao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_AtualizaQuarto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AtualizaQuarto.Designer.cs">
+      <DependentUpon>Frm_AtualizaQuarto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_AtualizaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_AtualizaCartao.resx">
       <DependentUpon>Frm_AtualizaCartao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AtualizaQuarto.resx">
+      <DependentUpon>Frm_AtualizaQuarto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_AtualizaUsuarios.resx">
       <DependentUpon>Frm_AtualizaUsuarios.cs</DependentUpon>

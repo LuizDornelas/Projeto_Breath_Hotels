@@ -126,10 +126,10 @@ namespace ProjetoHotel
             // 
             this.msk_pesquisa.Location = new System.Drawing.Point(215, 103);
             this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_pesquisa.Mask = "99999";
+            this.msk_pesquisa.Mask = "9999";
             this.msk_pesquisa.Name = "msk_pesquisa";
             this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
-            this.msk_pesquisa.TabIndex = 67;
+            this.msk_pesquisa.TabIndex = 67;          
             // 
             // lbl_reservas
             // 

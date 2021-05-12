@@ -149,6 +149,7 @@ namespace ProjetoHotel
             this.Name = "Frm_Pgto_Dinheiro";
             this.Text = "Pagamento";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Frm_Pgto_Dinheiro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

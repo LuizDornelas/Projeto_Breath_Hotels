@@ -59,6 +59,10 @@ namespace ProjetoHotel
                     dt.Load(dgv);
                     dgv_reservas.DataSource = dt;
                 }
+                else
+                {
+                    dgv_reservas.DataSource = null;
+                }
             }
             finally
             {
@@ -105,6 +109,18 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
+        private int calculaValor(string pesquisa)
+        {
+            DateTime dataInicial = Convert.ToDateTime(pesquisa);
+
+            DateTime dataFinal = DateTime.Now;
+
+            TimeSpan date = dataFinal - dataInicial;
+
+            int totalDias = 1;
+
+            return totalDias += date.Days;
+        }
         private void btn_pesquisa_Click(object sender, EventArgs e)
         {
             Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();
@@ -130,7 +146,10 @@ namespace ProjetoHotel
                         itens(msk_pesquisa.Text);
                         pesquisa.Id = msk_pesquisa.Text;
                         id = pesquisa.Id;
-                        if (pesquisa.valortotal())
+                        
+                        int totalDias = calculaValor(pesquisa.Entradaout);
+
+                        if (pesquisa.valortotal(totalDias))
                         {
                             msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
                         }
@@ -151,8 +170,13 @@ namespace ProjetoHotel
                         txt_quarto.Text = pesquisa.Quarto;
                         itens(pesquisa.Id);
                         id = pesquisa.Id;
-                        pesquisa.valortotal();
-                        msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
+
+                        int totalDias = calculaValor(pesquisa.Entradaout);
+
+                        if (pesquisa.valortotal(totalDias))
+                        {
+                            msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
+                        }                                                
                     }
                     else
                     {
@@ -173,12 +197,12 @@ namespace ProjetoHotel
         {
             if (cmb_criterio.Text == "Id")
             {
-                msk_pesquisa.Mask = "9999";
+                msk_pesquisa.Mask = "9999";              
                 msk_pesquisa.Text = "";
             }
             else
             {
-                msk_pesquisa.Mask = "";
+                msk_pesquisa.Mask = "";             
                 msk_pesquisa.Text = "";
             }
         }
@@ -196,6 +220,7 @@ namespace ProjetoHotel
                     Frm_Pgto_Dinheiro form = new Frm_Pgto_Dinheiro(id, msk_total.Text);
                     form.ShowDialog();
                     limpa_campos();
+                    dgv_pesquisa();
                 }
                 else
                 {
@@ -208,9 +233,10 @@ namespace ProjetoHotel
 
                         if (pgto == DialogResult.Yes)
                         {
-                            if (cartao.pgto_dinheiro_cartao(id))
+                            if (cartao.pgto_dinheiro_cartao(id, msk_total.Text.Replace(",", ".").Trim()))
                             {
                                 MessageBox.Show("Pagamento com o cartão realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dgv_pesquisa();
                             }
                         }
                         else

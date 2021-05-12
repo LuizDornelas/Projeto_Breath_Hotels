@@ -44,10 +44,10 @@ namespace ProjetoHotel
             this.msk_numero_cartao = new System.Windows.Forms.MaskedTextBox();
             this.lbl_numero_cartao = new System.Windows.Forms.Label();
             this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cartoes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,16 +201,6 @@ namespace ProjetoHotel
             this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
             this.msk_pesquisa.TabIndex = 100;
             // 
-            // btn_pesquisa
-            // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(325, 97);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 99;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
-            // 
             // lbl_pesquisa
             // 
             this.lbl_pesquisa.AutoSize = true;
@@ -241,6 +231,16 @@ namespace ProjetoHotel
             this.lbl_nome.Size = new System.Drawing.Size(68, 25);
             this.lbl_nome.TabIndex = 102;
             this.lbl_nome.Text = "Nome";
+            // 
+            // btn_pesquisa
+            // 
+            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
+            this.btn_pesquisa.Location = new System.Drawing.Point(325, 97);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
+            this.btn_pesquisa.TabIndex = 99;
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // Frm_AtualizaCartao
             // 

@@ -1,7 +1,7 @@
 ﻿
 namespace ProjetoHotel
 {
-    partial class Frm_CadastroQuarto
+    partial class Frm_AtualizaQuarto
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,6 @@ namespace ProjetoHotel
             this.lbl_cargo = new System.Windows.Forms.Label();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.lbl_campos_obrigatorios = new System.Windows.Forms.Label();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.msk_camacasal = new System.Windows.Forms.MaskedTextBox();
@@ -45,12 +44,16 @@ namespace ProjetoHotel
             this.msk_diaria = new System.Windows.Forms.MaskedTextBox();
             this.dgv_quartos = new System.Windows.Forms.DataGridView();
             this.btn_atualiza_dgv = new System.Windows.Forms.Button();
+            this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
+            this.btn_pesquisa = new System.Windows.Forms.Button();
+            this.lbl_pesquisa = new System.Windows.Forms.Label();
+            this.btn_excluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_quartos)).BeginInit();
             this.SuspendLayout();
             // 
             // msk_camasolteiro
             // 
-            this.msk_camasolteiro.Location = new System.Drawing.Point(437, 140);
+            this.msk_camasolteiro.Location = new System.Drawing.Point(436, 209);
             this.msk_camasolteiro.Margin = new System.Windows.Forms.Padding(4);
             this.msk_camasolteiro.Mask = "9";
             this.msk_camasolteiro.Name = "msk_camasolteiro";
@@ -59,7 +62,7 @@ namespace ProjetoHotel
             // 
             // txt_quarto
             // 
-            this.txt_quarto.Location = new System.Drawing.Point(164, 140);
+            this.txt_quarto.Location = new System.Drawing.Point(163, 209);
             this.txt_quarto.Margin = new System.Windows.Forms.Padding(4);
             this.txt_quarto.MaxLength = 4;
             this.txt_quarto.Multiline = true;
@@ -70,7 +73,7 @@ namespace ProjetoHotel
             // lbl_quarto
             // 
             this.lbl_quarto.AutoSize = true;
-            this.lbl_quarto.Location = new System.Drawing.Point(157, 111);
+            this.lbl_quarto.Location = new System.Drawing.Point(156, 180);
             this.lbl_quarto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_quarto.Name = "lbl_quarto";
             this.lbl_quarto.Size = new System.Drawing.Size(85, 25);
@@ -80,7 +83,7 @@ namespace ProjetoHotel
             // lbl_camasolteiro
             // 
             this.lbl_camasolteiro.AutoSize = true;
-            this.lbl_camasolteiro.Location = new System.Drawing.Point(432, 111);
+            this.lbl_camasolteiro.Location = new System.Drawing.Point(431, 180);
             this.lbl_camasolteiro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_camasolteiro.Name = "lbl_camasolteiro";
             this.lbl_camasolteiro.Size = new System.Drawing.Size(159, 25);
@@ -90,7 +93,7 @@ namespace ProjetoHotel
             // lbl_cargo
             // 
             this.lbl_cargo.AutoSize = true;
-            this.lbl_cargo.Location = new System.Drawing.Point(273, 111);
+            this.lbl_cargo.Location = new System.Drawing.Point(272, 180);
             this.lbl_cargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cargo.Name = "lbl_cargo";
             this.lbl_cargo.Size = new System.Drawing.Size(61, 25);
@@ -101,7 +104,7 @@ namespace ProjetoHotel
             // 
             this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Location = new System.Drawing.Point(278, 138);
+            this.cmb_tipo.Location = new System.Drawing.Point(277, 207);
             this.cmb_tipo.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(124, 33);
@@ -111,26 +114,15 @@ namespace ProjetoHotel
             // 
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Georgia", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo.Location = new System.Drawing.Point(366, 29);
+            this.lbl_titulo.Location = new System.Drawing.Point(390, 29);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(337, 38);
+            this.lbl_titulo.Size = new System.Drawing.Size(278, 38);
             this.lbl_titulo.TabIndex = 44;
-            this.lbl_titulo.Text = "Cadastro de Quarto";
-            // 
-            // lbl_campos_obrigatorios
-            // 
-            this.lbl_campos_obrigatorios.AutoSize = true;
-            this.lbl_campos_obrigatorios.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_campos_obrigatorios.Location = new System.Drawing.Point(335, 67);
-            this.lbl_campos_obrigatorios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_campos_obrigatorios.Name = "lbl_campos_obrigatorios";
-            this.lbl_campos_obrigatorios.Size = new System.Drawing.Size(407, 20);
-            this.lbl_campos_obrigatorios.TabIndex = 45;
-            this.lbl_campos_obrigatorios.Text = "* Todos os campos são de preenchimento obrigatório";
+            this.lbl_titulo.Text = "Atualiza Quarto";
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(267, 362);
+            this.btn_voltar.Location = new System.Drawing.Point(163, 431);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(204, 55);
             this.btn_voltar.TabIndex = 58;
@@ -140,17 +132,17 @@ namespace ProjetoHotel
             // 
             // btn_salvar
             // 
-            this.btn_salvar.Location = new System.Drawing.Point(587, 362);
+            this.btn_salvar.Location = new System.Drawing.Point(694, 431);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(204, 55);
             this.btn_salvar.TabIndex = 59;
-            this.btn_salvar.Text = "Salvar";
+            this.btn_salvar.Text = "Atualizar";
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // msk_camacasal
             // 
-            this.msk_camacasal.Location = new System.Drawing.Point(610, 140);
+            this.msk_camacasal.Location = new System.Drawing.Point(609, 209);
             this.msk_camacasal.Margin = new System.Windows.Forms.Padding(4);
             this.msk_camacasal.Mask = "9";
             this.msk_camacasal.Name = "msk_camacasal";
@@ -160,7 +152,7 @@ namespace ProjetoHotel
             // lbl_camacasal
             // 
             this.lbl_camacasal.AutoSize = true;
-            this.lbl_camacasal.Location = new System.Drawing.Point(605, 111);
+            this.lbl_camacasal.Location = new System.Drawing.Point(604, 180);
             this.lbl_camacasal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_camacasal.Name = "lbl_camacasal";
             this.lbl_camacasal.Size = new System.Drawing.Size(137, 25);
@@ -170,7 +162,7 @@ namespace ProjetoHotel
             // lbl_valor
             // 
             this.lbl_valor.AutoSize = true;
-            this.lbl_valor.Location = new System.Drawing.Point(765, 111);
+            this.lbl_valor.Location = new System.Drawing.Point(764, 180);
             this.lbl_valor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_valor.Name = "lbl_valor";
             this.lbl_valor.Size = new System.Drawing.Size(134, 25);
@@ -179,7 +171,7 @@ namespace ProjetoHotel
             // 
             // msk_diaria
             // 
-            this.msk_diaria.Location = new System.Drawing.Point(770, 140);
+            this.msk_diaria.Location = new System.Drawing.Point(769, 209);
             this.msk_diaria.Margin = new System.Windows.Forms.Padding(4);
             this.msk_diaria.Mask = "999,99";
             this.msk_diaria.Name = "msk_diaria";
@@ -193,7 +185,7 @@ namespace ProjetoHotel
             this.dgv_quartos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_quartos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_quartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_quartos.Location = new System.Drawing.Point(162, 198);
+            this.dgv_quartos.Location = new System.Drawing.Point(161, 267);
             this.dgv_quartos.Name = "dgv_quartos";
             this.dgv_quartos.ReadOnly = true;
             this.dgv_quartos.Size = new System.Drawing.Size(737, 139);
@@ -202,20 +194,62 @@ namespace ProjetoHotel
             // btn_atualiza_dgv
             // 
             this.btn_atualiza_dgv.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_atualiza_dgv.Location = new System.Drawing.Point(917, 198);
+            this.btn_atualiza_dgv.Location = new System.Drawing.Point(916, 267);
             this.btn_atualiza_dgv.Name = "btn_atualiza_dgv";
             this.btn_atualiza_dgv.Size = new System.Drawing.Size(41, 43);
             this.btn_atualiza_dgv.TabIndex = 82;
             this.btn_atualiza_dgv.UseVisualStyleBackColor = true;
             this.btn_atualiza_dgv.Click += new System.EventHandler(this.btn_atualiza_dgv_Click);
             // 
-            // Frm_CadastroQuarto
+            // msk_pesquisa
+            // 
+            this.msk_pesquisa.Location = new System.Drawing.Point(330, 115);
+            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
+            this.msk_pesquisa.Name = "msk_pesquisa";
+            this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
+            this.msk_pesquisa.TabIndex = 103;
+            // 
+            // btn_pesquisa
+            // 
+            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
+            this.btn_pesquisa.Location = new System.Drawing.Point(421, 110);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
+            this.btn_pesquisa.TabIndex = 102;
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
+            // 
+            // lbl_pesquisa
+            // 
+            this.lbl_pesquisa.AutoSize = true;
+            this.lbl_pesquisa.Location = new System.Drawing.Point(158, 118);
+            this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_pesquisa.Name = "lbl_pesquisa";
+            this.lbl_pesquisa.Size = new System.Drawing.Size(174, 25);
+            this.lbl_pesquisa.TabIndex = 101;
+            this.lbl_pesquisa.Text = "Pesquisar Quarto";
+            // 
+            // btn_excluir
+            // 
+            this.btn_excluir.Location = new System.Drawing.Point(436, 431);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(204, 55);
+            this.btn_excluir.TabIndex = 104;
+            this.btn_excluir.Text = "Excluir";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            // 
+            // Frm_AtualizaQuarto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1084, 478);
+            this.ClientSize = new System.Drawing.Size(1084, 547);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_excluir);
+            this.Controls.Add(this.msk_pesquisa);
+            this.Controls.Add(this.btn_pesquisa);
+            this.Controls.Add(this.lbl_pesquisa);
             this.Controls.Add(this.btn_atualiza_dgv);
             this.Controls.Add(this.dgv_quartos);
             this.Controls.Add(this.msk_diaria);
@@ -224,7 +258,6 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_camacasal);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.btn_voltar);
-            this.Controls.Add(this.lbl_campos_obrigatorios);
             this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.lbl_cargo);
@@ -237,8 +270,8 @@ namespace ProjetoHotel
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.Name = "Frm_CadastroQuarto";
-            this.Text = "Cadastro de Quarto";
+            this.Name = "Frm_AtualizaQuarto";
+            this.Text = "Atualiza Quarto";
             this.TransparencyKey = System.Drawing.Color.White;
             ((System.ComponentModel.ISupportInitialize)(this.dgv_quartos)).EndInit();
             this.ResumeLayout(false);
@@ -254,7 +287,6 @@ namespace ProjetoHotel
         private System.Windows.Forms.Label lbl_cargo;
         private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.Label lbl_titulo;
-        private System.Windows.Forms.Label lbl_campos_obrigatorios;
         private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.Button btn_salvar;
         public System.Windows.Forms.MaskedTextBox msk_camacasal;
@@ -263,5 +295,9 @@ namespace ProjetoHotel
         public System.Windows.Forms.MaskedTextBox msk_diaria;
         private System.Windows.Forms.DataGridView dgv_quartos;
         private System.Windows.Forms.Button btn_atualiza_dgv;
+        public System.Windows.Forms.MaskedTextBox msk_pesquisa;
+        private System.Windows.Forms.Button btn_pesquisa;
+        private System.Windows.Forms.Label lbl_pesquisa;
+        private System.Windows.Forms.Button btn_excluir;
     }
 }

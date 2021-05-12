@@ -49,6 +49,7 @@ namespace ProjetoHotel
             this.lbl_codigo = new System.Windows.Forms.Label();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.cmb_bandeira = new System.Windows.Forms.ComboBox();
+            this.lbl_campos_obrigatorios = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_nome
@@ -249,6 +250,17 @@ namespace ProjetoHotel
             this.cmb_bandeira.Size = new System.Drawing.Size(148, 33);
             this.cmb_bandeira.TabIndex = 83;
             // 
+            // lbl_campos_obrigatorios
+            // 
+            this.lbl_campos_obrigatorios.AutoSize = true;
+            this.lbl_campos_obrigatorios.Font = new System.Drawing.Font("Georgia", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_campos_obrigatorios.Location = new System.Drawing.Point(344, 59);
+            this.lbl_campos_obrigatorios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_campos_obrigatorios.Name = "lbl_campos_obrigatorios";
+            this.lbl_campos_obrigatorios.Size = new System.Drawing.Size(407, 20);
+            this.lbl_campos_obrigatorios.TabIndex = 84;
+            this.lbl_campos_obrigatorios.Text = "* Todos os campos são de preenchimento obrigatório";
+            // 
             // Frm_CadastroCartao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -256,6 +268,7 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1096, 520);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_campos_obrigatorios);
             this.Controls.Add(this.cmb_bandeira);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.lbl_codigo);
@@ -310,5 +323,6 @@ namespace ProjetoHotel
         private System.Windows.Forms.Label lbl_codigo;
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.ComboBox cmb_bandeira;
+        private System.Windows.Forms.Label lbl_campos_obrigatorios;
     }
 }

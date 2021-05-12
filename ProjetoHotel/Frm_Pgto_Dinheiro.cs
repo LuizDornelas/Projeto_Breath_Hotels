@@ -63,12 +63,25 @@ namespace ProjetoHotel
                 }
                 else
                 {
-                    Cls_Checkin_Checkout pagamento = new Cls_Checkin_Checkout();
-                    pagamento.pgto_dinheiro_cartao(id);
-                    MessageBox.Show($"Pagamento realizado com sucesso, seu troco é R${txt_troco.Text}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    Cls_Checkin_Checkout pagamento = new Cls_Checkin_Checkout();                           
+                    pagamento.pgto_dinheiro_cartao(id, txt_total.Text.Replace("R$", "").Replace(",", ".").Trim());   
+                    if (txt_troco.Text == "0")
+                    {
+                        MessageBox.Show($"Pagamento realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Pagamento realizado com sucesso, seu troco é R${txt_troco.Text}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }                                        
                 }
             }
+        }
+
+        private void Frm_Pgto_Dinheiro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

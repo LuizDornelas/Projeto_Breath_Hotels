@@ -523,7 +523,19 @@ namespace ProjetoHotel
 
                 cartoes.Close();
 
-                if (qntcartoes == 0)
+                querry = "select ativo from usuario where usuarioid = '"+ id +"';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader ativo = cmd.ExecuteReader();
+
+                ativo.Read();
+
+                string verificaAtivo = ativo["ativo"].ToString();
+
+                ativo.Close();
+
+                if (qntcartoes == 0 && verificaAtivo == "SIM")
                 {
                     querry = "INSERT INTO cartao(numerocartao, nome, validade, codigo, bandeira, usuariofk) VALUES ('" + this.numero + "', '" + this.nome + "', '" + this.validade + "', '" + this.codigo + "', '" + this.bandeira + "', '" + id + "');";
 
@@ -535,8 +547,14 @@ namespace ProjetoHotel
 
                     return true;
                 }
+                else if (verificaAtivo != "SIM")
+                {
+                    MessageBox.Show("Usuário desativado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
                 else
                 {
+                    MessageBox.Show("Usuário já tem cartão cadastrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -563,29 +581,34 @@ namespace ProjetoHotel
 
                 NpgsqlDataReader pesquisa = cmd.ExecuteReader();
 
-                pesquisa.Read();
+                if (pesquisa.Read())
+                {
+                    this.numero = pesquisa["numerocartao"].ToString();
+                    this.nome = pesquisa["nome"].ToString();
+                    this.validade = pesquisa["validade"].ToString();
+                    this.codigo = pesquisa["codigo"].ToString();
+                    this.bandeira = pesquisa["bandeira"].ToString();
 
-                this.numero = pesquisa["numerocartao"].ToString();
-                this.nome = pesquisa["nome"].ToString();
-                this.validade = pesquisa["validade"].ToString();
-                this.codigo = pesquisa["codigo"].ToString();
-                this.bandeira = pesquisa["bandeira"].ToString();              
+                    pesquisa.Close();
 
-                pesquisa.Close();
+                    pesquisar = "select nome from usuario where usuarioid = '" + this.criterio + "';";
 
-                pesquisar = "select nome from usuario where usuarioid = '" + this.criterio + "';";
+                    cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
-                cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
+                    NpgsqlDataReader pesquisa2 = cmd.ExecuteReader();
 
-                NpgsqlDataReader pesquisa2 = cmd.ExecuteReader();
+                    pesquisa2.Read();
 
-                pesquisa2.Read();
+                    this.nome2 = pesquisa2["nome"].ToString();
 
-                this.nome2 = pesquisa2["nome"].ToString();             
+                    pesquisa2.Close();
 
-                pesquisa2.Close();
-
-                return true;                
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             finally
             {
@@ -604,11 +627,11 @@ namespace ProjetoHotel
 
                 string atualiza;
 
-                atualiza = "UPDATE cartao SET numerocartao= '"+ this.numero +"', nome= '" + this.nome +"', validade= '" + this.validade +"', codigo= '" + this.codigo +"', bandeira= '" + this.bandeira +"' where usuariofk = '" + this.criterio + "';";
+                atualiza = "UPDATE cartao SET numerocartao= '" + this.numero + "', nome= '" + this.nome + "', validade= '" + this.validade + "', codigo= '" + this.codigo + "', bandeira= '" + this.bandeira + "' where usuariofk = '" + this.criterio + "';";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(atualiza, pgsqlConnection);
 
-                NpgsqlDataReader atualizar = cmd.ExecuteReader();               
+                NpgsqlDataReader atualizar = cmd.ExecuteReader();
 
                 return true;
             }
@@ -625,9 +648,9 @@ namespace ProjetoHotel
                 Cls_Conexao objconexao = new Cls_Conexao();
 
                 pgsqlConnection = objconexao.getConexao();
-                pgsqlConnection.Open();                
+                pgsqlConnection.Open();
 
-                string querry = "select count(quarto) from quartos where quarto = '"+ this.nome + "';";
+                string querry = "select count(quarto) from quartos where quarto = '" + this.nome + "';";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
@@ -641,19 +664,194 @@ namespace ProjetoHotel
 
                 if (qntquarto == 0)
                 {
-                    querry = "INSERT INTO quartos(quarto, tipo, camasolteiro, camacasal, status, diaria) VALUES ('"+ this.nome +"', '"+ this.tipo +"', '"+ this.camasolteiro +"', '"+ this.camacasal +"', 'Disponível', '"+ this.valor +"');";
+                    querry = "INSERT INTO quartos(quarto, tipo, camasolteiro, camacasal, status, diaria) VALUES ('" + this.nome + "', '" + this.tipo + "', '" + this.camasolteiro + "', '" + this.camacasal + "', 'Disponível', '" + this.valor + "');";
 
                     cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
                     NpgsqlDataReader quarto = cmd.ExecuteReader();
 
-                    quarto.Close();                    
+                    quarto.Close();
 
                     return true;
                 }
                 else
                 {
                     MessageBox.Show("Este quarto já existe, por favor insira outro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool pesquisaQuarto()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select quarto, tipo, camasolteiro, camacasal, diaria from quartos where quarto = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader quartoresult = cmd.ExecuteReader();
+
+                if (quartoresult.Read())
+                {
+                    this.nome = quartoresult["quarto"].ToString();
+                    this.tipo = quartoresult["tipo"].ToString();
+                    this.camasolteiro = Convert.ToInt16(quartoresult["camasolteiro"].ToString());
+                    this.camacasal = Convert.ToInt16(quartoresult["camacasal"].ToString());
+                    this.valor = quartoresult["diaria"].ToString();
+
+                    quartoresult.Close();
+
+                    querry = "select count(status) from quartos where quarto = '" + this.criterio + "' and status = 'Ocupado';";
+
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                    NpgsqlDataReader quartostatus = cmd.ExecuteReader();
+
+                    quartostatus.Read();
+
+                    int quarto_status = Convert.ToInt16(quartostatus["count"].ToString());
+
+                    if (quarto_status == 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este quarto está ocupado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Este quarto não existe!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool atualizaQuarto()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select quarto, tipo, camasolteiro, camacasal, diaria from quartos where quarto = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader quartoresult = cmd.ExecuteReader();
+
+                if (quartoresult.Read())
+                {
+                    quartoresult.Close();
+
+                    querry = "select count(status) from quartos where quarto = '" + this.criterio + "' and status = 'Ocupado';";
+
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                    NpgsqlDataReader quartostatus = cmd.ExecuteReader();
+
+                    quartostatus.Read();
+
+                    int quarto_status = Convert.ToInt16(quartostatus["count"].ToString());
+
+                    quartostatus.Close();
+
+                    if (quarto_status == 0)
+                    {
+                        querry = "UPDATE quartos SET quarto='" + this.nome + "', tipo='" + this.tipo + "', camasolteiro='" + this.camasolteiro + "', camacasal='" + this.camacasal + "', diaria='" + this.valor + "' WHERE quarto = '" + this.criterio + "';";
+
+                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                        NpgsqlDataReader attQuarto = cmd.ExecuteReader();
+
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este quarto está ocupado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Este quarto não existe!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool excluiQuarto()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select quarto, tipo, camasolteiro, camacasal, diaria from quartos where quarto = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader quartoresult = cmd.ExecuteReader();
+
+                if (quartoresult.Read())
+                {
+                    quartoresult.Close();
+
+                    querry = "select count(status) from quartos where quarto = '" + this.criterio + "' and status = 'Ocupado';";
+
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                    NpgsqlDataReader quartostatus = cmd.ExecuteReader();
+
+                    quartostatus.Read();
+
+                    int quarto_status = Convert.ToInt16(quartostatus["count"].ToString());
+
+                    quartostatus.Close();
+
+                    if (quarto_status == 0)
+                    {
+                        querry = "DELETE FROM quartos WHERE quarto = '" + this.criterio + "';";
+
+                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                        NpgsqlDataReader excluir = cmd.ExecuteReader();
+
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este quarto está ocupado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Este quarto não existe!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
