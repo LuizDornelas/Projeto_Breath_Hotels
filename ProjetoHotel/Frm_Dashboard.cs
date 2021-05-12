@@ -254,5 +254,13 @@ namespace ProjetoHotel
             AttQuarto.MdiParent = this;
             AttQuarto.Show();
         }
+
+        private void cadastroDeItensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroItensFornecedor Itens = new Frm_CadastroItensFornecedor();
+            Itens.StartPosition = FormStartPosition.CenterParent;
+            Itens.MdiParent = this;
+            Itens.Show();
+        }
     }
 }

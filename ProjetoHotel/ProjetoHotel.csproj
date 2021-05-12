@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>three-star-hotel.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\three-star-hotel.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
@@ -209,37 +209,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cls_Cadastro.cs" />
-    <Compile Include="Cls_Checkin_Checkout.cs" />
-    <Compile Include="Cls_Conexao.cs" />
-    <Compile Include="Frm_AtualizaCartao.cs">
+    <Compile Include="Classes\Cls_Cadastro.cs" />
+    <Compile Include="Classes\Cls_Checkin_Checkout.cs" />
+    <Compile Include="Classes\Cls_Conexao.cs" />
+    <Compile Include="Formulários de Atualização\Frm_AtualizaCartao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtualizaCartao.Designer.cs">
+    <Compile Include="Formulários de Atualização\Frm_AtualizaCartao.Designer.cs">
       <DependentUpon>Frm_AtualizaCartao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtualizaQuarto.cs">
+    <Compile Include="Formulários de Atualização\Frm_AtualizaQuarto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtualizaQuarto.Designer.cs">
+    <Compile Include="Formulários de Atualização\Frm_AtualizaQuarto.Designer.cs">
       <DependentUpon>Frm_AtualizaQuarto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtualizaUsuarios.cs">
+    <Compile Include="Formulários de Atualização\Frm_AtualizaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtualizaUsuarios.Designer.cs">
+    <Compile Include="Formulários de Atualização\Frm_AtualizaUsuarios.Designer.cs">
       <DependentUpon>Frm_AtualizaUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_CadastroCartao.cs">
+    <Compile Include="Formulário de Cadastro\Frm_CadastroCartao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_CadastroCartao.Designer.cs">
+    <Compile Include="Formulário de Cadastro\Frm_CadastroCartao.Designer.cs">
       <DependentUpon>Frm_CadastroCartao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_CadastroQuarto.cs">
+    <Compile Include="Formulário de Cadastro\Frm_CadastroItensFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_CadastroQuarto.Designer.cs">
+    <Compile Include="Formulário de Cadastro\Frm_CadastroItensFornecedor.Designer.cs">
+      <DependentUpon>Frm_CadastroItensFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulário de Cadastro\Frm_CadastroQuarto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulário de Cadastro\Frm_CadastroQuarto.Designer.cs">
       <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Checkin.cs">
@@ -260,11 +266,11 @@
     <Compile Include="Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cls_Login.cs" />
-    <Compile Include="Frm_CadastroUsuarios.cs">
+    <Compile Include="Classes\Cls_Login.cs" />
+    <Compile Include="Formulário de Cadastro\Frm_CadastroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_CadastroUsuarios.Designer.cs">
+    <Compile Include="Formulário de Cadastro\Frm_CadastroUsuarios.Designer.cs">
       <DependentUpon>Frm_CadastroUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Dashboard.cs">
@@ -279,24 +285,27 @@
     <Compile Include="Frm_Pgto_Dinheiro.Designer.cs">
       <DependentUpon>Frm_Pgto_Dinheiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Frm_AtualizaCartao.resx">
+    <EmbeddedResource Include="Formulários de Atualização\Frm_AtualizaCartao.resx">
       <DependentUpon>Frm_AtualizaCartao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtualizaQuarto.resx">
+    <EmbeddedResource Include="Formulários de Atualização\Frm_AtualizaQuarto.resx">
       <DependentUpon>Frm_AtualizaQuarto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtualizaUsuarios.resx">
+    <EmbeddedResource Include="Formulários de Atualização\Frm_AtualizaUsuarios.resx">
       <DependentUpon>Frm_AtualizaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_CadastroCartao.resx">
+    <EmbeddedResource Include="Formulário de Cadastro\Frm_CadastroCartao.resx">
       <DependentUpon>Frm_CadastroCartao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_CadastroQuarto.resx">
+    <EmbeddedResource Include="Formulário de Cadastro\Frm_CadastroItensFornecedor.resx">
+      <DependentUpon>Frm_CadastroItensFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulário de Cadastro\Frm_CadastroQuarto.resx">
       <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_CadastroUsuarios.resx">
+    <EmbeddedResource Include="Formulário de Cadastro\Frm_CadastroUsuarios.resx">
       <DependentUpon>Frm_CadastroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Checkin.resx">
@@ -342,7 +351,7 @@
     <None Include="Resources\Logo Breath Hotels.png" />
     <None Include="Resources\piscina.jpeg" />
     <None Include="Resources\refresh.png" />
-    <Content Include="three-star-hotel.ico" />
+    <Content Include="Resources\three-star-hotel.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
