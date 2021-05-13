@@ -31,7 +31,7 @@ namespace ProjetoHotel
         {
             total = Convert.ToDouble(txt_total.Text.Replace("R$", "").Trim());
 
-            recebido = Convert.ToDouble(txt_valor_pago.Text);
+            recebido = Convert.ToDouble(txt_valor_pago.Text.Replace(".", ","));
 
             if (recebido > total)
             {

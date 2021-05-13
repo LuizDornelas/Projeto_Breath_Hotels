@@ -49,7 +49,10 @@
             this.atualizaCadastroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarCartãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.atualizarQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizaItensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_pg_lateral = new System.Windows.Forms.Panel();
+            this.lbl_estoque = new System.Windows.Forms.Label();
+            this.pcb_estoque = new System.Windows.Forms.PictureBox();
             this.lbl_quartosdisponiveis = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.ptr_quartos = new System.Windows.Forms.PictureBox();
@@ -72,9 +75,9 @@
             this.ptr_atras_hotel = new System.Windows.Forms.PictureBox();
             this.ptr_piscina = new System.Windows.Forms.PictureBox();
             this.btn_pesquisa = new System.Windows.Forms.Button();
-            this.atualizaItensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu_principal.SuspendLayout();
             this.pnl_pg_lateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_estoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_quartos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_checkin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_usuario)).BeginInit();
@@ -161,14 +164,14 @@
             // hospedadoscheckInToolStripMenuItem
             // 
             this.hospedadoscheckInToolStripMenuItem.Name = "hospedadoscheckInToolStripMenuItem";
-            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.hospedadoscheckInToolStripMenuItem.Text = "Checkin";
             this.hospedadoscheckInToolStripMenuItem.Click += new System.EventHandler(this.hospedadoscheckInToolStripMenuItem_Click);
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkOutToolStripMenuItem.Text = "Checkout";
             this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.checkOutToolStripMenuItem_Click);
             // 
@@ -185,15 +188,15 @@
             // produtosToolStripMenuItem1
             // 
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
-            this.produtosToolStripMenuItem1.Text = "Produtos";
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.produtosToolStripMenuItem1.Text = "Compra Itens";
             this.produtosToolStripMenuItem1.Click += new System.EventHandler(this.produtosToolStripMenuItem1_Click);
             // 
             // fornecedoresToolStripMenuItem
             // 
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedoresToolStripMenuItem.Text = "Estoque";
             this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
             // mnu_principal
@@ -247,11 +250,20 @@
             this.atualizarQuartoToolStripMenuItem.Text = "Atualizar Quarto";
             this.atualizarQuartoToolStripMenuItem.Click += new System.EventHandler(this.atualizarQuartoToolStripMenuItem_Click);
             // 
+            // atualizaItensToolStripMenuItem
+            // 
+            this.atualizaItensToolStripMenuItem.Name = "atualizaItensToolStripMenuItem";
+            this.atualizaItensToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.atualizaItensToolStripMenuItem.Text = "Atualiza Itens";
+            this.atualizaItensToolStripMenuItem.Click += new System.EventHandler(this.atualizaItensToolStripMenuItem_Click);
+            // 
             // pnl_pg_lateral
             // 
             this.pnl_pg_lateral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnl_pg_lateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.pnl_pg_lateral.Controls.Add(this.lbl_estoque);
+            this.pnl_pg_lateral.Controls.Add(this.pcb_estoque);
             this.pnl_pg_lateral.Controls.Add(this.lbl_quartosdisponiveis);
             this.pnl_pg_lateral.Controls.Add(this.label5);
             this.pnl_pg_lateral.Controls.Add(this.ptr_quartos);
@@ -272,6 +284,29 @@
             this.pnl_pg_lateral.Name = "pnl_pg_lateral";
             this.pnl_pg_lateral.Size = new System.Drawing.Size(234, 727);
             this.pnl_pg_lateral.TabIndex = 3;
+            // 
+            // lbl_estoque
+            // 
+            this.lbl_estoque.AutoSize = true;
+            this.lbl_estoque.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_estoque.ForeColor = System.Drawing.Color.White;
+            this.lbl_estoque.Location = new System.Drawing.Point(17, 636);
+            this.lbl_estoque.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_estoque.Name = "lbl_estoque";
+            this.lbl_estoque.Size = new System.Drawing.Size(135, 22);
+            this.lbl_estoque.TabIndex = 21;
+            this.lbl_estoque.Text = "Estoque Bom!";
+            // 
+            // pcb_estoque
+            // 
+            this.pcb_estoque.Image = ((System.Drawing.Image)(resources.GetObject("pcb_estoque.Image")));
+            this.pcb_estoque.Location = new System.Drawing.Point(21, 566);
+            this.pcb_estoque.Margin = new System.Windows.Forms.Padding(2);
+            this.pcb_estoque.Name = "pcb_estoque";
+            this.pcb_estoque.Size = new System.Drawing.Size(50, 50);
+            this.pcb_estoque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_estoque.TabIndex = 20;
+            this.pcb_estoque.TabStop = false;
             // 
             // lbl_quartosdisponiveis
             // 
@@ -521,13 +556,6 @@
             this.btn_pesquisa.UseVisualStyleBackColor = true;
             this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
-            // atualizaItensToolStripMenuItem
-            // 
-            this.atualizaItensToolStripMenuItem.Name = "atualizaItensToolStripMenuItem";
-            this.atualizaItensToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.atualizaItensToolStripMenuItem.Text = "Atualiza Itens";
-            this.atualizaItensToolStripMenuItem.Click += new System.EventHandler(this.atualizaItensToolStripMenuItem_Click);
-            // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,6 +581,7 @@
             this.mnu_principal.PerformLayout();
             this.pnl_pg_lateral.ResumeLayout(false);
             this.pnl_pg_lateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_estoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_quartos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_checkin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_usuario)).EndInit();
@@ -611,5 +640,7 @@
         private System.Windows.Forms.ToolStripMenuItem atualizarQuartoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeItensToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atualizaItensToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pcb_estoque;
+        private System.Windows.Forms.Label lbl_estoque;
     }
 }

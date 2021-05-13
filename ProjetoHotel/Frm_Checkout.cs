@@ -103,6 +103,10 @@ namespace ProjetoHotel
                     dt.Load(dgv);
                     dgv_itens.DataSource = dt;
                 }
+                else
+                {
+                    dgv_itens.DataSource = null;
+                }
             }
             finally
             {
@@ -221,6 +225,7 @@ namespace ProjetoHotel
                     form.ShowDialog();
                     limpa_campos();
                     dgv_pesquisa();
+                    dgv_itens.DataSource = null;
                 }
                 else
                 {
@@ -237,6 +242,8 @@ namespace ProjetoHotel
                             {
                                 MessageBox.Show("Pagamento com o cartão realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 dgv_pesquisa();
+                                limpa_campos();
+                                dgv_itens.DataSource = null;
                             }
                         }
                         else

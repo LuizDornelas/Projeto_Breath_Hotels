@@ -961,49 +961,34 @@ namespace ProjetoHotel
                 {
                     itemsearch.Close();
 
-                    querry = "select nome_fornecedor from fornecedor where nome_fornecedor = '" + this.nome2 + "';";
+                    querry = "INSERT INTO itens(item, valor, quantidade, status) VALUES ('" + this.nome + "', '" + this.valor + "', '" + this.quantidade + "', 'Disponivel');";
 
                     cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
-                    NpgsqlDataReader fornecedorsearch = cmd.ExecuteReader();
+                    NpgsqlDataReader cadItem = cmd.ExecuteReader();
 
-                    if (fornecedorsearch.Read())
-                    {
-                        MessageBox.Show("Já existe um fornecedor cadastrado com este nome!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                    else
-                    {
-                        fornecedorsearch.Close();
+                    cadItem.Close();
 
-                        querry = "INSERT INTO itens(item, valor, quantidade, status) VALUES ('" + this.nome + "', '" + this.valor + "', '" + this.quantidade + "', 'Disponivel');";
+                    querry = "select itemid from itens where item = '" + this.nome + "';";
 
-                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
-                        NpgsqlDataReader cadItem = cmd.ExecuteReader();
+                    NpgsqlDataReader searchId = cmd.ExecuteReader();
 
-                        cadItem.Close();
+                    searchId.Read();
 
-                        querry = "select itemid from itens where item = '" + this.nome + "';";
+                    string IdSearched = searchId["itemid"].ToString();
 
-                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+                    searchId.Close();
 
-                        NpgsqlDataReader searchId = cmd.ExecuteReader();
+                    querry = "INSERT INTO fornecedor(nome_fornecedor, valor_item, itemfk) VALUES ('" + this.nome2 + "', '" + this.valor2 + "', '" + IdSearched + "');";
 
-                        searchId.Read();
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
-                        string IdSearched = searchId["itemid"].ToString();
+                    NpgsqlDataReader cadFornecedor = cmd.ExecuteReader();
 
-                        searchId.Close();
+                    return true;
 
-                        querry = "INSERT INTO fornecedor(nome_fornecedor, valor_item, itemfk) VALUES ('" + this.nome2 + "', '" + this.valor2 + "', '" + IdSearched + "');";
-
-                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
-
-                        NpgsqlDataReader cadFornecedor = cmd.ExecuteReader();
-
-                        return true;
-                    }
                 }
             }
             finally
@@ -1128,6 +1113,6 @@ namespace ProjetoHotel
             {
                 pgsqlConnection.Close();
             }
-        }            
+        }
     }
 }

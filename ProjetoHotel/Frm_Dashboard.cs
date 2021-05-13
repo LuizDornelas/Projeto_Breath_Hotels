@@ -23,6 +23,10 @@ namespace ProjetoHotel
             lbl_nome.Text = nome[0];
             lbl_usuario.Text = "Cargo: " + tipo;
 
+            attDashboard();
+        }
+        public void attDashboard()
+        {
             NpgsqlConnection pgsqlConnection = null;
             try
             {
@@ -66,17 +70,29 @@ namespace ProjetoHotel
                 lbl_quartosdisponiveis.Text = $"Quartos disponíveis: {quartos_disponivel["count"].ToString()}";
 
                 quartos_disponivel.Close();
+
+                querry = "select quantidade from itens where quantidade <= 10;";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader estoque = cmd.ExecuteReader();
+
+                estoque.Read();
+
+                if (estoque.HasRows)
+                {
+                    lbl_estoque.Text = "Estoque Ruim!";
+                }
+                else
+                {
+                    lbl_estoque.Text = "Estoque Bom!";
+                }
             }
             finally
             {
                 pgsqlConnection.Close();
             }
-
-        }
-        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
+        }    
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -125,12 +141,7 @@ namespace ProjetoHotel
         private void lbl_nome_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void reservasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
+        }  
 
         private void hospedadoscheckInToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -150,7 +161,10 @@ namespace ProjetoHotel
 
         private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            Frm_CompraItens CompraItens = new Frm_CompraItens();
+            CompraItens.StartPosition = FormStartPosition.CenterParent;
+            CompraItens.MdiParent = this;
+            CompraItens.Show();
         }
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -158,61 +172,9 @@ namespace ProjetoHotel
 
         }
 
-        private void atualizaCadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btn_pesquisa_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection pgsqlConnection = null;
-            try
-            {
-                Cls_Conexao objconexao = new Cls_Conexao();
-
-                pgsqlConnection = objconexao.getConexao();
-                pgsqlConnection.Open();
-
-                string querry = "select count (status) from reservas where status = 'Em andamento';";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
-
-                NpgsqlDataReader reserva = cmd.ExecuteReader();
-
-                reserva.Read();
-
-                lbl_reservas.Text = $"Reservas: {reserva["count"].ToString()}";
-
-                reserva.Close();
-
-                querry = "select count (quarto) from quartos;";
-
-                cmd = new NpgsqlCommand(querry, pgsqlConnection);
-
-                NpgsqlDataReader total_quartos = cmd.ExecuteReader();
-
-                total_quartos.Read();
-
-                lbl_quartostotal.Text = $"Total Quartos: {total_quartos["count"].ToString()}";
-
-                total_quartos.Close();
-
-                querry = "select count (quarto) from quartos where status = 'Disponível';";
-
-                cmd = new NpgsqlCommand(querry, pgsqlConnection);
-
-                NpgsqlDataReader quartos_disponivel = cmd.ExecuteReader();
-
-                quartos_disponivel.Read();
-
-                lbl_quartosdisponiveis.Text = $"Quartos disponíveis: {quartos_disponivel["count"].ToString()}";
-
-                quartos_disponivel.Close();
-            }
-            finally
-            {
-                pgsqlConnection.Close();
-            }
+            attDashboard();
         }
 
         private void atualizaCadastroToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -270,6 +232,14 @@ namespace ProjetoHotel
             AttItens.StartPosition = FormStartPosition.CenterParent;
             AttItens.MdiParent = this;
             AttItens.Show();
+        }
+
+        private void compraItensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_CompraItens CompraItens = new Frm_CompraItens();
+            CompraItens.StartPosition = FormStartPosition.CenterParent;
+            CompraItens.MdiParent = this;
+            CompraItens.Show();
         }
     }
 }
