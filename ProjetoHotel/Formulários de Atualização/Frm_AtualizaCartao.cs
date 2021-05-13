@@ -130,5 +130,28 @@ namespace ProjetoHotel
                 }               
             }
         }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            if (msk_pesquisa.Text == "" || txt_nome.Text == "" || msk_numero_cartao.Text == "    -    -    -")
+            {
+                MessageBox.Show("Campos vazios, pesquise!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msk_pesquisa.Focus();
+            }
+            else
+            {
+                Cls_Cadastro excluir = new Cls_Cadastro();                
+
+                excluir.Criterio = msk_pesquisa.Text;
+
+                if (excluir.excluiCartao())
+                {
+                    MessageBox.Show("Cartão excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    atualizadtg();
+                    msk_pesquisa.Text = "";
+                    txt_nome.Text = "";
+                }
+            }
+        }
     }
 }

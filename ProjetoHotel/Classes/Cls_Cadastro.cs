@@ -32,6 +32,30 @@ namespace ProjetoHotel
         private int camasolteiro;
         private int camacasal;
         private string valor;
+        private string valor2;
+        private int quantidade;
+        public int Quantidade
+        {
+            get
+            {
+                return this.quantidade;
+            }
+            set
+            {
+                this.quantidade = value;
+            }
+        }
+        public string Valor2
+        {
+            get
+            {
+                return this.valor2;
+            }
+            set
+            {
+                this.valor2 = value;
+            }
+        }
         public int Camasolteiro
         {
             get
@@ -523,7 +547,7 @@ namespace ProjetoHotel
 
                 cartoes.Close();
 
-                querry = "select ativo from usuario where usuarioid = '"+ id +"';";
+                querry = "select ativo from usuario where usuarioid = '" + id + "';";
 
                 cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
@@ -860,5 +884,250 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
+        public bool excluiCartao()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "SELECT cartaoid, numerocartao, nome, validade, codigo, bandeira, usuariofk FROM cartao where usuariofk = '" + this.criterio + "';;";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader cartaoresult = cmd.ExecuteReader();
+
+                if (cartaoresult.Read())
+                {
+                    DialogResult Dialogexcluir = new DialogResult();
+
+                    Dialogexcluir = MessageBox.Show($"Excluir cartão nº: {cartaoresult["numerocartao"].ToString()}?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (Dialogexcluir == DialogResult.Yes)
+                    {
+                        cartaoresult.Close();
+
+                        querry = "DELETE FROM cartao WHERE usuariofk = '" + this.criterio + "';";
+
+                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                        NpgsqlDataReader excluir = cmd.ExecuteReader();
+
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("O cartão não foi excluído", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Não há cartão cadastrado para este usuário!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool cadastroItens()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select item from itens where item = '" + this.nome + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader itemsearch = cmd.ExecuteReader();
+
+                if (itemsearch.Read())
+                {
+                    MessageBox.Show("Já existe um item cadastrado com este nome!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else
+                {
+                    itemsearch.Close();
+
+                    querry = "select nome_fornecedor from fornecedor where nome_fornecedor = '" + this.nome2 + "';";
+
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                    NpgsqlDataReader fornecedorsearch = cmd.ExecuteReader();
+
+                    if (fornecedorsearch.Read())
+                    {
+                        MessageBox.Show("Já existe um fornecedor cadastrado com este nome!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    else
+                    {
+                        fornecedorsearch.Close();
+
+                        querry = "INSERT INTO itens(item, valor, quantidade, status) VALUES ('" + this.nome + "', '" + this.valor + "', '" + this.quantidade + "', 'Disponivel');";
+
+                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                        NpgsqlDataReader cadItem = cmd.ExecuteReader();
+
+                        cadItem.Close();
+
+                        querry = "select itemid from itens where item = '" + this.nome + "';";
+
+                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                        NpgsqlDataReader searchId = cmd.ExecuteReader();
+
+                        searchId.Read();
+
+                        string IdSearched = searchId["itemid"].ToString();
+
+                        searchId.Close();
+
+                        querry = "INSERT INTO fornecedor(nome_fornecedor, valor_item, itemfk) VALUES ('" + this.nome2 + "', '" + this.valor2 + "', '" + IdSearched + "');";
+
+                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                        NpgsqlDataReader cadFornecedor = cmd.ExecuteReader();
+
+                        return true;
+                    }
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool pesquisaItem()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select item, valor, quantidade, nome_fornecedor, valor_item from itens, fornecedor where itemid = itemfk and item = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader itemresult = cmd.ExecuteReader();
+
+                itemresult.Read();
+
+                this.nome = itemresult["item"].ToString();
+                this.nome2 = itemresult["nome_fornecedor"].ToString();
+                this.quantidade = Convert.ToInt16(itemresult["quantidade"].ToString());
+                this.valor = itemresult["valor"].ToString();
+                this.valor2 = itemresult["valor_item"].ToString();
+                return true;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool atualizaItens()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "UPDATE itens SET item='" + this.nome + "', valor='" + this.valor + "', WHERE item = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader itemAtt = cmd.ExecuteReader();
+
+                itemAtt.Close();
+
+                querry = "select itemid from itens where item = '" + this.nome + "';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader searchId = cmd.ExecuteReader();
+
+                searchId.Read();
+
+                string IdSearched = searchId["itemid"].ToString();
+
+                searchId.Close();
+
+                querry = "UPDATE fornecedor SET nome_fornecedor='" + this.nome2 + "', valor_item='" + this.valor2 + "' WHERE itemfk='" + IdSearched + "';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader fornecedorAtt = cmd.ExecuteReader();
+
+                return true;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool excluiItem()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select itemid from itens where item = '" + this.criterio + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader searchId = cmd.ExecuteReader();
+
+                searchId.Read();
+
+                string IdSearched = searchId["itemid"].ToString();
+
+                searchId.Close();
+
+                querry = "DELETE FROM fornecedor WHERE itemfk = '" + IdSearched + "';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader excluir = cmd.ExecuteReader();
+
+                excluir.Close();
+
+                querry = "DELETE FROM itens WHERE item = '" + this.criterio + "';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader excluir2 = cmd.ExecuteReader();
+
+                excluir.Close();
+
+                return true;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }            
     }
 }

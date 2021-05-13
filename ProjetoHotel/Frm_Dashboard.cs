@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using ProjetoHotel.Formulários_de_Atualização;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -261,6 +262,14 @@ namespace ProjetoHotel
             Itens.StartPosition = FormStartPosition.CenterParent;
             Itens.MdiParent = this;
             Itens.Show();
+        }
+
+        private void atualizaItensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_AtualizaItensFornecedor AttItens = new Frm_AtualizaItensFornecedor();
+            AttItens.StartPosition = FormStartPosition.CenterParent;
+            AttItens.MdiParent = this;
+            AttItens.Show();
         }
     }
 }

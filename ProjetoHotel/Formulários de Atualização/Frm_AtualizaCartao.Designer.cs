@@ -48,6 +48,7 @@ namespace ProjetoHotel
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.btn_pesquisa = new System.Windows.Forms.Button();
+            this.btn_excluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cartoes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@ namespace ProjetoHotel
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(451, 559);
+            this.btn_voltar.Location = new System.Drawing.Point(325, 564);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(204, 55);
             this.btn_voltar.TabIndex = 63;
@@ -242,6 +243,16 @@ namespace ProjetoHotel
             this.btn_pesquisa.UseVisualStyleBackColor = true;
             this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
+            // btn_excluir
+            // 
+            this.btn_excluir.Location = new System.Drawing.Point(575, 564);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(204, 55);
+            this.btn_excluir.TabIndex = 103;
+            this.btn_excluir.Text = "Excluir";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            // 
             // Frm_AtualizaCartao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -249,6 +260,7 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1096, 631);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.lbl_nome);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.msk_pesquisa);
@@ -302,5 +314,6 @@ namespace ProjetoHotel
         private System.Windows.Forms.Label lbl_pesquisa;
         public System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label lbl_nome;
+        private System.Windows.Forms.Button btn_excluir;
     }
 }

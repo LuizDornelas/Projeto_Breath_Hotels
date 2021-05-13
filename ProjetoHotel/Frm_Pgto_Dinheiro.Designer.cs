@@ -88,6 +88,7 @@ namespace ProjetoHotel
             this.txt_valor_pago.Size = new System.Drawing.Size(148, 31);
             this.txt_valor_pago.TabIndex = 81;
             this.txt_valor_pago.TextChanged += new System.EventHandler(this.txt_valor_pago_TextChanged);
+            this.txt_valor_pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valor_pago_KeyPress);
             // 
             // lbl_valor_pago
             // 
