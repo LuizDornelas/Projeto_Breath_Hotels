@@ -41,7 +41,6 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.cmb_item = new System.Windows.Forms.ComboBox();
             this.txt_valor_fornecedor = new System.Windows.Forms.TextBox();
@@ -161,16 +160,6 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.btn_voltar.UseVisualStyleBackColor = true;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
-            // btn_pesquisa
-            // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(460, 90);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 109;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
-            // 
             // lbl_pesquisa
             // 
             this.lbl_pesquisa.AutoSize = true;
@@ -191,6 +180,7 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.cmb_item.Name = "cmb_item";
             this.cmb_item.Size = new System.Drawing.Size(152, 33);
             this.cmb_item.TabIndex = 111;
+            this.cmb_item.SelectedIndexChanged += new System.EventHandler(this.cmb_item_SelectedIndexChanged);
             // 
             // txt_valor_fornecedor
             // 
@@ -220,7 +210,6 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.Controls.Add(this.txt_valor_item);
             this.Controls.Add(this.txt_valor_fornecedor);
             this.Controls.Add(this.cmb_item);
-            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.lbl_pesquisa);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_salvar);
@@ -261,7 +250,6 @@ namespace ProjetoHotel.Formulários_de_Atualização
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.Button btn_pesquisa;
         private System.Windows.Forms.Label lbl_pesquisa;
         private System.Windows.Forms.ComboBox cmb_item;
         private System.Windows.Forms.TextBox txt_valor_fornecedor;

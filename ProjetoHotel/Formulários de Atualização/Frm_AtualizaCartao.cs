@@ -22,6 +22,36 @@ namespace ProjetoHotel
             cmb_bandeira.Items.Add("Visa");
 
             atualizadtg();
+            attComboBox();
+        }
+        public void attComboBox()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string combobox = "SELECT usuariofk FROM cartao order by usuariofk;";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(combobox, pgsqlConnection);
+
+                NpgsqlDataReader comboboxshow = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+
+                dt.Load(comboboxshow);
+
+                cmb_pesquisa_cartao.DisplayMember = "usuariofk";
+
+                cmb_pesquisa_cartao.DataSource = dt;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
         }
         public void atualizadtg()
         {
@@ -54,43 +84,13 @@ namespace ProjetoHotel
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btn_pesquisa_Click(object sender, EventArgs e)
-        {
-            atualizadtg();
-
-            Cls_Cadastro pesquisa = new Cls_Cadastro();
-
-            if (msk_pesquisa.Text == "")
-            {
-                MessageBox.Show("Campo vazio, pesquise!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                pesquisa.Criterio = msk_pesquisa.Text;
-
-                if (pesquisa.pesquisarCartao())
-                {
-                    msk_numero_cartao.Text = pesquisa.Numero;
-                    txt_nome_cartao.Text = pesquisa.Nome;
-                    msk_validade.Text = pesquisa.Validiade;
-                    msk_codigo.Text = pesquisa.Codigo;
-                    cmb_bandeira.Text = pesquisa.Bandeira;
-                    txt_nome.Text = pesquisa.Nome2;
-                }
-                else
-                {
-                    MessageBox.Show("Não foi encontrado cartão com os critérios informados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+        }        
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
-            if (msk_pesquisa.Text == "" && txt_nome.Text == "")
+            if (cmb_pesquisa_cartao.Text == "")
             {
-                MessageBox.Show("Campo vazio, pesquise!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não há nenhum cartão registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (msk_numero_cartao.Text == "    -    -    -")
             {
@@ -116,7 +116,7 @@ namespace ProjetoHotel
             {
                 Cls_Cadastro atualizaCartao = new Cls_Cadastro();
 
-                atualizaCartao.Criterio = msk_pesquisa.Text;
+                atualizaCartao.Criterio = cmb_pesquisa_cartao.Text;
 
                 atualizaCartao.Numero = msk_numero_cartao.Text;
                 atualizaCartao.Nome = txt_nome_cartao.Text.ToUpper();
@@ -127,30 +127,46 @@ namespace ProjetoHotel
                 if (atualizaCartao.atualizaCartao())
                 {
                     MessageBox.Show("Cartão atualizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }               
+                    atualizadtg();
+                }
             }
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            if (msk_pesquisa.Text == "" || txt_nome.Text == "" || msk_numero_cartao.Text == "    -    -    -")
+            if (cmb_pesquisa_cartao.Text == "")
             {
-                MessageBox.Show("Campos vazios, pesquise!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                msk_pesquisa.Focus();
+                MessageBox.Show("Não há nenhum cartão registrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);           
             }
             else
             {
-                Cls_Cadastro excluir = new Cls_Cadastro();                
+                Cls_Cadastro excluir = new Cls_Cadastro();
 
-                excluir.Criterio = msk_pesquisa.Text;
+                excluir.Criterio = cmb_pesquisa_cartao.Text;
 
                 if (excluir.excluiCartao())
                 {
+                    attComboBox();
                     MessageBox.Show("Cartão excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     atualizadtg();
-                    msk_pesquisa.Text = "";
-                    txt_nome.Text = "";
                 }
+            }
+        }
+
+        private void cmb_pesquisa_cartao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cls_Cadastro pesquisa = new Cls_Cadastro();
+
+            pesquisa.Criterio = cmb_pesquisa_cartao.Text;
+
+            if (pesquisa.pesquisarCartao())
+            {
+                msk_numero_cartao.Text = pesquisa.Numero;
+                txt_nome_cartao.Text = pesquisa.Nome;
+                msk_validade.Text = pesquisa.Validiade;
+                msk_codigo.Text = pesquisa.Codigo;
+                cmb_bandeira.Text = pesquisa.Bandeira;
+                txt_nome.Text = pesquisa.Nome2;
             }
         }
     }

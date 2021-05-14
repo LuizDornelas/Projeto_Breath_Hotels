@@ -51,6 +51,36 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
             dgv_pesquisa();
+            comboboxAtt();
+        }
+        public void comboboxAtt()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string combobox = "select usuarioid from usuario where ativo = 'SIM' order by usuarioid;";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(combobox, pgsqlConnection);
+
+                NpgsqlDataReader comboboxshow = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+
+                dt.Load(comboboxshow);
+
+                cmb_id.DisplayMember = "usuarioid";
+
+                cmb_id.DataSource = dt;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
         }
         public void dgv_pesquisa()
         {
@@ -79,31 +109,6 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
-        private void btn_pesquisa_Click(object sender, EventArgs e)
-        {
-            Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();            
-
-            if (msk_pesquisa.Text == "")
-            {
-                MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                pesquisa.Criterio = msk_pesquisa.Text;
-
-                if (pesquisa.pesquisar())
-                {
-                    txt_nome.Text = pesquisa.Nome;
-                    msk_rg.Text = pesquisa.Rg;
-                    msk_telefone.Text = pesquisa.Telefone;
-                }
-                else
-                {
-                    MessageBox.Show("Usuário não encontrado, ou desativado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -195,70 +200,68 @@ namespace ProjetoHotel
         {
             Cls_Checkin_Checkout reserva = new Cls_Checkin_Checkout();
 
-            if (msk_pesquisa.Text == "")
+
+            double valor = Convert.ToDouble(msk_valor.Text);
+
+            DateTime dataInicial = dtp_entrada.Value;
+
+            DateTime dataFinal = dtp_saida.Value;
+
+            if (dataInicial.ToString("dd-MM-yyyy") != DateTime.Now.ToString("dd-MM-yyyy"))
             {
-                MessageBox.Show("Há campos vazios, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Data inicial divergente!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dataFinal.ToString("dd-MM-yyyy") == DateTime.Now.ToString("dd-MM-yyyy"))
+            {
+                MessageBox.Show("Data final não pode ser hoje!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                double valor = Convert.ToDouble(msk_valor.Text);
+                TimeSpan date = dataFinal - dataInicial;
 
-                DateTime dataInicial = dtp_entrada.Value;
+                int totalDias = 1;
 
-                DateTime dataFinal = dtp_saida.Value;
+                totalDias += date.Days;
 
-                if (dataInicial.ToString("dd-MM-yyyy") != DateTime.Now.ToString("dd-MM-yyyy"))
+                if (totalDias < 1)
                 {
-                    MessageBox.Show("Data inicial divergente!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (dataFinal.ToString("dd-MM-yyyy") == DateTime.Now.ToString("dd-MM-yyyy"))
-                {
-                    MessageBox.Show("Data final não pode ser hoje!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Data final divergente!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    TimeSpan date = dataFinal - dataInicial;
+                    valor *= totalDias;
+                    reserva.Valor = valor;
+                    string cliente = txt_nome.Text;
+                    string[] nome_cliente = cliente.Split(' ');
+                    reserva.Nome = nome_cliente[0];
+                    reserva.Nomefunc = nomefunc;
+                    reserva.Entrada = dtp_entrada.Value;
+                    reserva.Saida = dtp_saida.Value;
+                    reserva.Quarto = cmb_quarto.Text;
+                    string id;
+                    id = cmb_id.Text;
 
-                    int totalDias = 1;
-
-                    totalDias += date.Days;
-
-                    if (totalDias < 1)
+                    if (reserva.checkin(id))
                     {
-                        MessageBox.Show("Data final divergente!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        valor *= totalDias;
-
-                        reserva.Valor = valor;
-
-                        if (txt_nome.Text == "")
-                        {
-                            MessageBox.Show("Favor pesquisar ID para confirmar nome do cliente!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            btn_pesquisa.Focus();
-                        }
-                        else
-                        {
-                            string cliente = txt_nome.Text;
-                            string[] nome_cliente = cliente.Split(' ');
-                            reserva.Nome = nome_cliente[0];
-                            reserva.Nomefunc = nomefunc;
-                            reserva.Entrada = dtp_entrada.Value;
-                            reserva.Saida = dtp_saida.Value;
-                            reserva.Quarto = cmb_quarto.Text;                            
-                            string id;
-                            id = msk_pesquisa.Text;
-
-                            if (reserva.checkin(id))
-                            {
-                                MessageBox.Show("Reserva realizada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                dgv_pesquisa();
-                            }
-
-                        }
+                        MessageBox.Show("Reserva realizada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dgv_pesquisa();
                     }
                 }
+            }
+
+        }
+
+        private void cmb_id_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();
+
+            pesquisa.Criterio = cmb_id.Text;
+
+            if (pesquisa.pesquisar())
+            {
+                txt_nome.Text = pesquisa.Nome;
+                msk_rg.Text = pesquisa.Rg;
+                msk_telefone.Text = pesquisa.Telefone;
             }
         }
     }

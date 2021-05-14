@@ -178,9 +178,9 @@ namespace ProjetoHotel
             {
                 MessageBox.Show("Não há reservas em andamento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (msk_quantidade.Text == "")
+            else if (msk_quantidade.Text == "" || msk_quantidade.Text == "0")
             {
-                MessageBox.Show("Insira a quantidade de itens!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Quantidade de itens inválida!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 msk_quantidade.Focus();
             }
             else

@@ -21,17 +21,13 @@ namespace ProjetoHotel
         {
             InitializeComponent();
 
-            cmb_criterio.Items.Clear();
-            cmb_criterio.Items.Add("Id");
-            cmb_criterio.Items.Add("Quarto");
-            cmb_criterio.SelectedItem = "Id";
-
             cmb_pagamento.Items.Clear();
             cmb_pagamento.Items.Add("Dinheiro");
             cmb_pagamento.Items.Add("Cartão de crédito");
             cmb_pagamento.SelectedItem = "Dinheiro";
 
             dgv_pesquisa();
+            attComboBox();
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
@@ -76,6 +72,35 @@ namespace ProjetoHotel
             txt_saida.Text = "";
             txt_quarto.Text = "";
             msk_total.Text = "";
+        }
+        public void attComboBox()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string combobox = "select quarto from quartos where status = 'Ocupado'";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(combobox, pgsqlConnection);
+
+                NpgsqlDataReader comboboxshow = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+
+                dt.Load(comboboxshow);
+
+                cmb_quarto.DisplayMember = "quarto";
+
+                cmb_quarto.DataSource = dt;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
         }
         public void itens(string criterio)
         {
@@ -124,74 +149,7 @@ namespace ProjetoHotel
             int totalDias = 1;
 
             return totalDias += date.Days;
-        }
-        private void btn_pesquisa_Click(object sender, EventArgs e)
-        {
-            Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();
-
-            dgv_itens.DataSource = null;
-
-            if (msk_pesquisa.Text == "")
-            {
-                MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                pesquisa.Criterio = msk_pesquisa.Text.ToUpper();
-
-                if (cmb_criterio.Text == "Id")
-                {
-                    if (pesquisa.pesquisaid())
-                    {
-                        txt_nome.Text = pesquisa.Nome;
-                        txt_entrada.Text = pesquisa.Entradaout;
-                        txt_saida.Text = pesquisa.Saidaout;
-                        txt_quarto.Text = pesquisa.Quarto;
-                        itens(msk_pesquisa.Text);
-                        pesquisa.Id = msk_pesquisa.Text;
-                        id = pesquisa.Id;
-                        
-                        int totalDias = calculaValor(pesquisa.Entradaout);
-
-                        if (pesquisa.valortotal(totalDias))
-                        {
-                            msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Reserva não encontrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        limpa_campos();
-                    }
-                }
-                else
-                {
-                    if (pesquisa.pesquisaquarto())
-                    {
-                        txt_nome.Text = pesquisa.Nome;
-                        txt_entrada.Text = pesquisa.Entradaout;
-                        txt_saida.Text = pesquisa.Saidaout;
-                        txt_quarto.Text = pesquisa.Quarto;
-                        itens(pesquisa.Id);
-                        id = pesquisa.Id;
-
-                        int totalDias = calculaValor(pesquisa.Entradaout);
-
-                        if (pesquisa.valortotal(totalDias))
-                        {
-                            msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
-                        }                                                
-                    }
-                    else
-                    {
-                        MessageBox.Show("Reserva não encontrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        limpa_campos();
-                    }
-                }
-
-            }
-        }
-
+        }        
         private void btn_atualiza_reserva_Click(object sender, EventArgs e)
         {
             dgv_pesquisa();
@@ -199,15 +157,27 @@ namespace ProjetoHotel
 
         private void cmb_criterio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_criterio.Text == "Id")
+            Cls_Checkin_Checkout pesquisa = new Cls_Checkin_Checkout();
+
+            dgv_itens.DataSource = null;
+
+            pesquisa.Criterio = cmb_quarto.Text.ToUpper();
+
+            if (pesquisa.pesquisaquarto())
             {
-                msk_pesquisa.Mask = "9999";              
-                msk_pesquisa.Text = "";
-            }
-            else
-            {
-                msk_pesquisa.Mask = "";             
-                msk_pesquisa.Text = "";
+                txt_nome.Text = pesquisa.Nome;
+                txt_entrada.Text = pesquisa.Entradaout;
+                txt_saida.Text = pesquisa.Saidaout;
+                txt_quarto.Text = pesquisa.Quarto;
+                itens(pesquisa.Id);
+                id = pesquisa.Id;
+
+                int totalDias = calculaValor(pesquisa.Entradaout);
+
+                if (pesquisa.valortotal(totalDias))
+                {
+                    msk_total.Text = Convert.ToString($"{pesquisa.Total:f2}");
+                }
             }
         }
 
@@ -215,7 +185,7 @@ namespace ProjetoHotel
         {
             if (txt_nome.Text == "" || txt_entrada.Text == "" || txt_saida.Text == "" || txt_quarto.Text == "" || msk_total.Text == "")
             {
-                MessageBox.Show("Há campos vazios, favor pesquisar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não há reservas em andamento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -225,6 +195,7 @@ namespace ProjetoHotel
                     form.ShowDialog();
                     limpa_campos();
                     dgv_pesquisa();
+                    attComboBox();
                     dgv_itens.DataSource = null;
                 }
                 else
@@ -243,6 +214,7 @@ namespace ProjetoHotel
                                 MessageBox.Show("Pagamento com o cartão realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 dgv_pesquisa();
                                 limpa_campos();
+                                attComboBox();
                                 dgv_itens.DataSource = null;
                             }
                         }

@@ -43,12 +43,11 @@ namespace ProjetoHotel
             this.txt_nome_cartao = new System.Windows.Forms.TextBox();
             this.msk_numero_cartao = new System.Windows.Forms.MaskedTextBox();
             this.lbl_numero_cartao = new System.Windows.Forms.Label();
-            this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
             this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
+            this.cmb_pesquisa_cartao = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cartoes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,24 +192,15 @@ namespace ProjetoHotel
             this.lbl_numero_cartao.TabIndex = 88;
             this.lbl_numero_cartao.Text = "Número cartão";
             // 
-            // msk_pesquisa
-            // 
-            this.msk_pesquisa.Location = new System.Drawing.Point(234, 102);
-            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_pesquisa.Mask = "99999";
-            this.msk_pesquisa.Name = "msk_pesquisa";
-            this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
-            this.msk_pesquisa.TabIndex = 100;
-            // 
             // lbl_pesquisa
             // 
             this.lbl_pesquisa.AutoSize = true;
-            this.lbl_pesquisa.Location = new System.Drawing.Point(105, 106);
+            this.lbl_pesquisa.Location = new System.Drawing.Point(105, 105);
             this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pesquisa.Name = "lbl_pesquisa";
-            this.lbl_pesquisa.Size = new System.Drawing.Size(132, 25);
+            this.lbl_pesquisa.Size = new System.Drawing.Size(164, 25);
             this.lbl_pesquisa.TabIndex = 98;
-            this.lbl_pesquisa.Text = "Pesquisar ID";
+            this.lbl_pesquisa.Text = "Seleciona cartão";
             // 
             // txt_nome
             // 
@@ -233,16 +223,6 @@ namespace ProjetoHotel
             this.lbl_nome.TabIndex = 102;
             this.lbl_nome.Text = "Nome";
             // 
-            // btn_pesquisa
-            // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(325, 97);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 99;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
-            // 
             // btn_excluir
             // 
             this.btn_excluir.Location = new System.Drawing.Point(575, 564);
@@ -253,6 +233,17 @@ namespace ProjetoHotel
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
+            // cmb_pesquisa_cartao
+            // 
+            this.cmb_pesquisa_cartao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_pesquisa_cartao.FormattingEnabled = true;
+            this.cmb_pesquisa_cartao.Location = new System.Drawing.Point(275, 101);
+            this.cmb_pesquisa_cartao.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_pesquisa_cartao.Name = "cmb_pesquisa_cartao";
+            this.cmb_pesquisa_cartao.Size = new System.Drawing.Size(73, 33);
+            this.cmb_pesquisa_cartao.TabIndex = 104;
+            this.cmb_pesquisa_cartao.SelectedIndexChanged += new System.EventHandler(this.cmb_pesquisa_cartao_SelectedIndexChanged);
+            // 
             // Frm_AtualizaCartao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -260,11 +251,10 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1096, 631);
             this.ControlBox = false;
+            this.Controls.Add(this.cmb_pesquisa_cartao);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.lbl_nome);
             this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.msk_pesquisa);
-            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.lbl_pesquisa);
             this.Controls.Add(this.cmb_bandeira);
             this.Controls.Add(this.lbl_codigo);
@@ -309,11 +299,10 @@ namespace ProjetoHotel
         public System.Windows.Forms.TextBox txt_nome_cartao;
         public System.Windows.Forms.MaskedTextBox msk_numero_cartao;
         private System.Windows.Forms.Label lbl_numero_cartao;
-        public System.Windows.Forms.MaskedTextBox msk_pesquisa;
-        private System.Windows.Forms.Button btn_pesquisa;
         private System.Windows.Forms.Label lbl_pesquisa;
         public System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Button btn_excluir;
+        private System.Windows.Forms.ComboBox cmb_pesquisa_cartao;
     }
 }

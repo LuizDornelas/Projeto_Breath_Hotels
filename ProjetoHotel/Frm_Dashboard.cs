@@ -169,7 +169,10 @@ namespace ProjetoHotel
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Frm_Estoque Estoque = new Frm_Estoque();
+            Estoque.StartPosition = FormStartPosition.CenterParent;
+            Estoque.MdiParent = this;
+            Estoque.Show();
         }
 
         private void btn_pesquisa_Click(object sender, EventArgs e)

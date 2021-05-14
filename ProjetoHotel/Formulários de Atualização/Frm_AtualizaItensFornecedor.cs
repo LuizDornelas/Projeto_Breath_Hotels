@@ -78,21 +78,7 @@ namespace ProjetoHotel.Formulários_de_Atualização
             {
                 pgsqlconnection.Close();
             }
-        }
-        private void btn_pesquisa_Click(object sender, EventArgs e)
-        {
-            Cls_Cadastro pesquisa = new Cls_Cadastro();
-
-            pesquisa.Criterio = cmb_item.Text;
-
-            if (pesquisa.pesquisaItem())
-            {
-                txt_nome_item.Text = pesquisa.Nome;
-                txt_nome_fornecedor.Text = pesquisa.Nome2;
-                txt_valor_item.Text = pesquisa.Valor;
-                txt_valor_fornecedor.Text = pesquisa.Valor2;
-            }
-        }
+        }        
 
         private void btn_atualiza_dgv_Click(object sender, EventArgs e)
         {
@@ -236,6 +222,21 @@ namespace ProjetoHotel.Formulários_de_Atualização
             else
             {
                 MessageBox.Show($"O item não foi excluído", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void cmb_item_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cls_Cadastro pesquisa = new Cls_Cadastro();
+
+            pesquisa.Criterio = cmb_item.Text;
+
+            if (pesquisa.pesquisaItem())
+            {
+                txt_nome_item.Text = pesquisa.Nome;
+                txt_nome_fornecedor.Text = pesquisa.Nome2;
+                txt_valor_item.Text = pesquisa.Valor;
+                txt_valor_fornecedor.Text = pesquisa.Valor2;
             }
         }
     }

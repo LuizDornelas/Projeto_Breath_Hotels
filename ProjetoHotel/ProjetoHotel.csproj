@@ -254,16 +254,16 @@
     <Compile Include="Formulário de Cadastro\Frm_CadastroQuarto.Designer.cs">
       <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Checkin.cs">
+    <Compile Include="Checkin e Checkout\Frm_Checkin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Checkin.Designer.cs">
+    <Compile Include="Checkin e Checkout\Frm_Checkin.Designer.cs">
       <DependentUpon>Frm_Checkin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Checkout.cs">
+    <Compile Include="Checkin e Checkout\Frm_Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Checkout.Designer.cs">
+    <Compile Include="Checkin e Checkout\Frm_Checkout.Designer.cs">
       <DependentUpon>Frm_Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_CompraItens.cs">
@@ -271,6 +271,12 @@
     </Compile>
     <Compile Include="Frm_CompraItens.Designer.cs">
       <DependentUpon>Frm_CompraItens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Estoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Estoque.Designer.cs">
+      <DependentUpon>Frm_Estoque.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
@@ -323,14 +329,17 @@
     <EmbeddedResource Include="Formulário de Cadastro\Frm_CadastroUsuarios.resx">
       <DependentUpon>Frm_CadastroUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Checkin.resx">
+    <EmbeddedResource Include="Checkin e Checkout\Frm_Checkin.resx">
       <DependentUpon>Frm_Checkin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Checkout.resx">
+    <EmbeddedResource Include="Checkin e Checkout\Frm_Checkout.resx">
       <DependentUpon>Frm_Checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_CompraItens.resx">
       <DependentUpon>Frm_CompraItens.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Estoque.resx">
+      <DependentUpon>Frm_Estoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>

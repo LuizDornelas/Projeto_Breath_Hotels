@@ -22,15 +22,28 @@ namespace ProjetoHotel
             Cls_Login objusuario = new Cls_Login();
 
             objusuario.Login = txtUsuario.Text;
-            objusuario.Senha = txtSenha.Text;            
+            objusuario.Senha = txtSenha.Text;
 
-            if (objusuario.logar())
+            if (txtUsuario.Text == "")
             {
-                this.Hide();
-                Frm_Dashboard form = new Frm_Dashboard(objusuario.Nome, objusuario.Tipo);
-                form.ShowDialog();
-                this.Close();
-            }            
+                MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsuario.Focus();
+            }
+            else if (txtSenha.Text == "")
+            {
+                MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSenha.Focus();
+            }
+            else
+            {
+                if ((objusuario.logar()))
+                {
+                    this.Hide();
+                    Frm_Dashboard form = new Frm_Dashboard(objusuario.Nome, objusuario.Tipo);
+                    form.ShowDialog();
+                    this.Close();
+                }
+            }
         }
 
         private void txtSenha_OnValueChanged(object sender, EventArgs e)

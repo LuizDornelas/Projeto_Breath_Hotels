@@ -32,10 +32,8 @@ namespace ProjetoHotel
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.dgv_reservas = new System.Windows.Forms.DataGridView();
-            this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
             this.lbl_reservas = new System.Windows.Forms.Label();
             this.lbl_quarto = new System.Windows.Forms.Label();
             this.lbl_saida = new System.Windows.Forms.Label();
@@ -44,11 +42,10 @@ namespace ProjetoHotel
             this.msk_total = new System.Windows.Forms.MaskedTextBox();
             this.lbl_total = new System.Windows.Forms.Label();
             this.btn_atualiza_reserva = new System.Windows.Forms.Button();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.txt_entrada = new System.Windows.Forms.TextBox();
             this.txt_saida = new System.Windows.Forms.TextBox();
             this.txt_quarto = new System.Windows.Forms.TextBox();
-            this.cmb_criterio = new System.Windows.Forms.ComboBox();
+            this.cmb_quarto = new System.Windows.Forms.ComboBox();
             this.lbl_criterio = new System.Windows.Forms.Label();
             this.lbl_itens = new System.Windows.Forms.Label();
             this.dgv_itens = new System.Windows.Forms.DataGridView();
@@ -89,16 +86,6 @@ namespace ProjetoHotel
             this.lbl_titulo.TabIndex = 44;
             this.lbl_titulo.Text = "Checkout";
             // 
-            // lbl_pesquisa
-            // 
-            this.lbl_pesquisa.AutoSize = true;
-            this.lbl_pesquisa.Location = new System.Drawing.Point(104, 107);
-            this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_pesquisa.Name = "lbl_pesquisa";
-            this.lbl_pesquisa.Size = new System.Drawing.Size(103, 25);
-            this.lbl_pesquisa.TabIndex = 59;
-            this.lbl_pesquisa.Text = "Pesquisar";
-            // 
             // btn_voltar
             // 
             this.btn_voltar.Location = new System.Drawing.Point(448, 764);
@@ -121,15 +108,6 @@ namespace ProjetoHotel
             this.dgv_reservas.ReadOnly = true;
             this.dgv_reservas.Size = new System.Drawing.Size(880, 176);
             this.dgv_reservas.TabIndex = 64;
-            // 
-            // msk_pesquisa
-            // 
-            this.msk_pesquisa.Location = new System.Drawing.Point(215, 103);
-            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_pesquisa.Mask = "9999";
-            this.msk_pesquisa.Name = "msk_pesquisa";
-            this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
-            this.msk_pesquisa.TabIndex = 67;          
             // 
             // lbl_reservas
             // 
@@ -210,16 +188,6 @@ namespace ProjetoHotel
             this.btn_atualiza_reserva.UseVisualStyleBackColor = true;
             this.btn_atualiza_reserva.Click += new System.EventHandler(this.btn_atualiza_reserva_Click);
             // 
-            // btn_pesquisa
-            // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(518, 98);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 66;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
-            // 
             // txt_entrada
             // 
             this.txt_entrada.Location = new System.Drawing.Point(564, 183);
@@ -253,26 +221,26 @@ namespace ProjetoHotel
             this.txt_quarto.Size = new System.Drawing.Size(129, 31);
             this.txt_quarto.TabIndex = 84;
             // 
-            // cmb_criterio
+            // cmb_quarto
             // 
-            this.cmb_criterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_criterio.FormattingEnabled = true;
-            this.cmb_criterio.Location = new System.Drawing.Point(387, 104);
-            this.cmb_criterio.Margin = new System.Windows.Forms.Padding(4);
-            this.cmb_criterio.Name = "cmb_criterio";
-            this.cmb_criterio.Size = new System.Drawing.Size(124, 33);
-            this.cmb_criterio.TabIndex = 85;
-            this.cmb_criterio.SelectedIndexChanged += new System.EventHandler(this.cmb_criterio_SelectedIndexChanged);
+            this.cmb_quarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_quarto.FormattingEnabled = true;
+            this.cmb_quarto.Location = new System.Drawing.Point(265, 104);
+            this.cmb_quarto.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_quarto.Name = "cmb_quarto";
+            this.cmb_quarto.Size = new System.Drawing.Size(124, 33);
+            this.cmb_quarto.TabIndex = 85;
+            this.cmb_quarto.SelectedIndexChanged += new System.EventHandler(this.cmb_criterio_SelectedIndexChanged);
             // 
             // lbl_criterio
             // 
             this.lbl_criterio.AutoSize = true;
-            this.lbl_criterio.Location = new System.Drawing.Point(307, 109);
+            this.lbl_criterio.Location = new System.Drawing.Point(96, 107);
             this.lbl_criterio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_criterio.Name = "lbl_criterio";
-            this.lbl_criterio.Size = new System.Drawing.Size(83, 25);
+            this.lbl_criterio.Size = new System.Drawing.Size(171, 25);
             this.lbl_criterio.TabIndex = 86;
-            this.lbl_criterio.Text = "Critério";
+            this.lbl_criterio.Text = "Seleciona Quarto";
             // 
             // lbl_itens
             // 
@@ -329,7 +297,7 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_itens);
             this.Controls.Add(this.dgv_itens);
             this.Controls.Add(this.lbl_criterio);
-            this.Controls.Add(this.cmb_criterio);
+            this.Controls.Add(this.cmb_quarto);
             this.Controls.Add(this.txt_quarto);
             this.Controls.Add(this.txt_saida);
             this.Controls.Add(this.txt_entrada);
@@ -341,11 +309,8 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_saida);
             this.Controls.Add(this.lbl_quarto);
             this.Controls.Add(this.lbl_reservas);
-            this.Controls.Add(this.msk_pesquisa);
-            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.dgv_reservas);
             this.Controls.Add(this.btn_voltar);
-            this.Controls.Add(this.lbl_pesquisa);
             this.Controls.Add(this.lbl_titulo);
             this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.lbl_nome);
@@ -368,11 +333,8 @@ namespace ProjetoHotel
         public System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.Label lbl_titulo;
-        private System.Windows.Forms.Label lbl_pesquisa;
         private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.DataGridView dgv_reservas;
-        private System.Windows.Forms.Button btn_pesquisa;
-        public System.Windows.Forms.MaskedTextBox msk_pesquisa;
         private System.Windows.Forms.Label lbl_reservas;
         private System.Windows.Forms.Label lbl_quarto;
         private System.Windows.Forms.Label lbl_saida;
@@ -384,7 +346,7 @@ namespace ProjetoHotel
         public System.Windows.Forms.TextBox txt_entrada;
         public System.Windows.Forms.TextBox txt_saida;
         public System.Windows.Forms.TextBox txt_quarto;
-        private System.Windows.Forms.ComboBox cmb_criterio;
+        private System.Windows.Forms.ComboBox cmb_quarto;
         private System.Windows.Forms.Label lbl_criterio;
         private System.Windows.Forms.Label lbl_itens;
         private System.Windows.Forms.DataGridView dgv_itens;

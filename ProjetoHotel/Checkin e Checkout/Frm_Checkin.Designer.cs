@@ -39,7 +39,6 @@ namespace ProjetoHotel
             this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.dgv_reservas = new System.Windows.Forms.DataGridView();
-            this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
             this.msk_valor = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Valor = new System.Windows.Forms.Label();
             this.lbl_reservas = new System.Windows.Forms.Label();
@@ -58,7 +57,7 @@ namespace ProjetoHotel
             this.lbl_casal = new System.Windows.Forms.Label();
             this.btn_atualiza_reserva = new System.Windows.Forms.Button();
             this.btn_total = new System.Windows.Forms.Button();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
+            this.cmb_id = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reservas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,9 +138,9 @@ namespace ProjetoHotel
             this.lbl_pesquisa.Location = new System.Drawing.Point(104, 107);
             this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pesquisa.Name = "lbl_pesquisa";
-            this.lbl_pesquisa.Size = new System.Drawing.Size(132, 25);
+            this.lbl_pesquisa.Size = new System.Drawing.Size(129, 25);
             this.lbl_pesquisa.TabIndex = 59;
-            this.lbl_pesquisa.Text = "Pesquisar ID";
+            this.lbl_pesquisa.Text = "Seleciona ID";
             // 
             // btn_voltar
             // 
@@ -165,15 +164,6 @@ namespace ProjetoHotel
             this.dgv_reservas.ReadOnly = true;
             this.dgv_reservas.Size = new System.Drawing.Size(880, 176);
             this.dgv_reservas.TabIndex = 64;
-            // 
-            // msk_pesquisa
-            // 
-            this.msk_pesquisa.Location = new System.Drawing.Point(233, 103);
-            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_pesquisa.Mask = "99999";
-            this.msk_pesquisa.Name = "msk_pesquisa";
-            this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
-            this.msk_pesquisa.TabIndex = 67;
             // 
             // msk_valor
             // 
@@ -353,15 +343,16 @@ namespace ProjetoHotel
             this.btn_total.UseVisualStyleBackColor = true;
             this.btn_total.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // btn_pesquisa
+            // cmb_id
             // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(324, 98);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 66;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
+            this.cmb_id.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_id.FormattingEnabled = true;
+            this.cmb_id.Location = new System.Drawing.Point(241, 104);
+            this.cmb_id.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_id.Name = "cmb_id";
+            this.cmb_id.Size = new System.Drawing.Size(81, 33);
+            this.cmb_id.TabIndex = 86;
+            this.cmb_id.SelectedIndexChanged += new System.EventHandler(this.cmb_id_SelectedIndexChanged);
             // 
             // Frm_Checkin
             // 
@@ -370,6 +361,7 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1096, 708);
             this.ControlBox = false;
+            this.Controls.Add(this.cmb_id);
             this.Controls.Add(this.lbl_casal);
             this.Controls.Add(this.lbl_solteiro);
             this.Controls.Add(this.txt_solteiro_casal);
@@ -388,8 +380,6 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_reservas);
             this.Controls.Add(this.lbl_Valor);
             this.Controls.Add(this.msk_valor);
-            this.Controls.Add(this.msk_pesquisa);
-            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.dgv_reservas);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.lbl_pesquisa);
@@ -425,8 +415,6 @@ namespace ProjetoHotel
         private System.Windows.Forms.Label lbl_pesquisa;
         private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.DataGridView dgv_reservas;
-        private System.Windows.Forms.Button btn_pesquisa;
-        public System.Windows.Forms.MaskedTextBox msk_pesquisa;
         public System.Windows.Forms.MaskedTextBox msk_valor;
         private System.Windows.Forms.Label lbl_Valor;
         private System.Windows.Forms.Label lbl_reservas;
@@ -445,5 +433,6 @@ namespace ProjetoHotel
         public System.Windows.Forms.TextBox txt_solteiro_casal;
         private System.Windows.Forms.Label lbl_solteiro;
         private System.Windows.Forms.Label lbl_casal;
+        private System.Windows.Forms.ComboBox cmb_id;
     }
 }

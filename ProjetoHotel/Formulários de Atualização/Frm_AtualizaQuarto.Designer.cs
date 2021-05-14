@@ -44,10 +44,9 @@ namespace ProjetoHotel
             this.msk_diaria = new System.Windows.Forms.MaskedTextBox();
             this.dgv_quartos = new System.Windows.Forms.DataGridView();
             this.btn_atualiza_dgv = new System.Windows.Forms.Button();
-            this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.btn_excluir = new System.Windows.Forms.Button();
+            this.cmb_quarto = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_quartos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,30 +193,12 @@ namespace ProjetoHotel
             // btn_atualiza_dgv
             // 
             this.btn_atualiza_dgv.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_atualiza_dgv.Location = new System.Drawing.Point(916, 267);
+            this.btn_atualiza_dgv.Location = new System.Drawing.Point(904, 267);
             this.btn_atualiza_dgv.Name = "btn_atualiza_dgv";
             this.btn_atualiza_dgv.Size = new System.Drawing.Size(41, 43);
             this.btn_atualiza_dgv.TabIndex = 82;
             this.btn_atualiza_dgv.UseVisualStyleBackColor = true;
             this.btn_atualiza_dgv.Click += new System.EventHandler(this.btn_atualiza_dgv_Click);
-            // 
-            // msk_pesquisa
-            // 
-            this.msk_pesquisa.Location = new System.Drawing.Point(330, 115);
-            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_pesquisa.Name = "msk_pesquisa";
-            this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
-            this.msk_pesquisa.TabIndex = 103;
-            // 
-            // btn_pesquisa
-            // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(421, 110);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 102;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // lbl_pesquisa
             // 
@@ -225,9 +206,9 @@ namespace ProjetoHotel
             this.lbl_pesquisa.Location = new System.Drawing.Point(158, 118);
             this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pesquisa.Name = "lbl_pesquisa";
-            this.lbl_pesquisa.Size = new System.Drawing.Size(174, 25);
+            this.lbl_pesquisa.Size = new System.Drawing.Size(171, 25);
             this.lbl_pesquisa.TabIndex = 101;
-            this.lbl_pesquisa.Text = "Pesquisar Quarto";
+            this.lbl_pesquisa.Text = "Seleciona Quarto";
             // 
             // btn_excluir
             // 
@@ -239,6 +220,17 @@ namespace ProjetoHotel
             this.btn_excluir.UseVisualStyleBackColor = true;
             this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
+            // cmb_quarto
+            // 
+            this.cmb_quarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_quarto.FormattingEnabled = true;
+            this.cmb_quarto.Location = new System.Drawing.Point(331, 115);
+            this.cmb_quarto.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_quarto.Name = "cmb_quarto";
+            this.cmb_quarto.Size = new System.Drawing.Size(124, 33);
+            this.cmb_quarto.TabIndex = 105;
+            this.cmb_quarto.SelectedIndexChanged += new System.EventHandler(this.cmb_quarto_SelectedIndexChanged);
+            // 
             // Frm_AtualizaQuarto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -246,9 +238,8 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1084, 547);
             this.ControlBox = false;
+            this.Controls.Add(this.cmb_quarto);
             this.Controls.Add(this.btn_excluir);
-            this.Controls.Add(this.msk_pesquisa);
-            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.lbl_pesquisa);
             this.Controls.Add(this.btn_atualiza_dgv);
             this.Controls.Add(this.dgv_quartos);
@@ -295,9 +286,8 @@ namespace ProjetoHotel
         public System.Windows.Forms.MaskedTextBox msk_diaria;
         private System.Windows.Forms.DataGridView dgv_quartos;
         private System.Windows.Forms.Button btn_atualiza_dgv;
-        public System.Windows.Forms.MaskedTextBox msk_pesquisa;
-        private System.Windows.Forms.Button btn_pesquisa;
         private System.Windows.Forms.Label lbl_pesquisa;
         private System.Windows.Forms.Button btn_excluir;
+        private System.Windows.Forms.ComboBox cmb_quarto;
     }
 }

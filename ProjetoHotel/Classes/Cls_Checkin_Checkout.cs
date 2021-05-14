@@ -27,6 +27,18 @@ namespace ProjetoHotel
         private double total;
         private string cartao;
         private int quantidade;
+        private int quantidade2;
+        public int Quantidade2
+        {
+            get
+            {
+                return this.quantidade2;
+            }
+            set
+            {
+                this.quantidade2 = value;
+            }
+        }
         public int Quantidade
         {
             get
@@ -248,43 +260,7 @@ namespace ProjetoHotel
             {
                 pgsqlConnection.Close();
             }
-        }
-        public bool pesquisaid()
-        {
-            NpgsqlConnection pgsqlConnection = null;
-            try
-            {
-                Cls_Conexao objconexao = new Cls_Conexao();
-
-                pgsqlConnection = objconexao.getConexao();
-                pgsqlConnection.Open();
-
-                string pesquisar;
-
-                pesquisar = "select nomecli, entrada, saida, quartofk from reservas where reservaid = '" + this.criterio + "' and status = 'Em andamento' LIMIT 1;";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
-
-                NpgsqlDataReader pesquisa = cmd.ExecuteReader();
-
-                if (pesquisa.Read())
-                {
-                    this.nome = pesquisa["nomecli"].ToString();
-                    this.entradaout = pesquisa["entrada"].ToString();
-                    this.saidaout = pesquisa["saida"].ToString();
-                    this.quarto = pesquisa["quartofk"].ToString();
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            finally
-            {
-                pgsqlConnection.Close();
-            }
-        }
+        }        
         public bool pesquisaquarto()
         {
             NpgsqlConnection pgsqlConnection = null;
@@ -623,7 +599,7 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string querry = "select quantidade from itens where item = '"+ this.nome +"';";
+                string querry = "select quantidade from itens where item = '" + this.nome + "';";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
@@ -678,8 +654,8 @@ namespace ProjetoHotel
 
                     retornaItemId.Close();
 
-                    string totalbd = Convert.ToString(this.total).Replace(",", ".");                    
-                    
+                    string totalbd = Convert.ToString(this.total).Replace(",", ".");
+
                     querry = "INSERT INTO consumos(item, valor, quantidade, data, reservafk, itemfk) VALUES('" + this.nome + "', '" + totalbd + "', '" + this.quantidade + "', '" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "', '" + reservaid + "', '" + itemid + "');";
 
                     cmd = new NpgsqlCommand(querry, pgsqlConnection);
@@ -693,9 +669,49 @@ namespace ProjetoHotel
                     cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
                     NpgsqlDataReader attQnt = cmd.ExecuteReader();
-                    
+
                     return true;
-                }                
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
+        public bool compraEstoque()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                int totalQnt = this.quantidade2 + this.quantidade;
+
+                string querry;
+
+                NpgsqlCommand cmd;
+
+                if (totalQnt > 10)
+                {
+                    querry = "UPDATE itens set status = 'Disponível' WHERE item = '" + this.nome + "';";
+
+                    cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                    NpgsqlDataReader attStatus = cmd.ExecuteReader();
+
+                    attStatus.Close();
+                }
+
+                querry = "UPDATE itens set quantidade = quantidade + '" + this.quantidade + "' WHERE item = '" + this.nome + "';";
+
+                cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader attQnt = cmd.ExecuteReader();
+
+                return true;
             }
             finally
             {

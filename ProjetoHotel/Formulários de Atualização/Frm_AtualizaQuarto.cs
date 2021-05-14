@@ -21,6 +21,36 @@ namespace ProjetoHotel
             cmb_tipo.Items.Add("Simples");
             cmb_tipo.Items.Add("Luxo");
             atualizadtg();
+            attComboBox();            
+        }
+        public void attComboBox()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                Cls_Conexao objconexao = new Cls_Conexao();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string combobox = "select quarto from quartos order by quarto;";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(combobox, pgsqlConnection);
+
+                NpgsqlDataReader comboboxshow = cmd.ExecuteReader();
+
+                DataTable dt = new DataTable();
+
+                dt.Load(comboboxshow);
+
+                cmb_quarto.DisplayMember = "quarto";
+
+                cmb_quarto.DataSource = dt;
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
         }
         public void atualizadtg()
         {
@@ -54,30 +84,7 @@ namespace ProjetoHotel
         private void btn_atualiza_dgv_Click(object sender, EventArgs e)
         {
             atualizadtg();
-        }
-
-        private void btn_pesquisa_Click(object sender, EventArgs e)
-        {
-            Cls_Cadastro pesquisa = new Cls_Cadastro();
-
-            if (msk_pesquisa.Text == "")
-            {
-                MessageBox.Show("Campo vazio, pesquise!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                pesquisa.Criterio = msk_pesquisa.Text.ToUpper();
-
-                if (pesquisa.pesquisaQuarto())
-                {
-                    txt_quarto.Text = pesquisa.Nome;
-                    cmb_tipo.Text = pesquisa.Tipo;
-                    msk_camasolteiro.Text = Convert.ToString(pesquisa.Camasolteiro);
-                    msk_camacasal.Text = Convert.ToString(pesquisa.Camacasal);
-                    msk_diaria.Text = pesquisa.Valor;
-                }
-            }
-        }
+        }        
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
@@ -86,16 +93,15 @@ namespace ProjetoHotel
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            if (msk_pesquisa.Text == "" || txt_quarto.Text == "" || cmb_tipo.Text == "" || msk_camasolteiro.Text == "" || msk_camacasal.Text == "" || msk_diaria.Text == "   .")
+            if (cmb_quarto.Text == "")
             {
-                MessageBox.Show("Há campos vazios, pesquise!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                msk_pesquisa.Focus();
+                MessageBox.Show("Não há quartos registrados!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);                
             }
             else
             {
                 Cls_Cadastro atualizaQuarto = new Cls_Cadastro();
 
-                atualizaQuarto.Criterio = msk_pesquisa.Text.ToUpper();
+                atualizaQuarto.Criterio = cmb_quarto.Text;
                 atualizaQuarto.Nome = txt_quarto.Text.ToUpper();
                 atualizaQuarto.Tipo = cmb_tipo.Text;
                 atualizaQuarto.Camasolteiro = Convert.ToInt16(msk_camasolteiro.Text);
@@ -105,9 +111,8 @@ namespace ProjetoHotel
                 if (atualizaQuarto.atualizaQuarto())
                 {
                     MessageBox.Show("Quarto atualizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    atualizadtg();
-                    limpacampos();
-                }                
+                    atualizadtg();                    
+                }
             }
         }
         private void limpacampos()
@@ -119,16 +124,15 @@ namespace ProjetoHotel
         }
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            if (msk_pesquisa.Text == "" || txt_quarto.Text == "" || cmb_tipo.Text == "" || msk_camasolteiro.Text == "" || msk_camacasal.Text == "" || msk_diaria.Text == "   .")
+            if (cmb_quarto.Text == "")
             {
-                MessageBox.Show("Há campos vazios, pesquise!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                msk_pesquisa.Focus();
+                MessageBox.Show("Não há quartos registrados!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);                
             }
             else
             {
                 Cls_Cadastro excluiQuarto = new Cls_Cadastro();
 
-                excluiQuarto.Criterio = msk_pesquisa.Text.ToUpper();
+                excluiQuarto.Criterio = cmb_quarto.Text;
 
                 DialogResult excluir = new DialogResult();
 
@@ -141,13 +145,30 @@ namespace ProjetoHotel
                         MessageBox.Show("Quarto excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         limpacampos();
                         atualizadtg();
+                        attComboBox();
                     }
                 }
                 else
                 {
                     MessageBox.Show("O quarto não foi excluído", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                
+
+            }
+        }
+
+        private void cmb_quarto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cls_Cadastro pesquisa = new Cls_Cadastro();
+
+            pesquisa.Criterio = cmb_quarto.Text;
+
+            if (pesquisa.pesquisaQuarto())
+            {
+                txt_quarto.Text = pesquisa.Nome;
+                cmb_tipo.Text = pesquisa.Tipo;
+                msk_camasolteiro.Text = Convert.ToString(pesquisa.Camasolteiro);
+                msk_camacasal.Text = Convert.ToString(pesquisa.Camacasal);
+                msk_diaria.Text = pesquisa.Valor;
             }
         }
     }
