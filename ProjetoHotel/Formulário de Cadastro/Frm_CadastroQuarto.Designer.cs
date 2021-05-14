@@ -29,6 +29,7 @@ namespace ProjetoHotel
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroQuarto));
             this.msk_camasolteiro = new System.Windows.Forms.MaskedTextBox();
             this.txt_quarto = new System.Windows.Forms.TextBox();
             this.lbl_quarto = new System.Windows.Forms.Label();
@@ -234,12 +235,15 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_camasolteiro);
             this.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(72)))), ((int)(((byte)(112)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Frm_CadastroQuarto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cadastro de Quarto";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Frm_CadastroQuarto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_quartos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

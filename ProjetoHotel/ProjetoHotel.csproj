@@ -266,6 +266,18 @@
     <Compile Include="Checkin e Checkout\Frm_Checkout.Designer.cs">
       <DependentUpon>Frm_Checkout.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulários Cliente\Frm_Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários Cliente\Frm_Cliente.Designer.cs">
+      <DependentUpon>Frm_Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários Cliente\Frm_CompraCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários Cliente\Frm_CompraCliente.Designer.cs">
+      <DependentUpon>Frm_CompraCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_CompraItens.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +289,12 @@
     </Compile>
     <Compile Include="Frm_Estoque.Designer.cs">
       <DependentUpon>Frm_Estoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Historico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Historico.Designer.cs">
+      <DependentUpon>Frm_Historico.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Login.cs">
       <SubType>Form</SubType>
@@ -297,13 +315,13 @@
     <Compile Include="Frm_Dashboard.Designer.cs">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Pgto_Dinheiro.cs">
+    <Compile Include="Checkin e Checkout\Frm_Pgto_Dinheiro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_Pgto_Dinheiro.Designer.cs">
+    <Compile Include="Checkin e Checkout\Frm_Pgto_Dinheiro.Designer.cs">
       <DependentUpon>Frm_Pgto_Dinheiro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formulários de Atualização\Frm_AtualizaCartao.resx">
       <DependentUpon>Frm_AtualizaCartao.cs</DependentUpon>
@@ -335,11 +353,20 @@
     <EmbeddedResource Include="Checkin e Checkout\Frm_Checkout.resx">
       <DependentUpon>Frm_Checkout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Cliente\Frm_Cliente.resx">
+      <DependentUpon>Frm_Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários Cliente\Frm_CompraCliente.resx">
+      <DependentUpon>Frm_CompraCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_CompraItens.resx">
       <DependentUpon>Frm_CompraItens.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Estoque.resx">
       <DependentUpon>Frm_Estoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Historico.resx">
+      <DependentUpon>Frm_Historico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
@@ -347,7 +374,7 @@
     <EmbeddedResource Include="Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Pgto_Dinheiro.resx">
+    <EmbeddedResource Include="Checkin e Checkout\Frm_Pgto_Dinheiro.resx">
       <DependentUpon>Frm_Pgto_Dinheiro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

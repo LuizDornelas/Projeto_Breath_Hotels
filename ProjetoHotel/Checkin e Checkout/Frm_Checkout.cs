@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -191,12 +192,16 @@ namespace ProjetoHotel
             {
                 if (cmb_pagamento.Text == "Dinheiro")
                 {
-                    Frm_Pgto_Dinheiro form = new Frm_Pgto_Dinheiro(id, msk_total.Text);
+                    Frm_Pgto_Dinheiro form = new Frm_Pgto_Dinheiro(id, msk_total.Text, cmb_quarto.Text);
                     form.ShowDialog();
                     limpa_campos();
                     dgv_pesquisa();
                     attComboBox();
-                    dgv_itens.DataSource = null;
+
+                    if (dgv_reservas.DataSource == null)
+                    {
+                        dgv_itens.DataSource = null;
+                    }                    
                 }
                 else
                 {
@@ -209,13 +214,17 @@ namespace ProjetoHotel
 
                         if (pgto == DialogResult.Yes)
                         {
-                            if (cartao.pgto_dinheiro_cartao(id, msk_total.Text.Replace(",", ".").Trim()))
+                            if (cartao.pgto_dinheiro_cartao(id, msk_total.Text.Replace(",", ".").Trim(), cmb_quarto.Text))
                             {
                                 MessageBox.Show("Pagamento com o cartão realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 dgv_pesquisa();
                                 limpa_campos();
                                 attComboBox();
-                                dgv_itens.DataSource = null;
+
+                                if (dgv_reservas.DataSource == null)
+                                {
+                                    dgv_itens.DataSource = null;
+                                }
                             }
                         }
                         else
@@ -229,6 +238,31 @@ namespace ProjetoHotel
                     }
                 }
             }
+        }
+
+        private void Frm_Checkout_Load(object sender, EventArgs e)
+        {
+            GraphicsPath PastaGrafica = new GraphicsPath();
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, 1, this.Size.Width, this.Size.Height));
+
+            //Arredondar canto superior esquerdo        
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, 1, 10, 10));
+            PastaGrafica.AddPie(1, 1, 20, 20, 180, 90);
+
+            //Arredondar canto superior direito
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(this.Width - 12, 1, 12, 13));
+            PastaGrafica.AddPie(this.Width - 24, 1, 24, 26, 270, 90);
+
+            //Arredondar canto inferior esquerdo
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, this.Height - 10, 10, 10));
+            PastaGrafica.AddPie(1, this.Height - 20, 20, 20, 90, 90);
+
+            //Arredondar canto inferior direito
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(this.Width - 12, this.Height - 13, 13, 13));
+            PastaGrafica.AddPie(this.Width - 24, this.Height - 26, 24, 26, 0, 90);
+
+            PastaGrafica.SetMarkers();
+            this.Region = new Region(PastaGrafica);
         }
     }
 }

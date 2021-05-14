@@ -440,7 +440,7 @@ namespace ProjetoHotel
                 pgsqlConnection.Close();
             }
         }
-        public bool pgto_dinheiro_cartao(string id, string total)
+        public bool pgto_dinheiro_cartao(string id, string total, string quarto)
         {
             NpgsqlConnection pgsqlConnection = null;
             try
@@ -464,7 +464,7 @@ namespace ProjetoHotel
 
                 retornaId.Close();
 
-                pesquisar = "UPDATE reservas SET status='Encerrado', valor = '" + total + "', saida = '" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "' WHERE usuariofk = '" + usuariofk + "';";
+                pesquisar = "UPDATE reservas SET status='Encerrado', valor = '" + total + "', saida = '" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") + "' WHERE usuariofk = '" + usuariofk + "' and status = 'Em andamento' and quartofk = '"+ quarto +"';";
 
                 cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
@@ -696,7 +696,7 @@ namespace ProjetoHotel
 
                 if (totalQnt > 10)
                 {
-                    querry = "UPDATE itens set status = 'Disponível' WHERE item = '" + this.nome + "';";
+                    querry = "UPDATE itens set status = 'Disponivel' WHERE item = '" + this.nome + "';";
 
                     cmd = new NpgsqlCommand(querry, pgsqlConnection);
 

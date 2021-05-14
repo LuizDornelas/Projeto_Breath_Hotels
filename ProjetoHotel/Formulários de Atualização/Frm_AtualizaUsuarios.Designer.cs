@@ -29,6 +29,7 @@ namespace ProjetoHotel
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AtualizaUsuarios));
             this.msk_telefone = new System.Windows.Forms.MaskedTextBox();
             this.txt_rua = new System.Windows.Forms.TextBox();
             this.txt_nome = new System.Windows.Forms.TextBox();
@@ -417,12 +418,15 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_rua);
             this.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(72)))), ((int)(((byte)(112)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Frm_AtualizaUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Atualiza Cadastro";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Frm_AtualizaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

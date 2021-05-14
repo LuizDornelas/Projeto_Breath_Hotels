@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,13 @@ namespace ProjetoHotel
         double total;
         double recebido;
         string id;
-        public Frm_Pgto_Dinheiro(string idd, string total)
+        string quarto;
+        public Frm_Pgto_Dinheiro(string idd, string total, string quartoo)
         {
             InitializeComponent();
             txt_total.Text = $"R${total}";
             id = idd;
+            quarto = quartoo;
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
@@ -64,7 +67,7 @@ namespace ProjetoHotel
                 else
                 {
                     Cls_Checkin_Checkout pagamento = new Cls_Checkin_Checkout();                           
-                    pagamento.pgto_dinheiro_cartao(id, txt_total.Text.Replace("R$", "").Replace(",", ".").Trim());   
+                    pagamento.pgto_dinheiro_cartao(id, txt_total.Text.Replace("R$", "").Replace(",", ".").Trim(), quarto);   
                     if (txt_troco.Text == "0")
                     {
                         MessageBox.Show($"Pagamento realizado com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -81,7 +84,27 @@ namespace ProjetoHotel
 
         private void Frm_Pgto_Dinheiro_Load(object sender, EventArgs e)
         {
+            GraphicsPath PastaGrafica = new GraphicsPath();
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, 1, this.Size.Width, this.Size.Height));
 
+            //Arredondar canto superior esquerdo        
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, 1, 10, 10));
+            PastaGrafica.AddPie(1, 1, 20, 20, 180, 90);
+
+            //Arredondar canto superior direito
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(this.Width - 12, 1, 12, 13));
+            PastaGrafica.AddPie(this.Width - 24, 1, 24, 26, 270, 90);
+
+            //Arredondar canto inferior esquerdo
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, this.Height - 10, 10, 10));
+            PastaGrafica.AddPie(1, this.Height - 20, 20, 20, 90, 90);
+
+            //Arredondar canto inferior direito
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(this.Width - 12, this.Height - 13, 13, 13));
+            PastaGrafica.AddPie(this.Width - 24, this.Height - 26, 24, 26, 0, 90);
+
+            PastaGrafica.SetMarkers();
+            this.Region = new Region(PastaGrafica);
         }
 
         private void txt_valor_pago_KeyPress(object sender, KeyPressEventArgs e)

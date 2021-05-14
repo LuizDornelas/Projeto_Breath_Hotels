@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,19 +12,17 @@ using System.Windows.Forms;
 namespace ProjetoHotel
 {
     public partial class Frm_Login : Form
-    {
+    {       
         public Frm_Login()
         {
             InitializeComponent();
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        }        
+        public void btnLogin_Click(object sender, EventArgs e)
         {
             Cls_Login objusuario = new Cls_Login();
 
             objusuario.Login = txtUsuario.Text;
-            objusuario.Senha = txtSenha.Text;
-
+            objusuario.Senha = txtSenha.Text;            
             if (txtUsuario.Text == "")
             {
                 MessageBox.Show("Campo vazio, preencha!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -38,10 +37,20 @@ namespace ProjetoHotel
             {
                 if ((objusuario.logar()))
                 {
-                    this.Hide();
-                    Frm_Dashboard form = new Frm_Dashboard(objusuario.Nome, objusuario.Tipo);
-                    form.ShowDialog();
-                    this.Close();
+                    if (objusuario.Tipo == "Cliente")
+                    {                        
+                        this.Hide();
+                        Frm_Cliente form = new Frm_Cliente(objusuario.Nome, objusuario.Login);                        
+                        form.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        Frm_Dashboard form = new Frm_Dashboard(objusuario.Nome, objusuario.Tipo);
+                        form.ShowDialog();
+                        this.Close();
+                    }                    
                 }
             }
         }

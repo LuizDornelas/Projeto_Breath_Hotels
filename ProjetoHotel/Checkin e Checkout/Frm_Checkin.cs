@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,13 @@ namespace ProjetoHotel
             dtp_saida.Value = DateTime.Now.AddDays(1);
 
             nomefunc = nome;
-
+            
+            dgv_pesquisa();
+            comboboxAtt();
+            ComboBoxQuarto();
+        }
+        public void ComboBoxQuarto()
+        {
             NpgsqlConnection pgsqlConnection = null;
             try
             {
@@ -50,8 +57,6 @@ namespace ProjetoHotel
             {
                 pgsqlConnection.Close();
             }
-            dgv_pesquisa();
-            comboboxAtt();
         }
         public void comboboxAtt()
         {
@@ -245,6 +250,7 @@ namespace ProjetoHotel
                     {
                         MessageBox.Show("Reserva realizada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgv_pesquisa();
+                        ComboBoxQuarto();
                     }
                 }
             }
@@ -263,6 +269,31 @@ namespace ProjetoHotel
                 msk_rg.Text = pesquisa.Rg;
                 msk_telefone.Text = pesquisa.Telefone;
             }
+        }
+
+        private void Frm_Checkin_Load(object sender, EventArgs e)
+        {
+            GraphicsPath PastaGrafica = new GraphicsPath();
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, 1, this.Size.Width, this.Size.Height));
+
+            //Arredondar canto superior esquerdo        
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, 1, 10, 10));
+            PastaGrafica.AddPie(1, 1, 20, 20, 180, 90);
+
+            //Arredondar canto superior direito
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(this.Width - 12, 1, 12, 13));
+            PastaGrafica.AddPie(this.Width - 24, 1, 24, 26, 270, 90);
+
+            //Arredondar canto inferior esquerdo
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(1, this.Height - 10, 10, 10));
+            PastaGrafica.AddPie(1, this.Height - 20, 20, 20, 90, 90);
+
+            //Arredondar canto inferior direito
+            PastaGrafica.AddRectangle(new System.Drawing.Rectangle(this.Width - 12, this.Height - 13, 13, 13));
+            PastaGrafica.AddPie(this.Width - 24, this.Height - 26, 24, 26, 0, 90);
+
+            PastaGrafica.SetMarkers();
+            this.Region = new Region(PastaGrafica);
         }
     }
 }

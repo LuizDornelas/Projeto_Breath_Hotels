@@ -52,40 +52,41 @@
             this.atualizaItensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_pg_lateral = new System.Windows.Forms.Panel();
             this.lbl_estoque = new System.Windows.Forms.Label();
-            this.pcb_estoque = new System.Windows.Forms.PictureBox();
             this.lbl_quartosdisponiveis = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.ptr_quartos = new System.Windows.Forms.PictureBox();
             this.lbl_quartostotal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.ptr_checkin = new System.Windows.Forms.PictureBox();
             this.lbl_reservas = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_separador_2 = new System.Windows.Forms.Label();
-            this.ptr_usuario = new System.Windows.Forms.PictureBox();
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.lbl_separador_1 = new System.Windows.Forms.Label();
-            this.ptr_relogio = new System.Windows.Forms.PictureBox();
             this.lbl_data = new System.Windows.Forms.Label();
             this.lbl_horas = new System.Windows.Forms.Label();
             this.tmr_horas = new System.Windows.Forms.Timer(this.components);
             this.tmr_data = new System.Windows.Forms.Timer(this.components);
-            this.ptr_hotel = new System.Windows.Forms.PictureBox();
-            this.ptr_quarto = new System.Windows.Forms.PictureBox();
-            this.ptr_atras_hotel = new System.Windows.Forms.PictureBox();
-            this.ptr_piscina = new System.Windows.Forms.PictureBox();
+            this.históricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_pesquisa = new System.Windows.Forms.Button();
+            this.ptr_piscina = new System.Windows.Forms.PictureBox();
+            this.ptr_atras_hotel = new System.Windows.Forms.PictureBox();
+            this.ptr_quarto = new System.Windows.Forms.PictureBox();
+            this.ptr_hotel = new System.Windows.Forms.PictureBox();
+            this.pcb_estoque = new System.Windows.Forms.PictureBox();
+            this.ptr_quartos = new System.Windows.Forms.PictureBox();
+            this.ptr_checkin = new System.Windows.Forms.PictureBox();
+            this.ptr_usuario = new System.Windows.Forms.PictureBox();
+            this.ptr_relogio = new System.Windows.Forms.PictureBox();
             this.mnu_principal.SuspendLayout();
             this.pnl_pg_lateral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_piscina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_atras_hotel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_quarto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_hotel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_estoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_quartos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_checkin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_usuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_relogio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_hotel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_quarto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_atras_hotel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_piscina)).BeginInit();
             this.SuspendLayout();
             // 
             // sairToolStripMenuItem
@@ -164,14 +165,14 @@
             // hospedadoscheckInToolStripMenuItem
             // 
             this.hospedadoscheckInToolStripMenuItem.Name = "hospedadoscheckInToolStripMenuItem";
-            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.hospedadoscheckInToolStripMenuItem.Text = "Checkin";
             this.hospedadoscheckInToolStripMenuItem.Click += new System.EventHandler(this.hospedadoscheckInToolStripMenuItem_Click);
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.checkOutToolStripMenuItem.Text = "Checkout";
             this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.checkOutToolStripMenuItem_Click);
             // 
@@ -188,14 +189,14 @@
             // produtosToolStripMenuItem1
             // 
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(172, 22);
             this.produtosToolStripMenuItem1.Text = "Compra Itens";
             this.produtosToolStripMenuItem1.Click += new System.EventHandler(this.produtosToolStripMenuItem1_Click);
             // 
             // fornecedoresToolStripMenuItem
             // 
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.fornecedoresToolStripMenuItem.Text = "Estoque";
             this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
@@ -209,7 +210,8 @@
             this.cadastroToolStripMenuItem,
             this.atualizaToolStripMenuItem,
             this.reservasToolStripMenuItem,
-            this.produtosToolStripMenuItem});
+            this.produtosToolStripMenuItem,
+            this.históricoToolStripMenuItem});
             this.mnu_principal.Location = new System.Drawing.Point(0, 0);
             this.mnu_principal.Name = "mnu_principal";
             this.mnu_principal.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -297,17 +299,6 @@
             this.lbl_estoque.TabIndex = 21;
             this.lbl_estoque.Text = "Estoque Bom!";
             // 
-            // pcb_estoque
-            // 
-            this.pcb_estoque.Image = ((System.Drawing.Image)(resources.GetObject("pcb_estoque.Image")));
-            this.pcb_estoque.Location = new System.Drawing.Point(21, 566);
-            this.pcb_estoque.Margin = new System.Windows.Forms.Padding(2);
-            this.pcb_estoque.Name = "pcb_estoque";
-            this.pcb_estoque.Size = new System.Drawing.Size(50, 50);
-            this.pcb_estoque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcb_estoque.TabIndex = 20;
-            this.pcb_estoque.TabStop = false;
-            // 
             // lbl_quartosdisponiveis
             // 
             this.lbl_quartosdisponiveis.AutoSize = true;
@@ -332,17 +323,6 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "________________________________";
             // 
-            // ptr_quartos
-            // 
-            this.ptr_quartos.Image = ((System.Drawing.Image)(resources.GetObject("ptr_quartos.Image")));
-            this.ptr_quartos.Location = new System.Drawing.Point(21, 395);
-            this.ptr_quartos.Margin = new System.Windows.Forms.Padding(2);
-            this.ptr_quartos.Name = "ptr_quartos";
-            this.ptr_quartos.Size = new System.Drawing.Size(50, 50);
-            this.ptr_quartos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptr_quartos.TabIndex = 16;
-            this.ptr_quartos.TabStop = false;
-            // 
             // lbl_quartostotal
             // 
             this.lbl_quartostotal.AutoSize = true;
@@ -366,17 +346,6 @@
             this.label2.Size = new System.Drawing.Size(362, 22);
             this.label2.TabIndex = 14;
             this.label2.Text = "________________________________";
-            // 
-            // ptr_checkin
-            // 
-            this.ptr_checkin.Image = ((System.Drawing.Image)(resources.GetObject("ptr_checkin.Image")));
-            this.ptr_checkin.Location = new System.Drawing.Point(21, 268);
-            this.ptr_checkin.Margin = new System.Windows.Forms.Padding(2);
-            this.ptr_checkin.Name = "ptr_checkin";
-            this.ptr_checkin.Size = new System.Drawing.Size(50, 50);
-            this.ptr_checkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptr_checkin.TabIndex = 12;
-            this.ptr_checkin.TabStop = false;
             // 
             // lbl_reservas
             // 
@@ -415,17 +384,6 @@
             this.lbl_separador_2.TabIndex = 10;
             this.lbl_separador_2.Text = "________________________________";
             // 
-            // ptr_usuario
-            // 
-            this.ptr_usuario.Image = ((System.Drawing.Image)(resources.GetObject("ptr_usuario.Image")));
-            this.ptr_usuario.Location = new System.Drawing.Point(21, 144);
-            this.ptr_usuario.Margin = new System.Windows.Forms.Padding(2);
-            this.ptr_usuario.Name = "ptr_usuario";
-            this.ptr_usuario.Size = new System.Drawing.Size(50, 50);
-            this.ptr_usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptr_usuario.TabIndex = 8;
-            this.ptr_usuario.TabStop = false;
-            // 
             // lbl_usuario
             // 
             this.lbl_usuario.AutoSize = true;
@@ -449,17 +407,6 @@
             this.lbl_separador_1.Size = new System.Drawing.Size(362, 22);
             this.lbl_separador_1.TabIndex = 7;
             this.lbl_separador_1.Text = "________________________________";
-            // 
-            // ptr_relogio
-            // 
-            this.ptr_relogio.Image = ((System.Drawing.Image)(resources.GetObject("ptr_relogio.Image")));
-            this.ptr_relogio.Location = new System.Drawing.Point(21, 22);
-            this.ptr_relogio.Margin = new System.Windows.Forms.Padding(2);
-            this.ptr_relogio.Name = "ptr_relogio";
-            this.ptr_relogio.Size = new System.Drawing.Size(50, 50);
-            this.ptr_relogio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptr_relogio.TabIndex = 6;
-            this.ptr_relogio.TabStop = false;
             // 
             // lbl_data
             // 
@@ -497,41 +444,23 @@
             this.tmr_data.Enabled = true;
             this.tmr_data.Tick += new System.EventHandler(this.tmr_data_Tick);
             // 
-            // ptr_hotel
+            // históricoToolStripMenuItem
             // 
-            this.ptr_hotel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptr_hotel.Image = ((System.Drawing.Image)(resources.GetObject("ptr_hotel.Image")));
-            this.ptr_hotel.Location = new System.Drawing.Point(655, 25);
-            this.ptr_hotel.Margin = new System.Windows.Forms.Padding(2);
-            this.ptr_hotel.Name = "ptr_hotel";
-            this.ptr_hotel.Size = new System.Drawing.Size(224, 192);
-            this.ptr_hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptr_hotel.TabIndex = 6;
-            this.ptr_hotel.TabStop = false;
+            this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
+            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(81, 21);
+            this.históricoToolStripMenuItem.Text = "Histórico";
+            this.históricoToolStripMenuItem.Click += new System.EventHandler(this.históricoToolStripMenuItem_Click);
             // 
-            // ptr_quarto
+            // btn_pesquisa
             // 
-            this.ptr_quarto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptr_quarto.Image = ((System.Drawing.Image)(resources.GetObject("ptr_quarto.Image")));
-            this.ptr_quarto.Location = new System.Drawing.Point(655, 222);
-            this.ptr_quarto.Margin = new System.Windows.Forms.Padding(2);
-            this.ptr_quarto.Name = "ptr_quarto";
-            this.ptr_quarto.Size = new System.Drawing.Size(224, 192);
-            this.ptr_quarto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptr_quarto.TabIndex = 7;
-            this.ptr_quarto.TabStop = false;
-            // 
-            // ptr_atras_hotel
-            // 
-            this.ptr_atras_hotel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptr_atras_hotel.Image = ((System.Drawing.Image)(resources.GetObject("ptr_atras_hotel.Image")));
-            this.ptr_atras_hotel.Location = new System.Drawing.Point(655, 615);
-            this.ptr_atras_hotel.Margin = new System.Windows.Forms.Padding(2);
-            this.ptr_atras_hotel.Name = "ptr_atras_hotel";
-            this.ptr_atras_hotel.Size = new System.Drawing.Size(224, 192);
-            this.ptr_atras_hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptr_atras_hotel.TabIndex = 8;
-            this.ptr_atras_hotel.TabStop = false;
+            this.btn_pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_pesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisa.Image")));
+            this.btn_pesquisa.Location = new System.Drawing.Point(609, 38);
+            this.btn_pesquisa.Name = "btn_pesquisa";
+            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
+            this.btn_pesquisa.TabIndex = 67;
+            this.btn_pesquisa.UseVisualStyleBackColor = true;
+            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // ptr_piscina
             // 
@@ -545,16 +474,96 @@
             this.ptr_piscina.TabIndex = 9;
             this.ptr_piscina.TabStop = false;
             // 
-            // btn_pesquisa
+            // ptr_atras_hotel
             // 
-            this.btn_pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_pesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisa.Image")));
-            this.btn_pesquisa.Location = new System.Drawing.Point(609, 38);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 67;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
+            this.ptr_atras_hotel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptr_atras_hotel.Image = ((System.Drawing.Image)(resources.GetObject("ptr_atras_hotel.Image")));
+            this.ptr_atras_hotel.Location = new System.Drawing.Point(655, 615);
+            this.ptr_atras_hotel.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_atras_hotel.Name = "ptr_atras_hotel";
+            this.ptr_atras_hotel.Size = new System.Drawing.Size(224, 192);
+            this.ptr_atras_hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_atras_hotel.TabIndex = 8;
+            this.ptr_atras_hotel.TabStop = false;
+            // 
+            // ptr_quarto
+            // 
+            this.ptr_quarto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptr_quarto.Image = ((System.Drawing.Image)(resources.GetObject("ptr_quarto.Image")));
+            this.ptr_quarto.Location = new System.Drawing.Point(655, 222);
+            this.ptr_quarto.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_quarto.Name = "ptr_quarto";
+            this.ptr_quarto.Size = new System.Drawing.Size(224, 192);
+            this.ptr_quarto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_quarto.TabIndex = 7;
+            this.ptr_quarto.TabStop = false;
+            // 
+            // ptr_hotel
+            // 
+            this.ptr_hotel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptr_hotel.Image = ((System.Drawing.Image)(resources.GetObject("ptr_hotel.Image")));
+            this.ptr_hotel.Location = new System.Drawing.Point(655, 25);
+            this.ptr_hotel.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_hotel.Name = "ptr_hotel";
+            this.ptr_hotel.Size = new System.Drawing.Size(224, 192);
+            this.ptr_hotel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_hotel.TabIndex = 6;
+            this.ptr_hotel.TabStop = false;
+            // 
+            // pcb_estoque
+            // 
+            this.pcb_estoque.Image = ((System.Drawing.Image)(resources.GetObject("pcb_estoque.Image")));
+            this.pcb_estoque.Location = new System.Drawing.Point(21, 566);
+            this.pcb_estoque.Margin = new System.Windows.Forms.Padding(2);
+            this.pcb_estoque.Name = "pcb_estoque";
+            this.pcb_estoque.Size = new System.Drawing.Size(50, 50);
+            this.pcb_estoque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_estoque.TabIndex = 20;
+            this.pcb_estoque.TabStop = false;
+            // 
+            // ptr_quartos
+            // 
+            this.ptr_quartos.Image = ((System.Drawing.Image)(resources.GetObject("ptr_quartos.Image")));
+            this.ptr_quartos.Location = new System.Drawing.Point(21, 395);
+            this.ptr_quartos.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_quartos.Name = "ptr_quartos";
+            this.ptr_quartos.Size = new System.Drawing.Size(50, 50);
+            this.ptr_quartos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_quartos.TabIndex = 16;
+            this.ptr_quartos.TabStop = false;
+            // 
+            // ptr_checkin
+            // 
+            this.ptr_checkin.Image = ((System.Drawing.Image)(resources.GetObject("ptr_checkin.Image")));
+            this.ptr_checkin.Location = new System.Drawing.Point(21, 268);
+            this.ptr_checkin.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_checkin.Name = "ptr_checkin";
+            this.ptr_checkin.Size = new System.Drawing.Size(50, 50);
+            this.ptr_checkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_checkin.TabIndex = 12;
+            this.ptr_checkin.TabStop = false;
+            // 
+            // ptr_usuario
+            // 
+            this.ptr_usuario.Image = ((System.Drawing.Image)(resources.GetObject("ptr_usuario.Image")));
+            this.ptr_usuario.Location = new System.Drawing.Point(21, 144);
+            this.ptr_usuario.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_usuario.Name = "ptr_usuario";
+            this.ptr_usuario.Size = new System.Drawing.Size(50, 50);
+            this.ptr_usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_usuario.TabIndex = 8;
+            this.ptr_usuario.TabStop = false;
+            // 
+            // ptr_relogio
+            // 
+            this.ptr_relogio.Image = ((System.Drawing.Image)(resources.GetObject("ptr_relogio.Image")));
+            this.ptr_relogio.Location = new System.Drawing.Point(21, 22);
+            this.ptr_relogio.Margin = new System.Windows.Forms.Padding(2);
+            this.ptr_relogio.Name = "ptr_relogio";
+            this.ptr_relogio.Size = new System.Drawing.Size(50, 50);
+            this.ptr_relogio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptr_relogio.TabIndex = 6;
+            this.ptr_relogio.TabStop = false;
             // 
             // Frm_Dashboard
             // 
@@ -581,15 +590,15 @@
             this.mnu_principal.PerformLayout();
             this.pnl_pg_lateral.ResumeLayout(false);
             this.pnl_pg_lateral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_piscina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_atras_hotel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_quarto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptr_hotel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_estoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_quartos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_checkin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_usuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_relogio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_hotel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_quarto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_atras_hotel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptr_piscina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -642,5 +651,6 @@
         private System.Windows.Forms.ToolStripMenuItem atualizaItensToolStripMenuItem;
         private System.Windows.Forms.PictureBox pcb_estoque;
         private System.Windows.Forms.Label lbl_estoque;
+        private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem;
     }
 }

@@ -29,6 +29,7 @@ namespace ProjetoHotel.Formulários_de_Atualização
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AtualizaItensFornecedor));
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.txt_nome_item = new System.Windows.Forms.TextBox();
             this.dgv_itens = new System.Windows.Forms.DataGridView();
@@ -225,11 +226,14 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.Controls.Add(this.lbl_titulo);
             this.Font = new System.Drawing.Font("Georgia", 15.75F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(72)))), ((int)(((byte)(112)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Frm_AtualizaItensFornecedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Atualiza Itens";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Frm_AtualizaItensFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_itens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

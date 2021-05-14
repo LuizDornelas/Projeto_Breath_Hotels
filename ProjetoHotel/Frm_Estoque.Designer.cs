@@ -29,6 +29,7 @@ namespace ProjetoHotel
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Estoque));
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.lbl_fornecedor = new System.Windows.Forms.Label();
             this.btn_voltar = new System.Windows.Forms.Button();
@@ -239,12 +240,15 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_titulo);
             this.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(72)))), ((int)(((byte)(112)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Frm_Estoque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Estoque";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Frm_Estoque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_itens)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

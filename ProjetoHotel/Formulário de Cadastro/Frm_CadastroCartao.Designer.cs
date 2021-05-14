@@ -29,6 +29,7 @@ namespace ProjetoHotel
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_CadastroCartao));
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.msk_rg = new System.Windows.Forms.MaskedTextBox();
             this.lbl_rg = new System.Windows.Forms.Label();
@@ -36,8 +37,6 @@ namespace ProjetoHotel
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.lbl_pesquisa = new System.Windows.Forms.Label();
             this.btn_voltar = new System.Windows.Forms.Button();
-            this.msk_pesquisa = new System.Windows.Forms.MaskedTextBox();
-            this.btn_pesquisa = new System.Windows.Forms.Button();
             this.lbl_numero_cartao = new System.Windows.Forms.Label();
             this.msk_numero_cartao = new System.Windows.Forms.MaskedTextBox();
             this.txt_nome_cartao = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@ namespace ProjetoHotel
             this.btn_salvar = new System.Windows.Forms.Button();
             this.cmb_bandeira = new System.Windows.Forms.ComboBox();
             this.lbl_campos_obrigatorios = new System.Windows.Forms.Label();
+            this.cmb_pesquisa_cartao = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txt_nome
@@ -109,9 +109,9 @@ namespace ProjetoHotel
             this.lbl_pesquisa.Location = new System.Drawing.Point(104, 107);
             this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pesquisa.Name = "lbl_pesquisa";
-            this.lbl_pesquisa.Size = new System.Drawing.Size(132, 25);
+            this.lbl_pesquisa.Size = new System.Drawing.Size(129, 25);
             this.lbl_pesquisa.TabIndex = 59;
-            this.lbl_pesquisa.Text = "Pesquisar ID";
+            this.lbl_pesquisa.Text = "Seleciona ID";
             // 
             // btn_voltar
             // 
@@ -122,25 +122,6 @@ namespace ProjetoHotel
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
-            // 
-            // msk_pesquisa
-            // 
-            this.msk_pesquisa.Location = new System.Drawing.Point(233, 103);
-            this.msk_pesquisa.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_pesquisa.Mask = "99999";
-            this.msk_pesquisa.Name = "msk_pesquisa";
-            this.msk_pesquisa.Size = new System.Drawing.Size(84, 31);
-            this.msk_pesquisa.TabIndex = 67;
-            // 
-            // btn_pesquisa
-            // 
-            this.btn_pesquisa.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_pesquisa.Location = new System.Drawing.Point(324, 98);
-            this.btn_pesquisa.Name = "btn_pesquisa";
-            this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
-            this.btn_pesquisa.TabIndex = 66;
-            this.btn_pesquisa.UseVisualStyleBackColor = true;
-            this.btn_pesquisa.Click += new System.EventHandler(this.btn_pesquisa_Click);
             // 
             // lbl_numero_cartao
             // 
@@ -261,6 +242,17 @@ namespace ProjetoHotel
             this.lbl_campos_obrigatorios.TabIndex = 84;
             this.lbl_campos_obrigatorios.Text = "* Todos os campos são de preenchimento obrigatório";
             // 
+            // cmb_pesquisa_cartao
+            // 
+            this.cmb_pesquisa_cartao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_pesquisa_cartao.FormattingEnabled = true;
+            this.cmb_pesquisa_cartao.Location = new System.Drawing.Point(232, 104);
+            this.cmb_pesquisa_cartao.Margin = new System.Windows.Forms.Padding(4);
+            this.cmb_pesquisa_cartao.Name = "cmb_pesquisa_cartao";
+            this.cmb_pesquisa_cartao.Size = new System.Drawing.Size(73, 33);
+            this.cmb_pesquisa_cartao.TabIndex = 105;
+            this.cmb_pesquisa_cartao.SelectedIndexChanged += new System.EventHandler(this.cmb_pesquisa_cartao_SelectedIndexChanged);
+            // 
             // Frm_CadastroCartao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -268,6 +260,7 @@ namespace ProjetoHotel
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1096, 520);
             this.ControlBox = false;
+            this.Controls.Add(this.cmb_pesquisa_cartao);
             this.Controls.Add(this.lbl_campos_obrigatorios);
             this.Controls.Add(this.cmb_bandeira);
             this.Controls.Add(this.btn_salvar);
@@ -280,8 +273,6 @@ namespace ProjetoHotel
             this.Controls.Add(this.txt_nome_cartao);
             this.Controls.Add(this.msk_numero_cartao);
             this.Controls.Add(this.lbl_numero_cartao);
-            this.Controls.Add(this.msk_pesquisa);
-            this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.lbl_pesquisa);
             this.Controls.Add(this.lbl_titulo);
@@ -291,12 +282,15 @@ namespace ProjetoHotel
             this.Controls.Add(this.lbl_nome);
             this.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(72)))), ((int)(((byte)(112)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Frm_CadastroCartao";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cadastro Cartao";
             this.TransparencyKey = System.Drawing.Color.White;
+            this.Load += new System.EventHandler(this.Frm_CadastroCartao_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,8 +304,6 @@ namespace ProjetoHotel
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Label lbl_pesquisa;
         private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.Button btn_pesquisa;
-        public System.Windows.Forms.MaskedTextBox msk_pesquisa;
         private System.Windows.Forms.Label lbl_numero_cartao;
         public System.Windows.Forms.MaskedTextBox msk_numero_cartao;
         public System.Windows.Forms.TextBox txt_nome_cartao;
@@ -324,5 +316,6 @@ namespace ProjetoHotel
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.ComboBox cmb_bandeira;
         private System.Windows.Forms.Label lbl_campos_obrigatorios;
+        private System.Windows.Forms.ComboBox cmb_pesquisa_cartao;
     }
 }

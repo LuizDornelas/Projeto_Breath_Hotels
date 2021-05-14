@@ -101,7 +101,7 @@ namespace ProjetoHotel
         {
             string tipo = lbl_usuario.Text;
             Frm_CadastroUsuarios Cadastro = new Frm_CadastroUsuarios(tipo);
-            Cadastro.StartPosition = FormStartPosition.CenterParent;
+            Cadastro.StartPosition = FormStartPosition.Manual;
             Cadastro.MdiParent = this;
             Cadastro.Show();
             Cadastro.txt_nome.Focus();
@@ -141,12 +141,13 @@ namespace ProjetoHotel
         private void lbl_nome_Click(object sender, EventArgs e)
         {
 
+
         }  
 
         private void hospedadoscheckInToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Checkin Checkin = new Frm_Checkin(lbl_nome.Text);
-            Checkin.StartPosition = FormStartPosition.CenterParent;
+            Checkin.StartPosition = FormStartPosition.Manual;
             Checkin.MdiParent = this;
             Checkin.Show();
         }
@@ -154,7 +155,7 @@ namespace ProjetoHotel
         private void checkOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Checkout Checkout = new Frm_Checkout();
-            Checkout.StartPosition = FormStartPosition.CenterParent;
+            Checkout.StartPosition = FormStartPosition.Manual;
             Checkout.MdiParent = this;
             Checkout.Show();
         }
@@ -162,7 +163,7 @@ namespace ProjetoHotel
         private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Frm_CompraItens CompraItens = new Frm_CompraItens();
-            CompraItens.StartPosition = FormStartPosition.CenterParent;
+            CompraItens.StartPosition = FormStartPosition.Manual;
             CompraItens.MdiParent = this;
             CompraItens.Show();
         }
@@ -170,7 +171,7 @@ namespace ProjetoHotel
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Estoque Estoque = new Frm_Estoque();
-            Estoque.StartPosition = FormStartPosition.CenterParent;
+            Estoque.StartPosition = FormStartPosition.Manual;
             Estoque.MdiParent = this;
             Estoque.Show();
         }
@@ -184,7 +185,7 @@ namespace ProjetoHotel
         {
             string tipo = lbl_usuario.Text;
             Frm_AtualizaUsuarios Atualiza = new Frm_AtualizaUsuarios(tipo);
-            Atualiza.StartPosition = FormStartPosition.CenterParent;
+            Atualiza.StartPosition = FormStartPosition.Manual;
             Atualiza.MdiParent = this;
             Atualiza.Show();
         }
@@ -192,7 +193,7 @@ namespace ProjetoHotel
         private void cadastroDeCartõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_CadastroCartao Cartao = new Frm_CadastroCartao();
-            Cartao.StartPosition = FormStartPosition.CenterParent;
+            Cartao.StartPosition = FormStartPosition.Manual;
             Cartao.MdiParent = this;
             Cartao.Show();
         }
@@ -200,7 +201,7 @@ namespace ProjetoHotel
         private void atualizarCartãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_AtualizaCartao atualizaCartao = new Frm_AtualizaCartao();
-            atualizaCartao.StartPosition = FormStartPosition.CenterParent;
+            atualizaCartao.StartPosition = FormStartPosition.Manual;
             atualizaCartao.MdiParent = this;
             atualizaCartao.Show();
         }
@@ -208,7 +209,7 @@ namespace ProjetoHotel
         private void cadastroDeQuartoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_CadastroQuarto CadQuarto = new Frm_CadastroQuarto();
-            CadQuarto.StartPosition = FormStartPosition.CenterParent;
+            CadQuarto.StartPosition = FormStartPosition.Manual;
             CadQuarto.MdiParent = this;
             CadQuarto.Show();
         }
@@ -216,7 +217,7 @@ namespace ProjetoHotel
         private void atualizarQuartoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_AtualizaQuarto AttQuarto = new Frm_AtualizaQuarto();
-            AttQuarto.StartPosition = FormStartPosition.CenterParent;
+            AttQuarto.StartPosition = FormStartPosition.Manual;
             AttQuarto.MdiParent = this;
             AttQuarto.Show();
         }
@@ -224,7 +225,7 @@ namespace ProjetoHotel
         private void cadastroDeItensToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_CadastroItensFornecedor Itens = new Frm_CadastroItensFornecedor();
-            Itens.StartPosition = FormStartPosition.CenterParent;
+            Itens.StartPosition = FormStartPosition.Manual;
             Itens.MdiParent = this;
             Itens.Show();
         }
@@ -232,17 +233,17 @@ namespace ProjetoHotel
         private void atualizaItensToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_AtualizaItensFornecedor AttItens = new Frm_AtualizaItensFornecedor();
-            AttItens.StartPosition = FormStartPosition.CenterParent;
+            AttItens.StartPosition = FormStartPosition.Manual;
             AttItens.MdiParent = this;
             AttItens.Show();
-        }
+        }       
 
-        private void compraItensToolStripMenuItem_Click(object sender, EventArgs e)
+        private void históricoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_CompraItens CompraItens = new Frm_CompraItens();
-            CompraItens.StartPosition = FormStartPosition.CenterParent;
-            CompraItens.MdiParent = this;
-            CompraItens.Show();
+            Frm_Historico Historico = new Frm_Historico();
+            Historico.StartPosition = FormStartPosition.CenterParent;
+            Historico.MdiParent = this;
+            Historico.Show();
         }
     }
 }
