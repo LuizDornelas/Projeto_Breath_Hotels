@@ -379,63 +379,28 @@ namespace ProjetoHotel
 
                 string pesquisar;
 
-                if (this.criterio == "Id")
-                {
-                    pesquisar = "select nome, rg, telefone, rua, numero, bairro, cidade, login.ativo, estado, cep, login, senha, tipo from usuario, login where usuarioid = fk_usuario and usuarioid = '" + this.pesquisa + "' LIMIT 1;";
-                }
-                else if (this.criterio == "Nome")
-                {
-                    pesquisar = "select nome, rg, telefone, rua, numero, bairro, cidade, login.ativo, estado, cep, login, senha, tipo from usuario, login where usuarioid = fk_usuario and nome like '%" + this.pesquisa + "%' LIMIT 1;";
-                }
-                else if (this.criterio == "RG")
-                {
-                    pesquisar = "select nome, rg, telefone, rua, numero, bairro, cidade, login.ativo, estado, cep, login, senha, tipo from usuario, login where usuarioid = fk_usuario and rg = '" + this.pesquisa + "' LIMIT 1;";
-                }
-                else
-                {
-                    pesquisar = "select nome, rg, telefone, rua, numero, bairro, cidade, login.ativo, estado, cep, login, senha, tipo from usuario, login where usuarioid = fk_usuario and telefone = '" + this.pesquisa + "' LIMIT 1;";
-                }
+                pesquisar = "select nome, rg, telefone, rua, numero, bairro, cidade, login.ativo, estado, cep, login, senha, tipo from usuario, login where usuarioid = fk_usuario and usuarioid = '" + this.pesquisa + "' LIMIT 1;";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(pesquisar, pgsqlConnection);
 
                 NpgsqlDataReader pesquisa = cmd.ExecuteReader();
 
-                if (pesquisa.Read())
-                {
+                pesquisa.Read();
 
-                    if (pesquisa["tipo"].ToString() == "Admin" && tipo == "Cargo: Func")
-                    {
-                        MessageBox.Show("Não é possível atualizar este usuário com o seu login", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                    else if (pesquisa["tipo"].ToString() == "Func" && tipo == "Cargo: Func")
-                    {
-                        MessageBox.Show("Não é possível atualizar este usuário com o seu login", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return false;
-                    }
-                    else
-                    {
-                        this.nome = pesquisa["nome"].ToString();
-                        this.rg = pesquisa["rg"].ToString();
-                        this.telefone = pesquisa["telefone"].ToString();
-                        this.rua = pesquisa["rua"].ToString();
-                        this.numero = pesquisa["numero"].ToString();
-                        this.bairro = pesquisa["bairro"].ToString();
-                        this.cidade = pesquisa["cidade"].ToString();
-                        this.ativo = pesquisa["ativo"].ToString();
-                        this.estado = pesquisa["estado"].ToString();
-                        this.cep = pesquisa["cep"].ToString();
-                        this.login = pesquisa["login"].ToString();
-                        this.senha = pesquisa["senha"].ToString();
-                        this.tipo = pesquisa["tipo"].ToString();
-                        return true;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Não foi encontrado cadastro com os critérios informados", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+                this.nome = pesquisa["nome"].ToString();
+                this.rg = pesquisa["rg"].ToString();
+                this.telefone = pesquisa["telefone"].ToString();
+                this.rua = pesquisa["rua"].ToString();
+                this.numero = pesquisa["numero"].ToString();
+                this.bairro = pesquisa["bairro"].ToString();
+                this.cidade = pesquisa["cidade"].ToString();
+                this.ativo = pesquisa["ativo"].ToString();
+                this.estado = pesquisa["estado"].ToString();
+                this.cep = pesquisa["cep"].ToString();
+                this.login = pesquisa["login"].ToString();
+                this.senha = pesquisa["senha"].ToString();
+                this.tipo = pesquisa["tipo"].ToString();
+                return true;
             }
             finally
             {
@@ -1023,7 +988,7 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string querry = "UPDATE itens SET item='" + this.nome + "', valor='" + this.valor + "', WHERE item = '" + this.criterio + "';";
+                string querry = "UPDATE itens SET item='" + this.nome + "', valor='" + this.valor + "' WHERE item = '" + this.criterio + "';";
 
                 NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
 

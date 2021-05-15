@@ -52,19 +52,41 @@ namespace ProjetoHotel
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string combobox = "select usuarioid from usuario order by usuarioid;";
+                string combobox;
+                NpgsqlCommand cmd;
 
-                NpgsqlCommand cmd = new NpgsqlCommand(combobox, pgsqlConnection);
+                if (tipo == "Cargo: Admin")
+                {
+                    combobox = "select usuarioid from usuario order by usuarioid;";
 
-                NpgsqlDataReader comboboxshow = cmd.ExecuteReader();
+                    cmd = new NpgsqlCommand(combobox, pgsqlConnection);
 
-                DataTable dt = new DataTable();
+                    NpgsqlDataReader comboboxshow = cmd.ExecuteReader();
 
-                dt.Load(comboboxshow);
+                    DataTable dt = new DataTable();
 
-                cmb_pesquisacad.DisplayMember = "usuarioid";
+                    dt.Load(comboboxshow);
 
-                cmb_pesquisacad.DataSource = dt;
+                    cmb_pesquisacad.DisplayMember = "usuarioid";
+
+                    cmb_pesquisacad.DataSource = dt;
+                }
+                else
+                {
+                    combobox = "select usuarioid from usuario, login where usuarioid = fk_usuario and tipo = 'Cliente' order by usuarioid;";
+
+                    cmd = new NpgsqlCommand(combobox, pgsqlConnection);
+
+                    NpgsqlDataReader comboboxshow = cmd.ExecuteReader();
+
+                    DataTable dt = new DataTable();
+
+                    dt.Load(comboboxshow);
+
+                    cmb_pesquisacad.DisplayMember = "usuarioid";
+
+                    cmb_pesquisacad.DataSource = dt;
+                }                
             }
             finally
             {
@@ -206,8 +228,7 @@ namespace ProjetoHotel
             Cls_Cadastro pesquisa = new Cls_Cadastro();
 
             atualizadgv();
-
-            pesquisa.Criterio = "Id";
+            
             pesquisa.Pesquisa = cmb_pesquisacad.Text;
 
             if (pesquisa.pesquisar(tipo))
