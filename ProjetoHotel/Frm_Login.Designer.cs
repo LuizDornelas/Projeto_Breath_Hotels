@@ -51,10 +51,9 @@ namespace ProjetoHotel
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.label4.Location = new System.Drawing.Point(527, 227);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(386, 204);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 84);
+            this.label4.Size = new System.Drawing.Size(132, 67);
             this.label4.TabIndex = 1;
             this.label4.Text = "Login";
             // 
@@ -73,11 +72,11 @@ namespace ProjetoHotel
             this.txtUsuario.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
             this.txtUsuario.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.txtUsuario.LineThickness = 3;
-            this.txtUsuario.Location = new System.Drawing.Point(447, 339);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(5);
+            this.txtUsuario.Location = new System.Drawing.Point(335, 275);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.MaxLength = 32767;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(303, 49);
+            this.txtUsuario.Size = new System.Drawing.Size(227, 40);
             this.txtUsuario.TabIndex = 4;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtUsuario.OnValueChanged += new System.EventHandler(this.txtUsuario_OnValueChanged);
@@ -97,11 +96,11 @@ namespace ProjetoHotel
             this.txtSenha.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
             this.txtSenha.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
             this.txtSenha.LineThickness = 3;
-            this.txtSenha.Location = new System.Drawing.Point(447, 420);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSenha.Location = new System.Drawing.Point(335, 341);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSenha.MaxLength = 32767;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(303, 41);
+            this.txtSenha.Size = new System.Drawing.Size(227, 33);
             this.txtSenha.TabIndex = 4;
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtSenha.OnValueChanged += new System.EventHandler(this.txtSenha_OnValueChanged);
@@ -112,10 +111,9 @@ namespace ProjetoHotel
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(447, 542);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Location = new System.Drawing.Point(335, 440);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(303, 66);
+            this.btnLogin.Size = new System.Drawing.Size(227, 54);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -126,10 +124,9 @@ namespace ProjetoHotel
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.label8.Location = new System.Drawing.Point(757, 9);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(568, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 25);
+            this.label8.Size = new System.Drawing.Size(21, 20);
             this.label8.TabIndex = 9;
             this.label8.Text = "X";
             this.label8.Click += new System.EventHandler(this.label8_Click);
@@ -153,17 +150,17 @@ namespace ProjetoHotel
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(411, 653);
+            this.panel1.Size = new System.Drawing.Size(308, 531);
             this.panel1.TabIndex = 0;
             // 
             // pct_login
             // 
             this.pct_login.Image = ((System.Drawing.Image)(resources.GetObject("pct_login.Image")));
-            this.pct_login.Location = new System.Drawing.Point(-66, 0);
+            this.pct_login.Location = new System.Drawing.Point(-62, -28);
+            this.pct_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pct_login.Name = "pct_login";
-            this.pct_login.Size = new System.Drawing.Size(552, 656);
+            this.pct_login.Size = new System.Drawing.Size(452, 557);
             this.pct_login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pct_login.TabIndex = 10;
             this.pct_login.TabStop = false;
@@ -171,19 +168,20 @@ namespace ProjetoHotel
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(492, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(373, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 191);
+            this.pictureBox1.Size = new System.Drawing.Size(167, 155);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // Frm_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(807, 653);
+            this.ClientSize = new System.Drawing.Size(605, 531);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnLogin);
@@ -193,7 +191,6 @@ namespace ProjetoHotel
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
