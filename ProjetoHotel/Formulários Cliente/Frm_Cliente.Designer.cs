@@ -31,11 +31,11 @@ namespace ProjetoHotel
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cliente));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_pg_lateral = new System.Windows.Forms.Panel();
             this.lbl_reservas_andamento = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,19 +62,21 @@ namespace ProjetoHotel
             this.btn_andamento = new System.Windows.Forms.Button();
             this.btn_encerrados = new System.Windows.Forms.Button();
             this.dgv_reservas = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_pg_lateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_checkin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_usuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptr_relogio)).BeginInit();
             this.mnu_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reservas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_pg_lateral
             // 
             this.pnl_pg_lateral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnl_pg_lateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(67)))), ((int)(((byte)(96)))));
+            this.pnl_pg_lateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
             this.pnl_pg_lateral.Controls.Add(this.lbl_reservas_andamento);
             this.pnl_pg_lateral.Controls.Add(this.label1);
             this.pnl_pg_lateral.Controls.Add(this.label2);
@@ -86,21 +88,21 @@ namespace ProjetoHotel
             this.pnl_pg_lateral.Controls.Add(this.ptr_relogio);
             this.pnl_pg_lateral.Controls.Add(this.lbl_data);
             this.pnl_pg_lateral.Controls.Add(this.lbl_horas);
-            this.pnl_pg_lateral.Location = new System.Drawing.Point(929, 23);
+            this.pnl_pg_lateral.Location = new System.Drawing.Point(897, 23);
             this.pnl_pg_lateral.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pg_lateral.Name = "pnl_pg_lateral";
-            this.pnl_pg_lateral.Size = new System.Drawing.Size(234, 532);
+            this.pnl_pg_lateral.Size = new System.Drawing.Size(266, 623);
             this.pnl_pg_lateral.TabIndex = 3;
             // 
             // lbl_reservas_andamento
             // 
             this.lbl_reservas_andamento.AutoSize = true;
-            this.lbl_reservas_andamento.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_reservas_andamento.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_reservas_andamento.ForeColor = System.Drawing.Color.White;
-            this.lbl_reservas_andamento.Location = new System.Drawing.Point(2, 388);
+            this.lbl_reservas_andamento.Location = new System.Drawing.Point(4, 373);
             this.lbl_reservas_andamento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_reservas_andamento.Name = "lbl_reservas_andamento";
-            this.lbl_reservas_andamento.Size = new System.Drawing.Size(217, 18);
+            this.lbl_reservas_andamento.Size = new System.Drawing.Size(230, 28);
             this.lbl_reservas_andamento.TabIndex = 73;
             this.lbl_reservas_andamento.Text = "Reservas em andamento: 6";
             // 
@@ -131,19 +133,19 @@ namespace ProjetoHotel
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nome.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nome.ForeColor = System.Drawing.Color.White;
-            this.lbl_nome.Location = new System.Drawing.Point(2, 223);
+            this.lbl_nome.Location = new System.Drawing.Point(2, 217);
             this.lbl_nome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_nome.Name = "lbl_nome";
-            this.lbl_nome.Size = new System.Drawing.Size(127, 22);
+            this.lbl_nome.Size = new System.Drawing.Size(107, 28);
             this.lbl_nome.TabIndex = 11;
             this.lbl_nome.Text = "Usuário: Luiz";
             // 
             // ptr_checkin
             // 
             this.ptr_checkin.Image = ((System.Drawing.Image)(resources.GetObject("ptr_checkin.Image")));
-            this.ptr_checkin.Location = new System.Drawing.Point(6, 283);
+            this.ptr_checkin.Location = new System.Drawing.Point(8, 282);
             this.ptr_checkin.Margin = new System.Windows.Forms.Padding(2);
             this.ptr_checkin.Name = "ptr_checkin";
             this.ptr_checkin.Size = new System.Drawing.Size(50, 50);
@@ -154,12 +156,12 @@ namespace ProjetoHotel
             // lbl_reservas_encerradas
             // 
             this.lbl_reservas_encerradas.AutoSize = true;
-            this.lbl_reservas_encerradas.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_reservas_encerradas.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_reservas_encerradas.ForeColor = System.Drawing.Color.White;
-            this.lbl_reservas_encerradas.Location = new System.Drawing.Point(2, 354);
+            this.lbl_reservas_encerradas.Location = new System.Drawing.Point(4, 345);
             this.lbl_reservas_encerradas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_reservas_encerradas.Name = "lbl_reservas_encerradas";
-            this.lbl_reservas_encerradas.Size = new System.Drawing.Size(200, 18);
+            this.lbl_reservas_encerradas.Size = new System.Drawing.Size(198, 28);
             this.lbl_reservas_encerradas.TabIndex = 70;
             this.lbl_reservas_encerradas.Text = "Reservas encerradas: 6";
             // 
@@ -179,7 +181,7 @@ namespace ProjetoHotel
             this.lbl_separador_1.AutoSize = true;
             this.lbl_separador_1.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_separador_1.ForeColor = System.Drawing.Color.White;
-            this.lbl_separador_1.Location = new System.Drawing.Point(-25, 112);
+            this.lbl_separador_1.Location = new System.Drawing.Point(-16, 118);
             this.lbl_separador_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_separador_1.Name = "lbl_separador_1";
             this.lbl_separador_1.Size = new System.Drawing.Size(362, 22);
@@ -200,24 +202,24 @@ namespace ProjetoHotel
             // lbl_data
             // 
             this.lbl_data.AutoSize = true;
-            this.lbl_data.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_data.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_data.ForeColor = System.Drawing.Color.White;
-            this.lbl_data.Location = new System.Drawing.Point(17, 90);
+            this.lbl_data.Location = new System.Drawing.Point(50, 90);
             this.lbl_data.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_data.Name = "lbl_data";
-            this.lbl_data.Size = new System.Drawing.Size(181, 22);
+            this.lbl_data.Size = new System.Drawing.Size(152, 28);
             this.lbl_data.TabIndex = 6;
             this.lbl_data.Text = "DATA:  25/03/2021";
             // 
             // lbl_horas
             // 
             this.lbl_horas.AutoSize = true;
-            this.lbl_horas.Font = new System.Drawing.Font("Verdana", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_horas.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_horas.ForeColor = System.Drawing.Color.White;
             this.lbl_horas.Location = new System.Drawing.Point(75, 35);
             this.lbl_horas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_horas.Name = "lbl_horas";
-            this.lbl_horas.Size = new System.Drawing.Size(92, 22);
+            this.lbl_horas.Size = new System.Drawing.Size(62, 28);
             this.lbl_horas.TabIndex = 6;
             this.lbl_horas.Text = "16:13:18";
             // 
@@ -236,36 +238,41 @@ namespace ProjetoHotel
             this.sairToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logToolStripMenuItem,
             this.fecharSistemaToolStripMenuItem});
+            this.sairToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(58, 21);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(66, 32);
             this.sairToolStripMenuItem.Text = "Login";
             // 
             // logToolStripMenuItem
             // 
+            this.logToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
+            this.logToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(207, 32);
             this.logToolStripMenuItem.Text = "Logout";
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
             // fecharSistemaToolStripMenuItem
             // 
+            this.fecharSistemaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
+            this.fecharSistemaToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fecharSistemaToolStripMenuItem.Name = "fecharSistemaToolStripMenuItem";
-            this.fecharSistemaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.fecharSistemaToolStripMenuItem.Size = new System.Drawing.Size(207, 32);
             this.fecharSistemaToolStripMenuItem.Text = "Fechar Sistema";
             this.fecharSistemaToolStripMenuItem.Click += new System.EventHandler(this.fecharSistemaToolStripMenuItem_Click);
             // 
             // produtosToolStripMenuItem
             // 
-            this.produtosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.produtosToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(116, 21);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(132, 32);
             this.produtosToolStripMenuItem.Text = "Compra Itens";
             this.produtosToolStripMenuItem.Click += new System.EventHandler(this.produtosToolStripMenuItem_Click);
             // 
             // mnu_principal
             // 
-            this.mnu_principal.BackColor = System.Drawing.Color.White;
-            this.mnu_principal.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnu_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
+            this.mnu_principal.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnu_principal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mnu_principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sairToolStripMenuItem,
@@ -275,21 +282,23 @@ namespace ProjetoHotel
             this.mnu_principal.Location = new System.Drawing.Point(0, 0);
             this.mnu_principal.Name = "mnu_principal";
             this.mnu_principal.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mnu_principal.Size = new System.Drawing.Size(1154, 25);
+            this.mnu_principal.Size = new System.Drawing.Size(1154, 36);
             this.mnu_principal.TabIndex = 0;
             this.mnu_principal.Text = "menu_pg1";
             // 
             // históricoToolStripMenuItem
             // 
+            this.históricoToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
-            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(196, 21);
+            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(225, 32);
             this.históricoToolStripMenuItem.Text = "Reservas em Andamento";
             this.históricoToolStripMenuItem.Click += new System.EventHandler(this.históricoToolStripMenuItem_Click);
             // 
             // reservasEncerradasToolStripMenuItem
             // 
+            this.reservasEncerradasToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.reservasEncerradasToolStripMenuItem.Name = "reservasEncerradasToolStripMenuItem";
-            this.reservasEncerradasToolStripMenuItem.Size = new System.Drawing.Size(167, 21);
+            this.reservasEncerradasToolStripMenuItem.Size = new System.Drawing.Size(191, 32);
             this.reservasEncerradasToolStripMenuItem.Text = "Reservas Encerradas";
             this.reservasEncerradasToolStripMenuItem.Click += new System.EventHandler(this.reservasEncerradasToolStripMenuItem_Click);
             // 
@@ -298,7 +307,7 @@ namespace ProjetoHotel
             this.btn_compra.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_compra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_compra.BackgroundImage")));
             this.btn_compra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_compra.Location = new System.Drawing.Point(97, 83);
+            this.btn_compra.Location = new System.Drawing.Point(12, 240);
             this.btn_compra.Name = "btn_compra";
             this.btn_compra.Size = new System.Drawing.Size(78, 74);
             this.btn_compra.TabIndex = 70;
@@ -309,7 +318,7 @@ namespace ProjetoHotel
             // 
             this.btn_pesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_pesquisa.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisa.Image")));
-            this.btn_pesquisa.Location = new System.Drawing.Point(883, 37);
+            this.btn_pesquisa.Location = new System.Drawing.Point(851, 39);
             this.btn_pesquisa.Name = "btn_pesquisa";
             this.btn_pesquisa.Size = new System.Drawing.Size(41, 43);
             this.btn_pesquisa.TabIndex = 68;
@@ -321,7 +330,7 @@ namespace ProjetoHotel
             this.btn_andamento.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_andamento.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_andamento.BackgroundImage")));
             this.btn_andamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_andamento.Location = new System.Drawing.Point(211, 83);
+            this.btn_andamento.Location = new System.Drawing.Point(12, 45);
             this.btn_andamento.Name = "btn_andamento";
             this.btn_andamento.Size = new System.Drawing.Size(78, 74);
             this.btn_andamento.TabIndex = 77;
@@ -333,7 +342,7 @@ namespace ProjetoHotel
             this.btn_encerrados.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btn_encerrados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_encerrados.BackgroundImage")));
             this.btn_encerrados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btn_encerrados.Location = new System.Drawing.Point(317, 83);
+            this.btn_encerrados.Location = new System.Drawing.Point(12, 141);
             this.btn_encerrados.Name = "btn_encerrados";
             this.btn_encerrados.Size = new System.Drawing.Size(78, 74);
             this.btn_encerrados.TabIndex = 79;
@@ -344,52 +353,62 @@ namespace ProjetoHotel
             // 
             this.dgv_reservas.AllowUserToAddRows = false;
             this.dgv_reservas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 14F);
-            this.dgv_reservas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 14F);
+            this.dgv_reservas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_reservas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_reservas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_reservas.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_reservas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 14F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_reservas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Verdana", 14F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_reservas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_reservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 14F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_reservas.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_reservas.Location = new System.Drawing.Point(97, 208);
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 14F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_reservas.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_reservas.Location = new System.Drawing.Point(417, 88);
             this.dgv_reservas.Name = "dgv_reservas";
             this.dgv_reservas.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 14F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_reservas.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 14F);
-            this.dgv_reservas.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_reservas.Size = new System.Drawing.Size(715, 287);
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 14F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_reservas.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Verdana", 14F);
+            this.dgv_reservas.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgv_reservas.Size = new System.Drawing.Size(459, 400);
             this.dgv_reservas.TabIndex = 81;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(900, 568);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 83;
+            this.pictureBox1.TabStop = false;
             // 
             // Frm_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 553);
+            this.ClientSize = new System.Drawing.Size(1154, 644);
             this.Controls.Add(this.dgv_reservas);
             this.Controls.Add(this.btn_encerrados);
             this.Controls.Add(this.btn_andamento);
@@ -397,6 +416,7 @@ namespace ProjetoHotel
             this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.pnl_pg_lateral);
             this.Controls.Add(this.mnu_principal);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -414,6 +434,7 @@ namespace ProjetoHotel
             this.mnu_principal.ResumeLayout(false);
             this.mnu_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reservas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,5 +467,6 @@ namespace ProjetoHotel
         private System.Windows.Forms.Button btn_andamento;
         private System.Windows.Forms.Button btn_encerrados;
         private System.Windows.Forms.DataGridView dgv_reservas;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

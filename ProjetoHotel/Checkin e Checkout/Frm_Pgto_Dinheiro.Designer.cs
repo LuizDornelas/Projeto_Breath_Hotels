@@ -163,7 +163,6 @@ namespace ProjetoHotel
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(723, 423);
-            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_total);
             this.Controls.Add(this.lbl_troco);

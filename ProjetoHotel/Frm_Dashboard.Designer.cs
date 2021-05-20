@@ -175,7 +175,7 @@
             this.hospedadoscheckInToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
             this.hospedadoscheckInToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.hospedadoscheckInToolStripMenuItem.Name = "hospedadoscheckInToolStripMenuItem";
-            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.hospedadoscheckInToolStripMenuItem.Size = new System.Drawing.Size(160, 32);
             this.hospedadoscheckInToolStripMenuItem.Text = "Checkin";
             this.hospedadoscheckInToolStripMenuItem.Click += new System.EventHandler(this.hospedadoscheckInToolStripMenuItem_Click);
             // 
@@ -184,7 +184,7 @@
             this.checkOutToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(69)))), ((int)(((byte)(89)))));
             this.checkOutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 32);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(160, 32);
             this.checkOutToolStripMenuItem.Text = "Checkout";
             this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.checkOutToolStripMenuItem_Click);
             // 
@@ -319,7 +319,7 @@
             this.pnl_pg_lateral.Controls.Add(this.lbl_data);
             this.pnl_pg_lateral.Controls.Add(this.lbl_horas);
             this.pnl_pg_lateral.Location = new System.Drawing.Point(907, 23);
-            this.pnl_pg_lateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_pg_lateral.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_pg_lateral.Name = "pnl_pg_lateral";
             this.pnl_pg_lateral.Size = new System.Drawing.Size(274, 955);
             this.pnl_pg_lateral.TabIndex = 3;
@@ -340,7 +340,7 @@
             // 
             this.pcb_estoque.Image = ((System.Drawing.Image)(resources.GetObject("pcb_estoque.Image")));
             this.pcb_estoque.Location = new System.Drawing.Point(21, 616);
-            this.pcb_estoque.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcb_estoque.Margin = new System.Windows.Forms.Padding(2);
             this.pcb_estoque.Name = "pcb_estoque";
             this.pcb_estoque.Size = new System.Drawing.Size(50, 50);
             this.pcb_estoque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -362,12 +362,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(-25, 552);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(396, 28);
+            this.label5.Size = new System.Drawing.Size(296, 18);
             this.label5.TabIndex = 18;
             this.label5.Text = "________________________________";
             // 
@@ -375,7 +375,7 @@
             // 
             this.ptr_quartos.Image = ((System.Drawing.Image)(resources.GetObject("ptr_quartos.Image")));
             this.ptr_quartos.Location = new System.Drawing.Point(21, 411);
-            this.ptr_quartos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptr_quartos.Margin = new System.Windows.Forms.Padding(2);
             this.ptr_quartos.Name = "ptr_quartos";
             this.ptr_quartos.Size = new System.Drawing.Size(50, 50);
             this.ptr_quartos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -397,12 +397,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(-25, 379);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(396, 28);
+            this.label2.Size = new System.Drawing.Size(296, 18);
             this.label2.TabIndex = 14;
             this.label2.Text = "________________________________";
             // 
@@ -410,7 +410,7 @@
             // 
             this.ptr_checkin.Image = ((System.Drawing.Image)(resources.GetObject("ptr_checkin.Image")));
             this.ptr_checkin.Location = new System.Drawing.Point(21, 268);
-            this.ptr_checkin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptr_checkin.Margin = new System.Windows.Forms.Padding(2);
             this.ptr_checkin.Name = "ptr_checkin";
             this.ptr_checkin.Size = new System.Drawing.Size(50, 50);
             this.ptr_checkin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -445,12 +445,12 @@
             // lbl_separador_2
             // 
             this.lbl_separador_2.AutoSize = true;
-            this.lbl_separador_2.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_separador_2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_separador_2.ForeColor = System.Drawing.Color.White;
             this.lbl_separador_2.Location = new System.Drawing.Point(-25, 234);
             this.lbl_separador_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_separador_2.Name = "lbl_separador_2";
-            this.lbl_separador_2.Size = new System.Drawing.Size(396, 28);
+            this.lbl_separador_2.Size = new System.Drawing.Size(296, 18);
             this.lbl_separador_2.TabIndex = 10;
             this.lbl_separador_2.Text = "________________________________";
             // 
@@ -458,7 +458,7 @@
             // 
             this.ptr_usuario.Image = ((System.Drawing.Image)(resources.GetObject("ptr_usuario.Image")));
             this.ptr_usuario.Location = new System.Drawing.Point(21, 144);
-            this.ptr_usuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptr_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.ptr_usuario.Name = "ptr_usuario";
             this.ptr_usuario.Size = new System.Drawing.Size(50, 50);
             this.ptr_usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -480,12 +480,12 @@
             // lbl_separador_1
             // 
             this.lbl_separador_1.AutoSize = true;
-            this.lbl_separador_1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_separador_1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_separador_1.ForeColor = System.Drawing.Color.White;
             this.lbl_separador_1.Location = new System.Drawing.Point(-25, 112);
             this.lbl_separador_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_separador_1.Name = "lbl_separador_1";
-            this.lbl_separador_1.Size = new System.Drawing.Size(396, 28);
+            this.lbl_separador_1.Size = new System.Drawing.Size(296, 18);
             this.lbl_separador_1.TabIndex = 7;
             this.lbl_separador_1.Text = "________________________________";
             // 
@@ -493,7 +493,7 @@
             // 
             this.ptr_relogio.Image = ((System.Drawing.Image)(resources.GetObject("ptr_relogio.Image")));
             this.ptr_relogio.Location = new System.Drawing.Point(21, 22);
-            this.ptr_relogio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptr_relogio.Margin = new System.Windows.Forms.Padding(2);
             this.ptr_relogio.Name = "ptr_relogio";
             this.ptr_relogio.Size = new System.Drawing.Size(50, 50);
             this.ptr_relogio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -558,6 +558,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1172, 739);
             this.Controls.Add(this.btn_pesquisa);
             this.Controls.Add(this.pnl_pg_lateral);
@@ -566,7 +567,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnu_principal;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Frm_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
