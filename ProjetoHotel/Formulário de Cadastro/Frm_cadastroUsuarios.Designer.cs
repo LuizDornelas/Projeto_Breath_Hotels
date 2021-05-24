@@ -65,51 +65,51 @@
             // 
             this.msk_telefone.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_telefone.Location = new System.Drawing.Point(619, 198);
-            this.msk_telefone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msk_telefone.Margin = new System.Windows.Forms.Padding(4);
             this.msk_telefone.Mask = "(99)00000-0000";
             this.msk_telefone.Name = "msk_telefone";
-            this.msk_telefone.Size = new System.Drawing.Size(166, 31);
+            this.msk_telefone.Size = new System.Drawing.Size(166, 37);
             this.msk_telefone.TabIndex = 26;
             // 
             // txt_rua
             // 
             this.txt_rua.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rua.Location = new System.Drawing.Point(34, 299);
-            this.txt_rua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_rua.Location = new System.Drawing.Point(34, 293);
+            this.txt_rua.Margin = new System.Windows.Forms.Padding(4);
             this.txt_rua.Multiline = true;
             this.txt_rua.Name = "txt_rua";
-            this.txt_rua.Size = new System.Drawing.Size(219, 31);
+            this.txt_rua.Size = new System.Drawing.Size(429, 26);
             this.txt_rua.TabIndex = 25;
             // 
             // txt_nome
             // 
             this.txt_nome.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(34, 198);
-            this.txt_nome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_nome.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nome.MaxLength = 50;
             this.txt_nome.Multiline = true;
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(359, 31);
+            this.txt_nome.Size = new System.Drawing.Size(359, 28);
             this.txt_nome.TabIndex = 24;
             // 
             // msk_rg
             // 
             this.msk_rg.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_rg.Location = new System.Drawing.Point(420, 198);
-            this.msk_rg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msk_rg.Margin = new System.Windows.Forms.Padding(4);
             this.msk_rg.Mask = "99,999,999-9";
             this.msk_rg.Name = "msk_rg";
-            this.msk_rg.Size = new System.Drawing.Size(148, 31);
+            this.msk_rg.Size = new System.Drawing.Size(148, 37);
             this.msk_rg.TabIndex = 23;
             // 
             // lbl_rg
             // 
             this.lbl_rg.AutoSize = true;
             this.lbl_rg.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rg.Location = new System.Drawing.Point(415, 172);
+            this.lbl_rg.Location = new System.Drawing.Point(414, 158);
             this.lbl_rg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_rg.Name = "lbl_rg";
-            this.lbl_rg.Size = new System.Drawing.Size(38, 28);
+            this.lbl_rg.Size = new System.Drawing.Size(48, 36);
             this.lbl_rg.TabIndex = 22;
             this.lbl_rg.Text = "RG:";
             // 
@@ -117,10 +117,10 @@
             // 
             this.lbl_nome.AutoSize = true;
             this.lbl_nome.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome.Location = new System.Drawing.Point(29, 172);
+            this.lbl_nome.Location = new System.Drawing.Point(28, 158);
             this.lbl_nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_nome.Name = "lbl_nome";
-            this.lbl_nome.Size = new System.Drawing.Size(65, 28);
+            this.lbl_nome.Size = new System.Drawing.Size(81, 36);
             this.lbl_nome.TabIndex = 21;
             this.lbl_nome.Text = "Nome:";
             // 
@@ -128,10 +128,10 @@
             // 
             this.lbl_telefone.AutoSize = true;
             this.lbl_telefone.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_telefone.Location = new System.Drawing.Point(614, 172);
+            this.lbl_telefone.Location = new System.Drawing.Point(614, 158);
             this.lbl_telefone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_telefone.Name = "lbl_telefone";
-            this.lbl_telefone.Size = new System.Drawing.Size(86, 28);
+            this.lbl_telefone.Size = new System.Drawing.Size(107, 36);
             this.lbl_telefone.TabIndex = 20;
             this.lbl_telefone.Text = "Telefone:";
             // 
@@ -139,10 +139,10 @@
             // 
             this.lbl_rua.AutoSize = true;
             this.lbl_rua.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rua.Location = new System.Drawing.Point(29, 267);
+            this.lbl_rua.Location = new System.Drawing.Point(28, 251);
             this.lbl_rua.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_rua.Name = "lbl_rua";
-            this.lbl_rua.Size = new System.Drawing.Size(48, 28);
+            this.lbl_rua.Size = new System.Drawing.Size(60, 36);
             this.lbl_rua.TabIndex = 19;
             this.lbl_rua.Text = "Rua:";
             // 
@@ -150,10 +150,10 @@
             // 
             this.lbl_cargo.AutoSize = true;
             this.lbl_cargo.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cargo.Location = new System.Drawing.Point(415, 362);
+            this.lbl_cargo.Location = new System.Drawing.Point(437, 427);
             this.lbl_cargo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cargo.Name = "lbl_cargo";
-            this.lbl_cargo.Size = new System.Drawing.Size(50, 28);
+            this.lbl_cargo.Size = new System.Drawing.Size(65, 36);
             this.lbl_cargo.TabIndex = 37;
             this.lbl_cargo.Text = "Tipo:";
             // 
@@ -161,30 +161,30 @@
             // 
             this.lbl_usuario.AutoSize = true;
             this.lbl_usuario.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuario.Location = new System.Drawing.Point(29, 362);
+            this.lbl_usuario.Location = new System.Drawing.Point(29, 427);
             this.lbl_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_usuario.Name = "lbl_usuario";
-            this.lbl_usuario.Size = new System.Drawing.Size(78, 28);
+            this.lbl_usuario.Size = new System.Drawing.Size(99, 36);
             this.lbl_usuario.TabIndex = 38;
             this.lbl_usuario.Text = "Usuário:";
             // 
             // txt_usuario
             // 
             this.txt_usuario.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_usuario.Location = new System.Drawing.Point(34, 394);
-            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_usuario.Location = new System.Drawing.Point(34, 467);
+            this.txt_usuario.Margin = new System.Windows.Forms.Padding(4);
             this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(219, 31);
+            this.txt_usuario.Size = new System.Drawing.Size(219, 37);
             this.txt_usuario.TabIndex = 39;
             // 
             // lbl_senha
             // 
             this.lbl_senha.AutoSize = true;
             this.lbl_senha.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_senha.Location = new System.Drawing.Point(276, 362);
+            this.lbl_senha.Location = new System.Drawing.Point(286, 427);
             this.lbl_senha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_senha.Name = "lbl_senha";
-            this.lbl_senha.Size = new System.Drawing.Size(69, 28);
+            this.lbl_senha.Size = new System.Drawing.Size(84, 36);
             this.lbl_senha.TabIndex = 41;
             this.lbl_senha.Text = "Senha:";
             this.lbl_senha.Click += new System.EventHandler(this.lbl_senha_Click);
@@ -192,10 +192,10 @@
             // txt_senha
             // 
             this.txt_senha.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_senha.Location = new System.Drawing.Point(281, 394);
-            this.txt_senha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_senha.Location = new System.Drawing.Point(292, 467);
+            this.txt_senha.Margin = new System.Windows.Forms.Padding(4);
             this.txt_senha.Name = "txt_senha";
-            this.txt_senha.Size = new System.Drawing.Size(112, 31);
+            this.txt_senha.Size = new System.Drawing.Size(112, 37);
             this.txt_senha.TabIndex = 42;
             // 
             // cmb_cadastro_fun
@@ -203,10 +203,10 @@
             this.cmb_cadastro_fun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cadastro_fun.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_cadastro_fun.FormattingEnabled = true;
-            this.cmb_cadastro_fun.Location = new System.Drawing.Point(420, 394);
-            this.cmb_cadastro_fun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmb_cadastro_fun.Location = new System.Drawing.Point(444, 467);
+            this.cmb_cadastro_fun.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_cadastro_fun.Name = "cmb_cadastro_fun";
-            this.cmb_cadastro_fun.Size = new System.Drawing.Size(124, 36);
+            this.cmb_cadastro_fun.Size = new System.Drawing.Size(124, 44);
             this.cmb_cadastro_fun.TabIndex = 43;
             this.cmb_cadastro_fun.SelectedIndexChanged += new System.EventHandler(this.cmb_cadastro_fun_SelectedIndexChanged);
             // 
@@ -215,9 +215,9 @@
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.lbl_titulo.Location = new System.Drawing.Point(404, 34);
+            this.lbl_titulo.Location = new System.Drawing.Point(352, 33);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(381, 56);
+            this.lbl_titulo.Size = new System.Drawing.Size(471, 70);
             this.lbl_titulo.TabIndex = 44;
             this.lbl_titulo.Text = "Cadastro de Usuários";
             this.lbl_titulo.Click += new System.EventHandler(this.Titulo_Click);
@@ -227,10 +227,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins ExtraLight", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.label1.Location = new System.Drawing.Point(741, 719);
+            this.label1.Location = new System.Drawing.Point(614, 695);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(386, 25);
+            this.label1.Size = new System.Drawing.Size(469, 30);
             this.label1.TabIndex = 45;
             this.label1.Text = "* Todos os campos são de preenchimento obrigatório";
             // 
@@ -238,10 +238,10 @@
             // 
             this.lbl_numero.AutoSize = true;
             this.lbl_numero.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_numero.Location = new System.Drawing.Point(276, 267);
+            this.lbl_numero.Location = new System.Drawing.Point(490, 251);
             this.lbl_numero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_numero.Name = "lbl_numero";
-            this.lbl_numero.Size = new System.Drawing.Size(82, 28);
+            this.lbl_numero.Size = new System.Drawing.Size(102, 36);
             this.lbl_numero.TabIndex = 47;
             this.lbl_numero.Text = "Número:";
             // 
@@ -249,72 +249,72 @@
             // 
             this.lbl_bairro.AutoSize = true;
             this.lbl_bairro.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bairro.Location = new System.Drawing.Point(415, 267);
+            this.lbl_bairro.Location = new System.Drawing.Point(627, 251);
             this.lbl_bairro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_bairro.Name = "lbl_bairro";
-            this.lbl_bairro.Size = new System.Drawing.Size(63, 28);
+            this.lbl_bairro.Size = new System.Drawing.Size(82, 36);
             this.lbl_bairro.TabIndex = 48;
             this.lbl_bairro.Text = "Bairro:";
             // 
             // txt_bairro
             // 
             this.txt_bairro.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_bairro.Location = new System.Drawing.Point(420, 299);
-            this.txt_bairro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_bairro.Location = new System.Drawing.Point(633, 293);
+            this.txt_bairro.Margin = new System.Windows.Forms.Padding(4);
             this.txt_bairro.Multiline = true;
             this.txt_bairro.Name = "txt_bairro";
-            this.txt_bairro.Size = new System.Drawing.Size(166, 31);
+            this.txt_bairro.Size = new System.Drawing.Size(166, 26);
             this.txt_bairro.TabIndex = 49;
             // 
             // lbl_cidade
             // 
             this.lbl_cidade.AutoSize = true;
             this.lbl_cidade.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cidade.Location = new System.Drawing.Point(614, 267);
+            this.lbl_cidade.Location = new System.Drawing.Point(28, 343);
             this.lbl_cidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cidade.Name = "lbl_cidade";
-            this.lbl_cidade.Size = new System.Drawing.Size(75, 28);
+            this.lbl_cidade.Size = new System.Drawing.Size(95, 36);
             this.lbl_cidade.TabIndex = 50;
             this.lbl_cidade.Text = "Cidade:";
             // 
             // txt_cidade
             // 
             this.txt_cidade.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cidade.Location = new System.Drawing.Point(619, 299);
-            this.txt_cidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_cidade.Location = new System.Drawing.Point(35, 383);
+            this.txt_cidade.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cidade.Multiline = true;
             this.txt_cidade.Name = "txt_cidade";
-            this.txt_cidade.Size = new System.Drawing.Size(166, 31);
+            this.txt_cidade.Size = new System.Drawing.Size(166, 26);
             this.txt_cidade.TabIndex = 51;
             // 
             // msk_numero
             // 
             this.msk_numero.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_numero.Location = new System.Drawing.Point(281, 299);
-            this.msk_numero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msk_numero.Location = new System.Drawing.Point(496, 293);
+            this.msk_numero.Margin = new System.Windows.Forms.Padding(4);
             this.msk_numero.Mask = "99999999";
             this.msk_numero.Name = "msk_numero";
-            this.msk_numero.Size = new System.Drawing.Size(106, 31);
+            this.msk_numero.Size = new System.Drawing.Size(106, 37);
             this.msk_numero.TabIndex = 52;
             // 
             // txt_estado
             // 
             this.txt_estado.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_estado.Location = new System.Drawing.Point(815, 299);
-            this.txt_estado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_estado.Location = new System.Drawing.Point(227, 383);
+            this.txt_estado.Margin = new System.Windows.Forms.Padding(4);
             this.txt_estado.Multiline = true;
             this.txt_estado.Name = "txt_estado";
-            this.txt_estado.Size = new System.Drawing.Size(166, 31);
+            this.txt_estado.Size = new System.Drawing.Size(166, 26);
             this.txt_estado.TabIndex = 53;
             // 
             // lbl_cep
             // 
             this.lbl_cep.AutoSize = true;
             this.lbl_cep.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cep.Location = new System.Drawing.Point(1000, 267);
+            this.lbl_cep.Location = new System.Drawing.Point(414, 343);
             this.lbl_cep.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_cep.Name = "lbl_cep";
-            this.lbl_cep.Size = new System.Drawing.Size(47, 28);
+            this.lbl_cep.Size = new System.Drawing.Size(58, 36);
             this.lbl_cep.TabIndex = 54;
             this.lbl_cep.Text = "CEP:";
             // 
@@ -322,21 +322,21 @@
             // 
             this.lbl_estado.AutoSize = true;
             this.lbl_estado.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_estado.Location = new System.Drawing.Point(810, 267);
+            this.lbl_estado.Location = new System.Drawing.Point(243, 343);
             this.lbl_estado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_estado.Name = "lbl_estado";
-            this.lbl_estado.Size = new System.Drawing.Size(72, 28);
+            this.lbl_estado.Size = new System.Drawing.Size(91, 36);
             this.lbl_estado.TabIndex = 55;
             this.lbl_estado.Text = "Estado:";
             // 
             // msk_cep
             // 
             this.msk_cep.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_cep.Location = new System.Drawing.Point(1005, 299);
-            this.msk_cep.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.msk_cep.Location = new System.Drawing.Point(420, 383);
+            this.msk_cep.Margin = new System.Windows.Forms.Padding(4);
             this.msk_cep.Mask = "99999-999";
             this.msk_cep.Name = "msk_cep";
-            this.msk_cep.Size = new System.Drawing.Size(122, 31);
+            this.msk_cep.Size = new System.Drawing.Size(122, 37);
             this.msk_cep.TabIndex = 56;
             // 
             // btn_voltar
@@ -345,7 +345,7 @@
             this.btn_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_voltar.Font = new System.Drawing.Font("Poppins SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.ForeColor = System.Drawing.Color.White;
-            this.btn_voltar.Location = new System.Drawing.Point(619, 599);
+            this.btn_voltar.Location = new System.Drawing.Point(551, 605);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(193, 69);
             this.btn_voltar.TabIndex = 58;
@@ -360,7 +360,7 @@
             this.btn_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvar.Font = new System.Drawing.Font("Poppins SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar.ForeColor = System.Drawing.Color.White;
-            this.btn_salvar.Location = new System.Drawing.Point(375, 599);
+            this.btn_salvar.Location = new System.Drawing.Point(309, 605);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(193, 69);
             this.btn_salvar.TabIndex = 59;
@@ -371,7 +371,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(912, 56);
+            this.pictureBox1.Location = new System.Drawing.Point(849, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -380,10 +380,10 @@
             // 
             // Frm_CadastroUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1151, 743);
+            this.ClientSize = new System.Drawing.Size(1102, 743);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_salvar);
@@ -418,7 +418,7 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(72)))), ((int)(((byte)(112)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Frm_CadastroUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

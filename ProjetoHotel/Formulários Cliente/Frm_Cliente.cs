@@ -92,7 +92,7 @@ namespace ProjetoHotel
 
                 ReservaAnd.Read();
 
-                lbl_reservas_andamento.Text = $"Reservas encerradas: {ReservaAnd["count"].ToString()}";
+                lbl_reservas_andamento.Text = $"Reservas em andamento: {ReservaAnd["count"].ToString()}";
             }
             finally
             {
@@ -230,6 +230,16 @@ namespace ProjetoHotel
             CompraItens.StartPosition = FormStartPosition.CenterParent;         
             CompraItens.Show();
             CompraItens.BringToFront();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_reservas_andamento_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

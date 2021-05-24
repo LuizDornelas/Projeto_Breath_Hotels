@@ -56,19 +56,19 @@ namespace ProjetoHotel
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.lbl_titulo.Location = new System.Drawing.Point(323, 12);
+            this.lbl_titulo.Location = new System.Drawing.Point(371, 9);
             this.lbl_titulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(156, 56);
+            this.lbl_titulo.Size = new System.Drawing.Size(194, 70);
             this.lbl_titulo.TabIndex = 44;
             this.lbl_titulo.Text = "Estoque";
             // 
             // lbl_fornecedor
             // 
             this.lbl_fornecedor.AutoSize = true;
-            this.lbl_fornecedor.Location = new System.Drawing.Point(92, 150);
+            this.lbl_fornecedor.Location = new System.Drawing.Point(384, 102);
             this.lbl_fornecedor.Name = "lbl_fornecedor";
-            this.lbl_fornecedor.Size = new System.Drawing.Size(108, 28);
+            this.lbl_fornecedor.Size = new System.Drawing.Size(136, 36);
             this.lbl_fornecedor.TabIndex = 59;
             this.lbl_fornecedor.Text = "Fornecedor:";
             // 
@@ -78,10 +78,10 @@ namespace ProjetoHotel
             this.btn_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_voltar.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.ForeColor = System.Drawing.Color.White;
-            this.btn_voltar.Location = new System.Drawing.Point(321, 567);
+            this.btn_voltar.Location = new System.Drawing.Point(219, 624);
             this.btn_voltar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(170, 62);
+            this.btn_voltar.Size = new System.Drawing.Size(204, 67);
             this.btn_voltar.TabIndex = 63;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = false;
@@ -93,10 +93,10 @@ namespace ProjetoHotel
             this.btn_comprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_comprar.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_comprar.ForeColor = System.Drawing.Color.White;
-            this.btn_comprar.Location = new System.Drawing.Point(551, 203);
+            this.btn_comprar.Location = new System.Drawing.Point(497, 624);
             this.btn_comprar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_comprar.Name = "btn_comprar";
-            this.btn_comprar.Size = new System.Drawing.Size(151, 58);
+            this.btn_comprar.Size = new System.Drawing.Size(204, 67);
             this.btn_comprar.TabIndex = 78;
             this.btn_comprar.Text = "Comprar";
             this.btn_comprar.UseVisualStyleBackColor = false;
@@ -105,9 +105,9 @@ namespace ProjetoHotel
             // lbl_itens
             // 
             this.lbl_itens.AutoSize = true;
-            this.lbl_itens.Location = new System.Drawing.Point(31, 249);
+            this.lbl_itens.Location = new System.Drawing.Point(63, 323);
             this.lbl_itens.Name = "lbl_itens";
-            this.lbl_itens.Size = new System.Drawing.Size(150, 28);
+            this.lbl_itens.Size = new System.Drawing.Size(188, 36);
             this.lbl_itens.TabIndex = 88;
             this.lbl_itens.Text = "Itens Disponíveis";
             // 
@@ -118,17 +118,18 @@ namespace ProjetoHotel
             this.dgv_itens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_itens.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_itens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_itens.Location = new System.Drawing.Point(36, 279);
+            this.dgv_itens.Location = new System.Drawing.Point(69, 362);
             this.dgv_itens.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dgv_itens.Name = "dgv_itens";
             this.dgv_itens.ReadOnly = true;
-            this.dgv_itens.Size = new System.Drawing.Size(705, 239);
+            this.dgv_itens.RowHeadersWidth = 51;
+            this.dgv_itens.Size = new System.Drawing.Size(764, 239);
             this.dgv_itens.TabIndex = 87;
             // 
             // txt_valor
             // 
             this.txt_valor.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_valor.Location = new System.Drawing.Point(287, 102);
+            this.txt_valor.Location = new System.Drawing.Point(240, 147);
             this.txt_valor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_valor.MaxLength = 50;
             this.txt_valor.Multiline = true;
@@ -140,29 +141,29 @@ namespace ProjetoHotel
             // lbl_valor
             // 
             this.lbl_valor.AutoSize = true;
-            this.lbl_valor.Location = new System.Drawing.Point(282, 74);
+            this.lbl_valor.Location = new System.Drawing.Point(234, 102);
             this.lbl_valor.Name = "lbl_valor";
-            this.lbl_valor.Size = new System.Drawing.Size(99, 28);
+            this.lbl_valor.Size = new System.Drawing.Size(127, 36);
             this.lbl_valor.TabIndex = 90;
             this.lbl_valor.Text = "Valor Item:";
             // 
             // lbl_quantidade
             // 
             this.lbl_quantidade.AutoSize = true;
-            this.lbl_quantidade.Location = new System.Drawing.Point(415, 150);
+            this.lbl_quantidade.Location = new System.Drawing.Point(63, 221);
             this.lbl_quantidade.Name = "lbl_quantidade";
-            this.lbl_quantidade.Size = new System.Drawing.Size(184, 28);
+            this.lbl_quantidade.Size = new System.Drawing.Size(231, 36);
             this.lbl_quantidade.TabIndex = 91;
             this.lbl_quantidade.Text = "Quantidade compra:";
             // 
             // msk_quantidade
             // 
             this.msk_quantidade.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msk_quantidade.Location = new System.Drawing.Point(480, 182);
+            this.msk_quantidade.Location = new System.Drawing.Point(69, 259);
             this.msk_quantidade.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.msk_quantidade.Mask = "999";
             this.msk_quantidade.Name = "msk_quantidade";
-            this.msk_quantidade.Size = new System.Drawing.Size(41, 31);
+            this.msk_quantidade.Size = new System.Drawing.Size(41, 37);
             this.msk_quantidade.TabIndex = 93;
             // 
             // cmb_itens
@@ -170,26 +171,27 @@ namespace ProjetoHotel
             this.cmb_itens.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_itens.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_itens.FormattingEnabled = true;
-            this.cmb_itens.Location = new System.Drawing.Point(97, 102);
+            this.cmb_itens.Location = new System.Drawing.Point(69, 147);
             this.cmb_itens.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb_itens.Name = "cmb_itens";
-            this.cmb_itens.Size = new System.Drawing.Size(145, 36);
+            this.cmb_itens.Size = new System.Drawing.Size(145, 44);
             this.cmb_itens.TabIndex = 94;
             this.cmb_itens.SelectedIndexChanged += new System.EventHandler(this.cmb_itens_SelectedIndexChanged);
             // 
             // lbl_item
             // 
             this.lbl_item.AutoSize = true;
-            this.lbl_item.Location = new System.Drawing.Point(92, 74);
+            this.lbl_item.Location = new System.Drawing.Point(63, 102);
             this.lbl_item.Name = "lbl_item";
-            this.lbl_item.Size = new System.Drawing.Size(53, 28);
+            this.lbl_item.Size = new System.Drawing.Size(67, 36);
             this.lbl_item.TabIndex = 95;
             this.lbl_item.Text = "Item:";
             // 
             // btn_atualiza_reserva
             // 
-            this.btn_atualiza_reserva.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_atualiza_reserva.Location = new System.Drawing.Point(747, 279);
+            this.btn_atualiza_reserva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_atualiza_reserva.Image = ((System.Drawing.Image)(resources.GetObject("btn_atualiza_reserva.Image")));
+            this.btn_atualiza_reserva.Location = new System.Drawing.Point(783, 305);
             this.btn_atualiza_reserva.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btn_atualiza_reserva.Name = "btn_atualiza_reserva";
             this.btn_atualiza_reserva.Size = new System.Drawing.Size(50, 51);
@@ -200,7 +202,7 @@ namespace ProjetoHotel
             // txt_fornecedor
             // 
             this.txt_fornecedor.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_fornecedor.Location = new System.Drawing.Point(97, 182);
+            this.txt_fornecedor.Location = new System.Drawing.Point(390, 147);
             this.txt_fornecedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_fornecedor.MaxLength = 50;
             this.txt_fornecedor.Multiline = true;
@@ -212,7 +214,7 @@ namespace ProjetoHotel
             // txt_qnt_disponivel
             // 
             this.txt_qnt_disponivel.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_qnt_disponivel.Location = new System.Drawing.Point(433, 102);
+            this.txt_qnt_disponivel.Location = new System.Drawing.Point(352, 259);
             this.txt_qnt_disponivel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_qnt_disponivel.MaxLength = 50;
             this.txt_qnt_disponivel.Multiline = true;
@@ -224,29 +226,29 @@ namespace ProjetoHotel
             // lbl_qnt_itens
             // 
             this.lbl_qnt_itens.AutoSize = true;
-            this.lbl_qnt_itens.Location = new System.Drawing.Point(415, 74);
+            this.lbl_qnt_itens.Location = new System.Drawing.Point(346, 221);
             this.lbl_qnt_itens.Name = "lbl_qnt_itens";
-            this.lbl_qnt_itens.Size = new System.Drawing.Size(93, 28);
+            this.lbl_qnt_itens.Size = new System.Drawing.Size(204, 36);
             this.lbl_qnt_itens.TabIndex = 98;
-            this.lbl_qnt_itens.Text = "Qnt atual:";
+            this.lbl_qnt_itens.Text = "Quantidade atual:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(624, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(679, 37);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 157);
+            this.pictureBox1.Size = new System.Drawing.Size(186, 175);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 99;
             this.pictureBox1.TabStop = false;
             // 
             // Frm_Estoque
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(842, 641);
+            this.ClientSize = new System.Drawing.Size(964, 726);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_qnt_itens);

@@ -56,19 +56,19 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.lbl_titulo.Location = new System.Drawing.Point(290, 44);
+            this.lbl_titulo.Location = new System.Drawing.Point(233, 63);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(474, 56);
+            this.lbl_titulo.Size = new System.Drawing.Size(607, 70);
             this.lbl_titulo.TabIndex = 44;
-            this.lbl_titulo.Text = "Atualiza Itens Consumíveis";
+            this.lbl_titulo.Text = "Atualizar Itens Consumíveis";
             // 
             // txt_nome_item
             // 
             this.txt_nome_item.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome_item.Location = new System.Drawing.Point(344, 155);
+            this.txt_nome_item.Location = new System.Drawing.Point(298, 236);
             this.txt_nome_item.MaxLength = 20;
             this.txt_nome_item.Name = "txt_nome_item";
-            this.txt_nome_item.Size = new System.Drawing.Size(249, 31);
+            this.txt_nome_item.Size = new System.Drawing.Size(249, 37);
             this.txt_nome_item.TabIndex = 45;
             // 
             // dgv_itens
@@ -76,18 +76,19 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.dgv_itens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_itens.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_itens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_itens.Location = new System.Drawing.Point(128, 327);
+            this.dgv_itens.Location = new System.Drawing.Point(94, 418);
             this.dgv_itens.Name = "dgv_itens";
-            this.dgv_itens.Size = new System.Drawing.Size(821, 169);
+            this.dgv_itens.RowHeadersWidth = 51;
+            this.dgv_itens.Size = new System.Drawing.Size(867, 169);
             this.dgv_itens.TabIndex = 64;
             // 
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
             this.lbl_nome.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome.Location = new System.Drawing.Point(344, 123);
+            this.lbl_nome.Location = new System.Drawing.Point(292, 182);
             this.lbl_nome.Name = "lbl_nome";
-            this.lbl_nome.Size = new System.Drawing.Size(131, 28);
+            this.lbl_nome.Size = new System.Drawing.Size(165, 36);
             this.lbl_nome.TabIndex = 65;
             this.lbl_nome.Text = "Nome do item:";
             // 
@@ -95,9 +96,9 @@ namespace ProjetoHotel.Formulários_de_Atualização
             // 
             this.lbl_valor.AutoSize = true;
             this.lbl_valor.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_valor.Location = new System.Drawing.Point(632, 123);
+            this.lbl_valor.Location = new System.Drawing.Point(616, 301);
             this.lbl_valor.Name = "lbl_valor";
-            this.lbl_valor.Size = new System.Drawing.Size(124, 28);
+            this.lbl_valor.Size = new System.Drawing.Size(159, 36);
             this.lbl_valor.TabIndex = 66;
             this.lbl_valor.Text = "Valor do item:";
             // 
@@ -105,35 +106,36 @@ namespace ProjetoHotel.Formulários_de_Atualização
             // 
             this.lbl_nome_fornecedor.AutoSize = true;
             this.lbl_nome_fornecedor.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome_fornecedor.Location = new System.Drawing.Point(344, 220);
+            this.lbl_nome_fornecedor.Location = new System.Drawing.Point(88, 301);
             this.lbl_nome_fornecedor.Name = "lbl_nome_fornecedor";
-            this.lbl_nome_fornecedor.Size = new System.Drawing.Size(186, 28);
+            this.lbl_nome_fornecedor.Size = new System.Drawing.Size(234, 36);
             this.lbl_nome_fornecedor.TabIndex = 85;
             this.lbl_nome_fornecedor.Text = "Nome do Fornecedor:";
             // 
             // txt_nome_fornecedor
             // 
             this.txt_nome_fornecedor.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome_fornecedor.Location = new System.Drawing.Point(344, 251);
+            this.txt_nome_fornecedor.Location = new System.Drawing.Point(94, 356);
             this.txt_nome_fornecedor.MaxLength = 20;
             this.txt_nome_fornecedor.Name = "txt_nome_fornecedor";
-            this.txt_nome_fornecedor.Size = new System.Drawing.Size(249, 31);
+            this.txt_nome_fornecedor.Size = new System.Drawing.Size(249, 37);
             this.txt_nome_fornecedor.TabIndex = 84;
             // 
             // lbl_valor_compra
             // 
             this.lbl_valor_compra.AutoSize = true;
             this.lbl_valor_compra.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_valor_compra.Location = new System.Drawing.Point(632, 220);
+            this.lbl_valor_compra.Location = new System.Drawing.Point(375, 301);
             this.lbl_valor_compra.Name = "lbl_valor_compra";
-            this.lbl_valor_compra.Size = new System.Drawing.Size(170, 28);
+            this.lbl_valor_compra.Size = new System.Drawing.Size(217, 36);
             this.lbl_valor_compra.TabIndex = 86;
             this.lbl_valor_compra.Text = "Valor para compra:";
             // 
             // btn_atualiza_dgv
             // 
-            this.btn_atualiza_dgv.Image = global::ProjetoHotel.Properties.Resources.refresh;
-            this.btn_atualiza_dgv.Location = new System.Drawing.Point(297, 245);
+            this.btn_atualiza_dgv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_atualiza_dgv.Image = ((System.Drawing.Image)(resources.GetObject("btn_atualiza_dgv.Image")));
+            this.btn_atualiza_dgv.Location = new System.Drawing.Point(910, 369);
             this.btn_atualiza_dgv.Name = "btn_atualiza_dgv";
             this.btn_atualiza_dgv.Size = new System.Drawing.Size(41, 43);
             this.btn_atualiza_dgv.TabIndex = 83;
@@ -146,9 +148,9 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_excluir.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.ForeColor = System.Drawing.Color.White;
-            this.btn_excluir.Location = new System.Drawing.Point(442, 522);
+            this.btn_excluir.Location = new System.Drawing.Point(423, 626);
             this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(204, 55);
+            this.btn_excluir.Size = new System.Drawing.Size(204, 67);
             this.btn_excluir.TabIndex = 107;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = false;
@@ -160,9 +162,9 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.btn_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvar.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar.ForeColor = System.Drawing.Color.White;
-            this.btn_salvar.Location = new System.Drawing.Point(700, 522);
+            this.btn_salvar.Location = new System.Drawing.Point(690, 626);
             this.btn_salvar.Name = "btn_salvar";
-            this.btn_salvar.Size = new System.Drawing.Size(204, 55);
+            this.btn_salvar.Size = new System.Drawing.Size(204, 67);
             this.btn_salvar.TabIndex = 106;
             this.btn_salvar.Text = "Atualizar";
             this.btn_salvar.UseVisualStyleBackColor = false;
@@ -174,9 +176,9 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.btn_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_voltar.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.ForeColor = System.Drawing.Color.White;
-            this.btn_voltar.Location = new System.Drawing.Point(169, 522);
+            this.btn_voltar.Location = new System.Drawing.Point(139, 626);
             this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(204, 55);
+            this.btn_voltar.Size = new System.Drawing.Size(204, 67);
             this.btn_voltar.TabIndex = 105;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = false;
@@ -186,10 +188,10 @@ namespace ProjetoHotel.Formulários_de_Atualização
             // 
             this.lbl_pesquisa.AutoSize = true;
             this.lbl_pesquisa.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pesquisa.Location = new System.Drawing.Point(123, 123);
+            this.lbl_pesquisa.Location = new System.Drawing.Point(88, 182);
             this.lbl_pesquisa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_pesquisa.Name = "lbl_pesquisa";
-            this.lbl_pesquisa.Size = new System.Drawing.Size(138, 28);
+            this.lbl_pesquisa.Size = new System.Drawing.Size(173, 36);
             this.lbl_pesquisa.TabIndex = 108;
             this.lbl_pesquisa.Text = "Pesquisar Item:";
             // 
@@ -199,37 +201,37 @@ namespace ProjetoHotel.Formulários_de_Atualização
             this.cmb_item.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_item.FormattingEnabled = true;
             this.cmb_item.IntegralHeight = false;
-            this.cmb_item.Location = new System.Drawing.Point(128, 155);
+            this.cmb_item.Location = new System.Drawing.Point(94, 236);
             this.cmb_item.Margin = new System.Windows.Forms.Padding(4);
             this.cmb_item.Name = "cmb_item";
-            this.cmb_item.Size = new System.Drawing.Size(152, 36);
+            this.cmb_item.Size = new System.Drawing.Size(152, 44);
             this.cmb_item.TabIndex = 111;
             this.cmb_item.SelectedIndexChanged += new System.EventHandler(this.cmb_item_SelectedIndexChanged);
             // 
             // txt_valor_fornecedor
             // 
             this.txt_valor_fornecedor.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_valor_fornecedor.Location = new System.Drawing.Point(637, 251);
+            this.txt_valor_fornecedor.Location = new System.Drawing.Point(381, 356);
             this.txt_valor_fornecedor.MaxLength = 20;
             this.txt_valor_fornecedor.Name = "txt_valor_fornecedor";
-            this.txt_valor_fornecedor.Size = new System.Drawing.Size(135, 31);
+            this.txt_valor_fornecedor.Size = new System.Drawing.Size(135, 37);
             this.txt_valor_fornecedor.TabIndex = 112;
             this.txt_valor_fornecedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valor_fornecedor_KeyPress);
             // 
             // txt_valor_item
             // 
             this.txt_valor_item.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_valor_item.Location = new System.Drawing.Point(637, 160);
+            this.txt_valor_item.Location = new System.Drawing.Point(608, 356);
             this.txt_valor_item.MaxLength = 20;
             this.txt_valor_item.Name = "txt_valor_item";
-            this.txt_valor_item.Size = new System.Drawing.Size(135, 31);
+            this.txt_valor_item.Size = new System.Drawing.Size(135, 37);
             this.txt_valor_item.TabIndex = 113;
             this.txt_valor_item.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valor_item_KeyPress);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(809, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(760, 74);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -238,10 +240,10 @@ namespace ProjetoHotel.Formulários_de_Atualização
             // 
             // Frm_AtualizaItensFornecedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1062, 644);
+            this.ClientSize = new System.Drawing.Size(1037, 743);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_valor_item);
