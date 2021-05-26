@@ -7,7 +7,7 @@ namespace ProjetoHotel
 
         public NpgsqlConnection getConexao()
         {            
-            NpgsqlConnection pgsqlConnection = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;Password=myhome2030;Database=BreathHotels;");
+            NpgsqlConnection pgsqlConnection = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;Password=postgres;Database=BreathHotels;");
 
             return pgsqlConnection;
         }
