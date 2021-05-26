@@ -48,9 +48,9 @@ namespace ProjetoHotel
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.lbl_titulo.Location = new System.Drawing.Point(62, 23);
+            this.lbl_titulo.Location = new System.Drawing.Point(171, 52);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(428, 56);
+            this.lbl_titulo.Size = new System.Drawing.Size(532, 70);
             this.lbl_titulo.TabIndex = 44;
             this.lbl_titulo.Text = "Pagamento por Dinheiro";
             // 
@@ -60,9 +60,9 @@ namespace ProjetoHotel
             this.btn_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_voltar.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.ForeColor = System.Drawing.Color.White;
-            this.btn_voltar.Location = new System.Drawing.Point(69, 338);
+            this.btn_voltar.Location = new System.Drawing.Point(207, 469);
             this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(204, 55);
+            this.btn_voltar.Size = new System.Drawing.Size(204, 67);
             this.btn_voltar.TabIndex = 63;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = false;
@@ -74,9 +74,9 @@ namespace ProjetoHotel
             this.btn_pagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_pagar.Font = new System.Drawing.Font("Poppins SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_pagar.ForeColor = System.Drawing.Color.White;
-            this.btn_pagar.Location = new System.Drawing.Point(323, 338);
+            this.btn_pagar.Location = new System.Drawing.Point(482, 469);
             this.btn_pagar.Name = "btn_pagar";
-            this.btn_pagar.Size = new System.Drawing.Size(204, 55);
+            this.btn_pagar.Size = new System.Drawing.Size(204, 67);
             this.btn_pagar.TabIndex = 78;
             this.btn_pagar.Text = "Pagar";
             this.btn_pagar.UseVisualStyleBackColor = false;
@@ -86,10 +86,10 @@ namespace ProjetoHotel
             // 
             this.lbl_total.AutoSize = true;
             this.lbl_total.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_total.Location = new System.Drawing.Point(123, 110);
+            this.lbl_total.Location = new System.Drawing.Point(201, 179);
             this.lbl_total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(56, 28);
+            this.lbl_total.Size = new System.Drawing.Size(73, 36);
             this.lbl_total.TabIndex = 80;
             this.lbl_total.Text = "Total:";
             // 
@@ -97,9 +97,9 @@ namespace ProjetoHotel
             // 
             this.txt_valor_pago.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txt_valor_pago.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_valor_pago.Location = new System.Drawing.Point(224, 178);
+            this.txt_valor_pago.Location = new System.Drawing.Point(303, 265);
             this.txt_valor_pago.Name = "txt_valor_pago";
-            this.txt_valor_pago.Size = new System.Drawing.Size(148, 31);
+            this.txt_valor_pago.Size = new System.Drawing.Size(148, 37);
             this.txt_valor_pago.TabIndex = 81;
             this.txt_valor_pago.TextChanged += new System.EventHandler(this.txt_valor_pago_TextChanged);
             this.txt_valor_pago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_valor_pago_KeyPress);
@@ -108,10 +108,10 @@ namespace ProjetoHotel
             // 
             this.lbl_valor_pago.AutoSize = true;
             this.lbl_valor_pago.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_valor_pago.Location = new System.Drawing.Point(74, 178);
+            this.lbl_valor_pago.Location = new System.Drawing.Point(139, 268);
             this.lbl_valor_pago.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_valor_pago.Name = "lbl_valor_pago";
-            this.lbl_valor_pago.Size = new System.Drawing.Size(105, 28);
+            this.lbl_valor_pago.Size = new System.Drawing.Size(135, 36);
             this.lbl_valor_pago.TabIndex = 82;
             this.lbl_valor_pago.Text = "Valor pago:";
             // 
@@ -119,10 +119,10 @@ namespace ProjetoHotel
             // 
             this.txt_troco.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txt_troco.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_troco.Location = new System.Drawing.Point(224, 240);
+            this.txt_troco.Location = new System.Drawing.Point(303, 351);
             this.txt_troco.Name = "txt_troco";
             this.txt_troco.ReadOnly = true;
-            this.txt_troco.Size = new System.Drawing.Size(148, 31);
+            this.txt_troco.Size = new System.Drawing.Size(148, 37);
             this.txt_troco.TabIndex = 83;
             // 
             // lbl_troco
@@ -130,10 +130,10 @@ namespace ProjetoHotel
             this.lbl_troco.AutoSize = true;
             this.lbl_troco.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_troco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(59)))), ((int)(((byte)(112)))));
-            this.lbl_troco.Location = new System.Drawing.Point(118, 243);
+            this.lbl_troco.Location = new System.Drawing.Point(196, 351);
             this.lbl_troco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_troco.Name = "lbl_troco";
-            this.lbl_troco.Size = new System.Drawing.Size(61, 28);
+            this.lbl_troco.Size = new System.Drawing.Size(78, 36);
             this.lbl_troco.TabIndex = 84;
             this.lbl_troco.Text = "Troco:";
             // 
@@ -141,16 +141,16 @@ namespace ProjetoHotel
             // 
             this.txt_total.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txt_total.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total.Location = new System.Drawing.Point(224, 107);
+            this.txt_total.Location = new System.Drawing.Point(303, 179);
             this.txt_total.Name = "txt_total";
             this.txt_total.ReadOnly = true;
-            this.txt_total.Size = new System.Drawing.Size(148, 31);
+            this.txt_total.Size = new System.Drawing.Size(148, 37);
             this.txt_total.TabIndex = 85;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(491, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(612, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 206);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -159,10 +159,10 @@ namespace ProjetoHotel
             // 
             // Frm_Pgto_Dinheiro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(723, 423);
+            this.ClientSize = new System.Drawing.Size(877, 591);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txt_total);
             this.Controls.Add(this.lbl_troco);
@@ -180,9 +180,8 @@ namespace ProjetoHotel
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Frm_Pgto_Dinheiro";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagamento";
-            this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.Frm_Pgto_Dinheiro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

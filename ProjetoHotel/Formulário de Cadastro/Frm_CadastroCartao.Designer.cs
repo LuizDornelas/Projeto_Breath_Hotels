@@ -56,7 +56,7 @@ namespace ProjetoHotel
             // 
             // txt_nome
             // 
-            this.txt_nome.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nome.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(71, 254);
             this.txt_nome.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nome.MaxLength = 50;
@@ -68,7 +68,7 @@ namespace ProjetoHotel
             // 
             // msk_rg
             // 
-            this.msk_rg.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msk_rg.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_rg.Location = new System.Drawing.Point(560, 254);
             this.msk_rg.Margin = new System.Windows.Forms.Padding(4);
             this.msk_rg.Mask = "99,999,999-9";
@@ -148,7 +148,7 @@ namespace ProjetoHotel
             // 
             // msk_numero_cartao
             // 
-            this.msk_numero_cartao.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msk_numero_cartao.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_numero_cartao.Location = new System.Drawing.Point(71, 355);
             this.msk_numero_cartao.Margin = new System.Windows.Forms.Padding(4);
             this.msk_numero_cartao.Mask = "9999-9999-9999-9999";
@@ -158,7 +158,7 @@ namespace ProjetoHotel
             // 
             // txt_nome_cartao
             // 
-            this.txt_nome_cartao.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nome_cartao.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome_cartao.Location = new System.Drawing.Point(560, 355);
             this.txt_nome_cartao.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nome_cartao.MaxLength = 50;
@@ -191,7 +191,7 @@ namespace ProjetoHotel
             // 
             // msk_validade
             // 
-            this.msk_validade.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msk_validade.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_validade.Location = new System.Drawing.Point(71, 461);
             this.msk_validade.Margin = new System.Windows.Forms.Padding(4);
             this.msk_validade.Mask = "00/00";

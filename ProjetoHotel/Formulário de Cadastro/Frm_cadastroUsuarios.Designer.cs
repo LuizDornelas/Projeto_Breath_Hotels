@@ -292,7 +292,7 @@
             this.msk_numero.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msk_numero.Location = new System.Drawing.Point(496, 293);
             this.msk_numero.Margin = new System.Windows.Forms.Padding(4);
-            this.msk_numero.Mask = "99999999";
+            this.msk_numero.Mask = "99999";
             this.msk_numero.Name = "msk_numero";
             this.msk_numero.Size = new System.Drawing.Size(106, 37);
             this.msk_numero.TabIndex = 52;
@@ -345,7 +345,7 @@
             this.btn_voltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_voltar.Font = new System.Drawing.Font("Poppins SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_voltar.ForeColor = System.Drawing.Color.White;
-            this.btn_voltar.Location = new System.Drawing.Point(551, 605);
+            this.btn_voltar.Location = new System.Drawing.Point(249, 596);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(193, 69);
             this.btn_voltar.TabIndex = 58;
@@ -360,7 +360,7 @@
             this.btn_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_salvar.Font = new System.Drawing.Font("Poppins SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salvar.ForeColor = System.Drawing.Color.White;
-            this.btn_salvar.Location = new System.Drawing.Point(309, 605);
+            this.btn_salvar.Location = new System.Drawing.Point(507, 596);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(193, 69);
             this.btn_salvar.TabIndex = 59;
